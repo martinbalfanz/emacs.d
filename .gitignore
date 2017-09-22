@@ -1,0 +1,4 @@
+*.elc
+custom.el
+*~
+*#
