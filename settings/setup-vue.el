@@ -1,5 +1,4 @@
-(use-package web-mode
-  :ensure t)
+(use-package web-mode)
 
 (define-derived-mode vue-mode
   web-mode "Vue"
