@@ -1,6 +1,6 @@
 #+TITLE: .emacs.d
 
-This is my emacs config, rewritten. Currently based on [[http://spacemacs.org/][spacemacs]].
+This is my emacs config, rewritten. Currently based on [[http://spacemacs.org/][spacemacs]] and [[https://github.com/purcell/emacs.d][Steve Purcell's emacs.d]].
 
 * Setup
 
