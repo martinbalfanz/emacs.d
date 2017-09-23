@@ -17,7 +17,8 @@
 
 (require 'setup-git)
 
-(require 'setup-emacs-lisp) ;; TODO, might be complete lisp mode required
+(require 'setup-emacs-lisp)
+(require 'setup-lisp)
 (require 'setup-vue)
 
 (provide 'my-setup)
