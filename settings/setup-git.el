@@ -25,4 +25,16 @@
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
   (add-hook 'dired-mode-hook 'diff-hl-dired-mode))
 
+;; ------------------------------------------------------------
+;; Github
+
+(use-package yagist)
+(use-package bug-reference-github
+  :init
+  (add-hook 'prog-mode-hook 'bug-reference-prog-mode))
+
+(use-package github-clone)
+(use-package github-issues)
+(use-package magit-gh-pulls)
+
 (provide 'setup-git)
