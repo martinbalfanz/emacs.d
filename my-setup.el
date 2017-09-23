@@ -13,6 +13,7 @@
 (require 'setup-recentf)
 (require 'setup-editing-utils)
 (require 'setup-helm)
+(require 'setup-whitespace)
 
 (require 'setup-git)
 
