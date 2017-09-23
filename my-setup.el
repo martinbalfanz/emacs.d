@@ -14,6 +14,8 @@
 (require 'setup-editing-utils)
 (require 'setup-helm)
 
+(require 'setup-git)
+
 (require 'setup-emacs-lisp) ;; TODO, might be complete lisp mode required
 (require 'setup-vue)
 
