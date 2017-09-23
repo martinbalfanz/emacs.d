@@ -65,7 +65,7 @@
   :config
   (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop))
 
-(use-package helm-git
+(use-package helm-ls-git
   :after helm)
 
 (use-package helm-gitignore
