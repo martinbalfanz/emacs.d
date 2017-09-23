@@ -16,4 +16,13 @@
   :init
   (add-hook 'git-commit-mode-hook 'goto-address-mode))
 
+(use-package diff-hl
+  :bind (:map diff-hl-mode-map
+              ("<left-fringe> <mouse-1>" . diff-hl-goto-hunk))
+  :init
+  (add-hook 'prog-mode-hook 'diff-hl-mode)
+  (add-hook 'vc-dir-mode-hook 'diff-hl-mode)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+  (add-hook 'dired-mode-hook 'diff-hl-dired-mode))
+
 (provide 'setup-git)
