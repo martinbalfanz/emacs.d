@@ -7,8 +7,7 @@
 (require 'setup-exec-path)
 (require 'setup-mac)
 (require 'setup-fonts)
-
-(use-package color-theme-sanityinc-tomorrow)
+(require 'setup-themes)
 
 (require 'setup-recentf)
 (require 'setup-editing-utils)
