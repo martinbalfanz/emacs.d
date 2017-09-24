@@ -157,7 +157,6 @@ With arg N, insert N newlines."
 ;; guide-key
 
 (use-package guide-key
-  :disabled
   :diminish guide-key-mode
   :config
   (setq guide-key/guide-key-sequence '("C-x" "C-c" "C-x 4" "C-x 5" "C-c ;" "C-c ; f" "C-c ' f" "C-x n" "C-x C-r" "C-x r" "M-s" "C-h" "C-c C-a"))
