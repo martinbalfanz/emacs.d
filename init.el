@@ -30,4 +30,5 @@
 (require 'setup-emacs-lisp)
 (require 'setup-lisp)
 (require 'setup-html)
+(require 'setup-css)
 (require 'setup-vue)
