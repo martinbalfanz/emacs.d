@@ -26,5 +26,4 @@
 (require 'setup-lisp)
 (require 'setup-vue)
 
-(provide 'my-setup)
 
