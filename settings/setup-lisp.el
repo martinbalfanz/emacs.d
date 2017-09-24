@@ -1,8 +1,10 @@
-(defun mb/remove-smartparens-and-add-parinfer ()
-  "If smartparens mode is enabled, disable it and enable parinfer instead."
+(use-package paren-face)
+
+(defun mb/lispy-mode-config ()
   (when (featurep 'smartparens)
     (smartparens-mode -1))
-  (parinfer-mode t))
+  (parinfer-mode t)
+  (paren-face-mode t))
 
 (use-package paredit)
 
@@ -16,11 +18,11 @@
 	   paredit
 	   smart-tab
 	   smart-yank))
-  (add-hook 'clojure-mode-hook 'mb/remove-smartparens-and-add-parinfer)
-  (add-hook 'emacs-lisp-mode-hook 'mb/remove-smartparens-and-add-parinfer)
-  (add-hook 'common-lisp-mode-hook 'mb/remove-smartparens-and-add-parinfer)
-  (add-hook 'scheme-mode-hook 'mb/remove-smartparens-and-add-parinfer)
-  (add-hook 'lisp-mode-hook 'mb/remove-smartparens-and-add-parinfer)
-  (add-hook 'json-mode-hook 'mb/remove-smartparens-and-add-parinfer))
+  (add-hook 'clojure-mode-hook 'mb/lispy-mode-config)
+  (add-hook 'emacs-lisp-mode-hook 'mb/lispy-mode-config)
+  (add-hook 'common-lisp-mode-hook 'mb/lispy-mode-config)
+  (add-hook 'scheme-mode-hook 'mb/lispy-mode-config)
+  (add-hook 'lisp-mode-hook 'mb/lispy-mode-config)
+  (add-hook 'json-mode-hook 'mb/lispy-mode-config))
 
 (provide 'setup-lisp)
