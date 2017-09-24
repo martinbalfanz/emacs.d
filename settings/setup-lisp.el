@@ -3,12 +3,13 @@
 (defun mb/lispy-mode-config ()
   (when (featurep 'smartparens)
     (smartparens-mode -1))
-  (parinfer-mode t)
+  (paredit-mode t)
   (paren-face-mode t))
 
 (use-package paredit)
 
 (use-package parinfer
+  :disabled
   :bind ("C-," . parinfer-toggle-mode)
   :diminish parinfer-mode
   :init
