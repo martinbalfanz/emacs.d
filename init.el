@@ -29,4 +29,5 @@
 
 (require 'setup-emacs-lisp)
 (require 'setup-lisp)
+(require 'setup-html)
 (require 'setup-vue)
