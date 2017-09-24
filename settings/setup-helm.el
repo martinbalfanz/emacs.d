@@ -60,6 +60,9 @@
 (use-package helm-tramp
   :after helm)
 
+(use-package helm-themes
+  :after helm)
+
 (use-package helm-swoop
   :defer t
   :init
