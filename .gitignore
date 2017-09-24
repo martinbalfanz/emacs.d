@@ -8,3 +8,4 @@ custom.el
 projectile-bookmarks.eld
 var/
 .mc-lists.el
+company-statistics-cache.el
