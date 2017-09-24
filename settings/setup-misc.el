@@ -69,6 +69,6 @@ Deletes whitespace at join."
 
 (global-set-key (kbd "C-x k") 'jcs-kill-a-buffer)
 
-(diminish auto-revert-mode)
+(diminish 'auto-revert-mode)
 
 (provide 'setup-misc)
