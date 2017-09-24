@@ -24,6 +24,7 @@
 (require 'setup-git)
 
 (require 'setup-projectile)
+(require 'setup-completion)
 
 (require 'setup-emacs-lisp)
 (require 'setup-lisp)
