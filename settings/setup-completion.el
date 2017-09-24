@@ -1,7 +1,9 @@
 ;; company
 
 (use-package company
-  :diminish company-mode)
+  :diminish company-mode
+  :config
+  (setq company-idle-delay 0.2))
 
 (use-package pos-tip)
 (use-package company-quickhelp
