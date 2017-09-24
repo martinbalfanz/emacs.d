@@ -22,8 +22,8 @@
 
 (require 'setup-git)
 
+(require 'setup-projectile)
+
 (require 'setup-emacs-lisp)
 (require 'setup-lisp)
 (require 'setup-vue)
-
-
