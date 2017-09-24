@@ -7,14 +7,14 @@
          ("M-y" . helm-show-kill-ring)
          ("C-x b" . helm-mini)
          ("C-x C-f" . helm-find-files)
-         ("C-c h o" . helm-occur)
-         ("C-c h g" . helm-google-suggest)
-         ("C-c h M-:" . helm-eval-expression-with-eldoc)
+         ;; ("C-c h o" . helm-occur)
+         ;; ("C-c h g" . helm-google-suggest)
+         ;; ("C-c h M-:" . helm-eval-expression-with-eldoc)
          ("C-x r i" . helm-register)
          :map helm-map
-              ("<tab>" . helm-execute-persistent-action)
-              ("C-i" . helm-execute-persistent-action)
-              ("C-z" . helm-select-action))
+	 ("<tab>" . helm-execute-persistent-action)
+	 ("C-i" . helm-execute-persistent-action)
+	 ("C-z" . helm-select-action))
   :diminish helm-mode
   :config
   (require 'helm-config)
