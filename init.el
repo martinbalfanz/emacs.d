@@ -27,6 +27,8 @@
 (require 'setup-editorconfig)
 (require 'setup-completion)
 
+(require 'setup-org)
+
 (require 'setup-emacs-lisp)
 (require 'setup-lisp)
 (require 'setup-html)
