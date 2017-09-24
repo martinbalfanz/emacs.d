@@ -13,6 +13,7 @@
 (require 'setup-fonts)
 (require 'setup-themes)
 (require 'setup-gui-frames)
+(require 'setup-misc)
 
 (require 'setup-recentf)
 (require 'setup-editing-utils)
