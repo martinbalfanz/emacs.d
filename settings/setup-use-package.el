@@ -19,6 +19,8 @@
 
 (setq use-package-always-ensure t)
 
+(require 'bind-key)
+
 (use-package diminish)
 (use-package delight)
 
