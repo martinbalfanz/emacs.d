@@ -1,3 +1,5 @@
+(global-unset-key (kbd "C-x c"))
+
 (use-package helm
   :commands (helm-mode)
   :bind (("C-c h" . helm-command-prefix)
