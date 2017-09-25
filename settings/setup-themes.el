@@ -1,6 +1,6 @@
 (use-package color-theme-sanityinc-solarized)
 (use-package color-theme-sanityinc-tomorrow)
 
-;; (setq-default custom-enabled-themes '(sanityinc-tomorrow-bright))
+(load-theme 'sanityinc-tomorrow-night t)
 
 (provide 'setup-themes)
