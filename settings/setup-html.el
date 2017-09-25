@@ -3,5 +3,11 @@
   :init
   (when (featurep 'company)
     (add-hook 'web-mode-hook 'company-mode-on))
+  :config
+  (setq web-mode-enable-current-column-highlight t
+        web-mode-enable-current-element-highlight t
+        web-mode-enable-element-tag-fontification nil
+        web-mode-enable-html-entities-fontification t
+        web-mode-enable-element-content-fontification t))
 
 (provide 'setup-html)
