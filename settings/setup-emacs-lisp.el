@@ -5,7 +5,8 @@
     (add-hook hook 'turn-on-elisp-slime-nav-mode)))
 
 (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
-  (add-hook hook 'company-mode-on))
+  (when (featurep 'company)
+    (add-hook hook 'company-mode-on)))
 
 (setq-default initial-scratch-message
 	      (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))

@@ -16,6 +16,7 @@
     (add-hook hook 'rainbow-mode)))
 
 (dolist (hook '(css-mode-hook sass-mode-hook scss-mode-hook))
-  (add-hook hook 'company-mode-on))
+  (when (featurep 'company)
+    (add-hook hook 'company-mode-on)))
 
 (provide 'setup-css)
