@@ -5,6 +5,8 @@
 
 (use-package list-unicode-display)
 
+(setq-default indent-tabs-mode nil)
+
 ;; ------------------------------------------------------------
 ;; Newline behaviour
 
