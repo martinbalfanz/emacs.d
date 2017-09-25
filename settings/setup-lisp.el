@@ -6,7 +6,12 @@
   (paredit-mode 1)
   (paren-face-mode 1))
 
-(use-package paredit)
+(use-package paredit
+  :config
+  (defadvice paredit-kill (around mb/paredit-kill () activate)
+    (if (eolp)
+        (delete-indentation t)
+      ad-do-it)))
 
 (use-package parinfer
   :disabled
