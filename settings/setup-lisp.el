@@ -18,12 +18,13 @@
 	   pretty-parens
 	   paredit
 	   smart-tab
-	   smart-yank))
-  (add-hook 'clojure-mode-hook 'mb/lispy-mode-config)
-  (add-hook 'emacs-lisp-mode-hook 'mb/lispy-mode-config)
-  (add-hook 'common-lisp-mode-hook 'mb/lispy-mode-config)
-  (add-hook 'scheme-mode-hook 'mb/lispy-mode-config)
-  (add-hook 'lisp-mode-hook 'mb/lispy-mode-config)
-  (add-hook 'json-mode-hook 'mb/lispy-mode-config))
+	   smart-yank)))
+
+(add-hook 'clojure-mode-hook 'mb/lispy-mode-config)
+(add-hook 'emacs-lisp-mode-hook 'mb/lispy-mode-config)
+(add-hook 'common-lisp-mode-hook 'mb/lispy-mode-config)
+(add-hook 'scheme-mode-hook 'mb/lispy-mode-config)
+(add-hook 'lisp-mode-hook 'mb/lispy-mode-config)
+(add-hook 'json-mode-hook 'mb/lispy-mode-config)
 
 (provide 'setup-lisp)
