@@ -49,3 +49,10 @@
 
 (require 'setup-twitter)
 
+;; ------------------------------------------------------------
+;; unconfigured packages
+
+(use-package scratch)
+(use-package ranger)
+(use-package command-log-mode)
+(use-package aggressive-indent)
