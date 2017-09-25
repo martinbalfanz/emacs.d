@@ -9,3 +9,4 @@ projectile-bookmarks.eld
 var/
 .mc-lists.el
 company-statistics-cache.el
+.litable-lists.el
