@@ -19,6 +19,7 @@
   (require 'helm-config)
   (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
   (setq helm-M-x-fuzzy-match t
+        helm-ff-fuzzy-matching t
         helm-buffers-fuzzy-matching t
         helm-recentf-fuzzy-match t
         helm-split-window-in-side-p nil)
