@@ -15,9 +15,8 @@
   (add-hook hook #'sanityinc/no-trailing-whitespace))
 
 (use-package whitespace-cleanup-mode
-  :diminish whitespace-cleanup-mode
-  :config
-  (global-whitespace-cleanup-mode t))
+  :diminish whitespace-cleanup-mode)
+(global-whitespace-cleanup-mode t)
 
 (global-set-key [remap just-one-space] 'cycle-spacing)
 
