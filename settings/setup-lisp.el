@@ -14,17 +14,21 @@
   :diminish parinfer-mode
   :init
   (setq parinfer-extensions
-	'(defaults
-	   pretty-parens
-	   paredit
-	   smart-tab
-	   smart-yank)))
+        '(defaults
+           pretty-parens
+           paredit
+           smart-tab
+           smart-yank)))
 
-(add-hook 'clojure-mode-hook 'mb/lispy-mode-config)
-(add-hook 'emacs-lisp-mode-hook 'mb/lispy-mode-config)
-(add-hook 'common-lisp-mode-hook 'mb/lispy-mode-config)
-(add-hook 'scheme-mode-hook 'mb/lispy-mode-config)
-(add-hook 'lisp-mode-hook 'mb/lispy-mode-config)
-(add-hook 'json-mode-hook 'mb/lispy-mode-config)
+(dolist (hook '(clojure-mode-hook
+                emacs-lisp-mode-hook
+                common-lisp-mode-hook
+                scheme-mode-hook
+                lisp-mode-hook
+                ;; json-mode-hook
+                slime-mode-hook
+                nrepl-mode-hook
+                ielm-mode-hook))
+  (add-hook hook 'mb/lispy-mode-config))
 
 (provide 'setup-lisp)
