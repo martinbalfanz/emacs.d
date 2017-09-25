@@ -2,6 +2,7 @@
 (setq use-dialog-box nil)
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-echo-area-message t)
+(setq-default indicate-empty-lines t)
 
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
