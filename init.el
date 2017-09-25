@@ -46,3 +46,6 @@
 (require 'setup-css)
 (require 'setup-vue)
 (use-package yaml-mode)
+
+(require 'setup-twitter)
+
