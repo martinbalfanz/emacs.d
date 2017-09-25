@@ -100,7 +100,7 @@ With arg N, insert N newlines."
 
 (show-paren-mode 1)
 
-(cua-selection-mode t)
+(cua-selection-mode 1)
 
 ;; ------------------------------------------------------------
 ;; Editing

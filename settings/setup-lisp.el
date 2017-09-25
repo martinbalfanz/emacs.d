@@ -3,8 +3,8 @@
 (defun mb/lispy-mode-config ()
   (when (featurep 'smartparens)
     (smartparens-mode -1))
-  (paredit-mode t)
-  (paren-face-mode t))
+  (paredit-mode 1)
+  (paren-face-mode 1))
 
 (use-package paredit)
 

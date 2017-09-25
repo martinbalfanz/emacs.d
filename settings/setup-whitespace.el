@@ -16,7 +16,7 @@
 
 (use-package whitespace-cleanup-mode
   :diminish whitespace-cleanup-mode)
-(global-whitespace-cleanup-mode t)
+(global-whitespace-cleanup-mode 1)
 
 (global-set-key [remap just-one-space] 'cycle-spacing)
 
