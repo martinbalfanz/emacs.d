@@ -30,6 +30,7 @@
 (require 'setup-helm)
 (require 'setup-whitespace)
 (require 'setup-windows)
+(require 'setup-deprecate)
 
 (require 'setup-git)
 
