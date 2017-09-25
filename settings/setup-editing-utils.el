@@ -102,6 +102,12 @@ With arg N, insert N newlines."
 
 (cua-selection-mode t)
 
+;; ------------------------------------------------------------
+;; Editing
+
+(auto-compression-mode 1)
+(auto-image-file-mode 1)
+
 ;; (use-package highlight-escape-sequences)
 ;; (hes-mode)
 
@@ -161,7 +167,7 @@ With arg N, insert N newlines."
 (use-package guide-key
   :diminish guide-key-mode
   :config
-  (setq guide-key/guide-key-sequence '("C-x" "C-c" "C-x 4" "C-x 5" "C-c ;" "C-c ; f" "C-c ' f" "C-x n" "C-x C-r" "C-x r" "M-s" "C-h" "C-c C-a"))
+  (setq guide-key/guide-key-sequence t)
   (guide-key-mode 1))
 
 (provide 'setup-editing-utils)

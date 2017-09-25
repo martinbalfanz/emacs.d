@@ -19,10 +19,10 @@ Keys are in kbd format."
   "Takes a list of (key function-designator) lists.
 The functions are globally bound to the keys. Keys
 are in kbd format."
-  (mapc (lambda (keybinding))
-    (destructuring-bind (key function) keybinding
-      (global-set-key (read-kbd-macro key) function)))
-  keybindings)
+  (mapc (lambda (keybinding)
+          (destructuring-bind (key function) keybinding
+            (global-set-key (read-kbd-macro key) function)))
+        keybindings))
 
 (defun mb/kill-and-join-forward (&optional arg)
   "If at end of line, join with following; otherwise kill line.
@@ -31,6 +31,13 @@ Deletes whitespace at join."
   (if (and (eolp) (not (bolp)))
       (delete-indentation t)
     (kill-line arg)))
+
+(defun mb/beginning-of-line (&optional arg)
+  "Toggle point between beginning of line and first non-whitespace."
+  (interactive "P")
+  (if (and (bolp) (not arg))
+      (back-to-indentation)
+    (beginning-of-line arg)))
 
 (defun buffer-contains-regex-p (regex)
   "Check if buffer contains a given REGEX."
@@ -67,9 +74,14 @@ Deletes whitespace at join."
 			    (mapcar #'buffer-name (buffer-list))))
     (kill-this-buffer)))
 
-(global-set-key (kbd "C-x k") 'jcs-kill-a-buffer)
+(global-set-keys '(("C-x k" jcs-kill-a-buffer)
+                   ("C-a" mb/beginning-of-line)
+                   ("C-k" mb/kill-and-join-forward)))
 
 (global-auto-revert-mode)
 (diminish 'auto-revert-mode)
+
+(setq-default require-final-newline t)
+;; (setq debug-on-error t)
 
 (provide 'setup-misc)

@@ -9,4 +9,6 @@
   (setq powerline-default-separator 'wave)
   (spaceline-spacemacs-theme))
 
+(setq-default line-spacing 2)
+
 (provide 'setup-themes)
