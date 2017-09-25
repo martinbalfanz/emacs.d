@@ -15,7 +15,6 @@
 	 ("<tab>" . helm-execute-persistent-action)
 	 ("C-i" . helm-execute-persistent-action)
 	 ("C-z" . helm-select-action))
-  :diminish helm-mode
   :config
   (require 'helm-config)
   (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
@@ -28,6 +27,7 @@
     (setq helm-google-suggest-use-curl-p t)))
 
 (helm-mode 1)
+(diminish 'helm-mode)
 
 (use-package helm-dash
   :after helm)
