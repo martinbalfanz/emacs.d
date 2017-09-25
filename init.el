@@ -44,3 +44,4 @@
 (require 'setup-html)
 (require 'setup-css)
 (require 'setup-vue)
+(use-package yaml-mode)
