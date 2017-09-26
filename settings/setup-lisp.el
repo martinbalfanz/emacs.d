@@ -3,6 +3,7 @@
 (defun mb/lispy-mode-config ()
   (when (featurep 'smartparens) (smartparens-mode -1))
   (when (featurep 'paredit) (paredit-mode 1))
+  (when (featurep 'aggressive-indent) (aggressive-indent-mode 1))
   (paren-face-mode 1))
 
 (use-package parinfer

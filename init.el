@@ -42,6 +42,7 @@
 (require 'setup-editorconfig)
 (require 'setup-completion)
 (require 'setup-paredit)
+(use-package aggressive-indent :diminish aggressive-indent-mode)
 
 (require 'setup-org)
 
@@ -65,4 +66,3 @@
 (use-package scratch)
 (use-package ranger)
 (use-package command-log-mode)
-(use-package aggressive-indent)
