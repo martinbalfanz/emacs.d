@@ -44,6 +44,7 @@
 
 (require 'setup-emacs-lisp)
 (require 'setup-lisp)
+(require 'setup-clojure)
 (require 'setup-html)
 (require 'setup-css)
 (require 'setup-javascript)
