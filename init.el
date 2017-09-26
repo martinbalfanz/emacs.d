@@ -12,6 +12,8 @@
 (add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+(require 'setup-benchmarking)
+
 (require 'setup-use-package)
 
 ;; (require 'setup-utils)
