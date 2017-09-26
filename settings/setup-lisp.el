@@ -7,6 +7,7 @@
   (paren-face-mode 1))
 
 (use-package paredit
+  :diminish paredit-mode
   :config
   (defadvice paredit-kill (around mb/paredit-kill () activate)
     (if (eolp)
