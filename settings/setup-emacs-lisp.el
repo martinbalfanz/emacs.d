@@ -19,4 +19,8 @@
 (use-package litable
   :defer 2)
 
+(use-package highlight-quoted
+  :config
+  (add-hook 'emacs-lisp-mode-hook 'highlight-quoted-mode))
+
 (provide 'setup-emacs-lisp)
