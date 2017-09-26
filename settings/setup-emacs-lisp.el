@@ -7,10 +7,9 @@
 
 (dolist (hook '(emacs-lisp-mode-hook
                 ielm-mode-hook))
-  (add-hook 'hook (lambda ()
-                   (when (featurep 'company)
-                     (add-hook hook 'company-mode-on))
-                   (eldoc-mode 1))))
+  (when (featurep 'company)
+    (add-hook hook 'company-mode-on))
+  (add-hook hook (lambda () (eldoc-mode 1))))
 
 (diminish 'eldoc-mode)
 
