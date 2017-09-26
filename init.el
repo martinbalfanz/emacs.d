@@ -34,13 +34,19 @@
 (require 'setup-windows)
 (require 'setup-deprecate)
 
-(require 'setup-git)
+;; ------------------------------------------------------------
+;; programming utilities
 
+(require 'setup-git)
 (require 'setup-projectile)
 (require 'setup-editorconfig)
 (require 'setup-completion)
+(require 'setup-paredit)
 
 (require 'setup-org)
+
+;; ------------------------------------------------------------
+;; programming languages
 
 (require 'setup-emacs-lisp)
 (require 'setup-lisp)
