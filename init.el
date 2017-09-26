@@ -36,6 +36,7 @@
 
 (use-package ranger)
 (use-package command-log-mode)
+(use-package paradox)
 
 ;; ------------------------------------------------------------
 ;; programming utilities
