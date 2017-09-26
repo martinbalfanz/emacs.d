@@ -11,9 +11,9 @@
 lists. The functions are bound to the keys in the given mode-map.
 Keys are in kbd format."
   (mapc (lambda (keybinding)
-	  (destructuring-bind (key function) keybinding
-	    (define-key mode-map (read-kbd-macro key) function)))
-	keybindings))
+          (destructuring-bind (key function) keybinding
+            (define-key mode-map (read-kbd-macro key) function)))
+        keybindings))
 
 (defun global-set-keys (keybindings)
   "Takes a list of (key function-designator) lists.
@@ -45,21 +45,21 @@ Deletes whitespace at join."
     (save-match-data
       (goto-char (point-min))
       (if (search-forward-regexp regex nil t)
-	  t
-	nil))))
+          t
+        nil))))
 
 (defun rename-file-and-buffer ()
   "Rename the current buffer and file it is visiting."
   (interactive)
   (let ((filename (buffer-file-name)))
     (if (not (and filename (file-exists-p filename)))
-	(message "Buffer is not visiting a file!")
+        (message "Buffer is not visiting a file!")
       (let ((new-name (read-file-name "New name: " filename)))
-	(cond
-	 ((vc-backend filename) (vc-rename-file filename new-name))
-	 (t
-	  (rename-file filename new-name t)
-	  (set-visited-file-name new-name t t)))))))
+        (cond
+         ((vc-backend filename) (vc-rename-file filename new-name))
+         (t
+          (rename-file filename new-name t)
+          (set-visited-file-name new-name t t)))))))
 
 (defun insert-current-date ()
   "Insert current date in the form Y-m-d."
@@ -70,8 +70,8 @@ Deletes whitespace at join."
   (interactive "P")
   (if askp
       (kill-buffer (funcall completing-read-function
-			    "Kill buffer: "
-			    (mapcar #'buffer-name (buffer-list))))
+                            "Kill buffer: "
+                            (mapcar #'buffer-name (buffer-list))))
     (kill-this-buffer)))
 
 (global-set-keys '(("C-x k" jcs-kill-a-buffer)

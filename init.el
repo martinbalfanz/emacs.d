@@ -5,7 +5,7 @@
   "Initial value of `gc-cons-threshold' at start-up time.")
 (setq gc-cons-threshold (* 128 1024 1024))
 (add-hook 'after-init-hook
-	  (lambda () (setq gc-cons-threshold sanityinc/initial-gc-cons-threshold)))
+          (lambda () (setq gc-cons-threshold sanityinc/initial-gc-cons-threshold)))
 
 ;; ------------------------------------------------------------
 

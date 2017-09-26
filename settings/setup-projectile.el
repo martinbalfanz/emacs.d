@@ -3,5 +3,4 @@
   :init
   (add-hook 'after-init-hook 'projectile-mode))
 
-
 (provide 'setup-projectile)
