@@ -28,13 +28,15 @@
 
 (dolist (hook '(clojure-mode-hook
                 emacs-lisp-mode-hook
+                ielm-mode-hook
                 common-lisp-mode-hook
                 scheme-mode-hook
                 lisp-mode-hook
                 ;; json-mode-hook
                 slime-mode-hook
                 nrepl-mode-hook
-                ielm-mode-hook))
+                clojure-mode-hook
+                cider-repl-mode-hook))
   (add-hook hook 'mb/lispy-mode-config))
 
 (provide 'setup-lisp)
