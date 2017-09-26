@@ -44,6 +44,7 @@
 (require 'setup-lisp)
 (require 'setup-html)
 (require 'setup-css)
+(require 'setup-javascript)
 (require 'setup-vue)
 (use-package yaml-mode)
 
