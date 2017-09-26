@@ -17,6 +17,7 @@
 (setq-default initial-scratch-message
               (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
 
-(use-package litable)
+(use-package litable
+  :defer 2)
 
 (provide 'setup-emacs-lisp)
