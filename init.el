@@ -34,6 +34,9 @@
 (require 'setup-windows)
 (require 'setup-deprecate)
 
+(use-package ranger)
+(use-package command-log-mode)
+
 ;; ------------------------------------------------------------
 ;; programming utilities
 
@@ -43,6 +46,7 @@
 (require 'setup-completion)
 (require 'setup-paredit)
 (use-package aggressive-indent :diminish aggressive-indent-mode)
+(use-package scratch)
 
 (require 'setup-org)
 
@@ -59,10 +63,3 @@
 (use-package yaml-mode)
 
 (require 'setup-twitter)
-
-;; ------------------------------------------------------------
-;; unconfigured packages
-
-(use-package scratch)
-(use-package ranger)
-(use-package command-log-mode)
