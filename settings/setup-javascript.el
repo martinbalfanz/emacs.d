@@ -2,7 +2,8 @@
   :mode ("\\.js$" . js2-mode)
   :init
   (when (featurep 'company)
-    (add-hook 'js2-mode-hook 'company-mode-on)))
+    (add-hook 'js2-mode-hook 'company-mode-on)
+    (add-hook 'js2-mode-hook 'subword-mode)))
 
 (use-package tern
   :if (executable-find "tern")
