@@ -33,6 +33,7 @@
 (require 'setup-whitespace)
 (require 'setup-windows)
 (require 'setup-deprecate)
+(require 'setup-dired)
 
 (use-package ranger)
 (use-package command-log-mode)
