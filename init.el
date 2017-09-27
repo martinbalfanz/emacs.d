@@ -63,6 +63,7 @@
 (require 'setup-javascript)
 (require 'setup-vue)
 (require 'setup-rust)
+(use-package toml-mode)
 (use-package yaml-mode)
 
 (require 'setup-twitter)
