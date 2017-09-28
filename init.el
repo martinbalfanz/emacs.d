@@ -37,7 +37,9 @@
 
 (use-package ranger)
 (use-package command-log-mode)
-(use-package paradox :defer 5)
+(use-package paradox
+  :commands (paradox-upgrade-packages
+             paradox-list-packages))
 
 ;; ------------------------------------------------------------
 ;; programming utilities
