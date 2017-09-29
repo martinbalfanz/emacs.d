@@ -27,8 +27,6 @@
 (require 'setup-misc) ;; TODO cleanup
 (require 'setup-backup)
 
-(require 'setup-shell)
-
 (require 'setup-recentf)
 (require 'setup-editing-utils)
 (require 'setup-helm)
@@ -37,6 +35,8 @@
 (require 'setup-deprecate)
 (require 'setup-dired)
 
+(require 'setup-shell)
+(use-package dash)
 (use-package ranger)
 (use-package command-log-mode)
 (use-package paradox
