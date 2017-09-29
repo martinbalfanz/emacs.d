@@ -3,6 +3,7 @@
   :init
   (when (featurep 'company)
     (add-hook 'web-mode-hook 'company-mode-on))
+  (add-hook 'web-mode-hook 'subword-mode)
   :config
   (setq web-mode-enable-current-column-highlight t
         web-mode-enable-current-element-highlight t
