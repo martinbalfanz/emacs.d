@@ -56,6 +56,7 @@
 (use-package scratch)
 
 (require 'setup-org)
+(require 'setup-deft)
 
 ;; ------------------------------------------------------------
 ;; programming languages & other file types
