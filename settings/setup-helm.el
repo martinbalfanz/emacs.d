@@ -46,6 +46,8 @@
 
 (use-package helm-projectile
   :after (helm projectile)
+  :if (featurep 'projectile)
+  :commands (helm-projectile)
   :config
   (setq projectile-completion-system 'helm)
   (helm-projectile-on))
@@ -82,5 +84,8 @@
 
 ;; (use-package helm-cider
 ;;   :after (helm cider))
+
+(use-package helm-css-scss
+  :after helm)
 
 (provide 'setup-helm)
