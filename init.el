@@ -58,7 +58,7 @@
 (require 'setup-org)
 
 ;; ------------------------------------------------------------
-;; programming languages
+;; programming languages & other file types
 
 (require 'setup-emacs-lisp)
 (require 'setup-lisp)
@@ -70,5 +70,10 @@
 (require 'setup-rust)
 (use-package toml-mode)
 (use-package yaml-mode)
+(use-package nginx-mode)
+(use-package systemd
+  :init
+  (when (featurep 'company)
+    (add-hook 'systemd-mode-hook 'company-mode-on)))
 
 (require 'setup-twitter)
