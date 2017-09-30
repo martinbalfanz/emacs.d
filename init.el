@@ -34,6 +34,7 @@
 (require 'setup-windows)
 (require 'setup-deprecate)
 (require 'setup-dired)
+(require 'setup-ibuffer)
 
 (require 'setup-shell)
 (use-package dash)
