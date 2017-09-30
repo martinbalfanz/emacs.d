@@ -12,6 +12,7 @@
         deft-text-mode 'org-mode
         deft-strip-title-regexp "^#.TITLE:[ ]*"
         deft-auto-save-interval 15.0
+        deft-use-filename-as-title t
         deft-directory "~/Dropbox/notes")
 
   (defun deft-next-line ()
