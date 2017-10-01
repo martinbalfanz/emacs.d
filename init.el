@@ -53,6 +53,7 @@
 (require 'setup-projectile)
 (require 'setup-editorconfig)
 (require 'setup-completion)
+(require 'setup-flycheck)
 (require 'setup-paredit)
 (use-package aggressive-indent :diminish aggressive-indent-mode)
 (use-package scratch)
