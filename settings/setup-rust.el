@@ -1,5 +1,5 @@
 (use-package rust-mode
-  :init
+  :config
   ;; install rustfmt using `cargo install rustfmt'
   (when (executable-find "rustfmt")
     (add-hook 'rust-mode-hook
