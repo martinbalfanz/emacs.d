@@ -30,4 +30,11 @@
 
 (use-package rust-playground)
 
+(use-package flycheck-rust
+  :if (featurep 'flycheck)
+  :after flycheck
+  :init
+  (add-hook 'rust-mode-hook 'flycheck-mode)
+  (add-hook 'flycheck-mode-hook 'flycheck-rust-setup))
+
 (provide 'setup-rust)
