@@ -40,6 +40,8 @@
 (use-package dash)
 (use-package ranger)
 (use-package command-log-mode)
+(use-package writeroom-mode
+  :commands (writeroom-mode global-writeroom-mode))
 (use-package paradox
   :commands (paradox-upgrade-packages
              paradox-list-packages))
