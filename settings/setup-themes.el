@@ -4,6 +4,7 @@
 (load-theme 'sanityinc-tomorrow-night t)
 
 (use-package spaceline
+  :defer 5
   :config
   (require 'spaceline-config)
   (setq powerline-default-separator 'wave)
