@@ -3,10 +3,8 @@
   :mode ("\\.org$" . org-mode)
   :bind (("C-c a" . org-agenda)
          ("C-c c" . org-capture))
-  :init
-  (add-hook 'org-mode-hook 'auto-fill-mode)
-
   :config
+  (add-hook 'org-mode-hook 'auto-fill-mode)
   (setq org-directory "~/Dropbox/notes"
         org-agenda-files (append '("~/Dropbox/notes/todox.org"
                                    "~/Dropbox/notes/inbox.org"
