@@ -1,9 +1,17 @@
 (use-package js2-mode
   :mode ("\\.js$" . js2-mode)
-  :init
+  :config
   (when (featurep 'company)
     (add-hook 'js2-mode-hook 'company-mode-on)
-    (add-hook 'js2-mode-hook 'subword-mode)))
+    (add-hook 'js2-mode-hook 'subword-mode))
+
+  (setq-default js2-basic-offset 2)
+
+  (setq js2-mode-show-parse-errors nil
+        js2-mode-show-strict-warnings nil)
+
+  (when (featurep 'flycheck)
+    (add-hook 'js2-mode-hook 'flycheck-mode)))
 
 (use-package tern
   :if (executable-find "tern")
