@@ -12,3 +12,4 @@ company-statistics-cache.el
 .litable-lists.el
 bookmarks
 tramp
+eshell/
