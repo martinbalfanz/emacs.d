@@ -25,7 +25,7 @@
   :config
   (when (featurep 'company)
     (add-hook 'racer-mode-hook 'company-mode)
-    (define-key rust-mode-map (kbd "TAB") 'company-indent-or-complete-common))
+    (bind-key "TAB" 'company-indent-or-complete-common rust-mode-map))
   (add-hook 'racer-mode-hook 'eldoc-mode))
 
 (use-package rust-playground)
