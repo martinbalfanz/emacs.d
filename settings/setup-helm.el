@@ -52,10 +52,10 @@
 ;;   :after (helm org))
 
 (use-package helm-projectile
-  :if (featurep 'projectile)
-  :after helm
+  :after (helm projectile)
   :init
   (setq projectile-completion-system 'helm)
+  :config
   (helm-projectile-on))
 
 (use-package helm-ag
