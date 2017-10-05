@@ -1,7 +1,13 @@
 (global-unset-key (kbd "C-x c"))
 
 (use-package helm
-  :commands (helm-mode)
+  :commands (helm-mode
+             helm-mini
+             helm-M-x
+             helm-command-prefix
+             helm-show-kill-ring
+             helm-find-files
+             helm-register)
   :bind (("C-c h" . helm-command-prefix)
          ("M-x" . helm-M-x)
          ("M-y" . helm-show-kill-ring)
@@ -25,9 +31,10 @@
         helm-split-window-in-side-p nil)
 
   (when (executable-find "curl")
-    (setq helm-google-suggest-use-curl-p t)))
+    (setq helm-google-suggest-use-curl-p t))
 
-(helm-mode 1)
+  (helm-mode 1))
+
 (diminish 'helm-mode)
 
 (use-package helm-dash
@@ -45,10 +52,9 @@
 ;;   :after (helm org))
 
 (use-package helm-projectile
-  :after (helm projectile)
   :if (featurep 'projectile)
-  :commands (helm-projectile)
-  :config
+  :after helm
+  :init
   (setq projectile-completion-system 'helm)
   (helm-projectile-on))
 
