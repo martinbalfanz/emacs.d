@@ -12,6 +12,8 @@
             (local-unset-key (kbd "n"))
             (local-unset-key (kbd "p"))))
 
+(bind-key "C-o" 'isearch-occur isearch-mode-map)
+
 (defadvice occur
     (after mb-switch-to-occur last () activate)
   "Switch to occur window automatically."
