@@ -73,11 +73,14 @@
   :after helm)
 
 (use-package helm-swoop
-  :defer t
-  :init
-  (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
-  :config
-  (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop))
+  :after helm
+  :commands (helm-swoop
+             helm-swoop-from-isearch
+             helm-multi-swoop-all-from-helm-swoop)
+  :bind (:map isearch-mode-map
+              ("M-i" . helm-swoop-from-isearch)
+              :map helm-swoop-map
+              ("M-i" . helm-multi-swoop-all-from-helm-swoop)))
 
 (use-package helm-ls-git
   :after helm)
