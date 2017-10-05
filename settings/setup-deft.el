@@ -1,5 +1,9 @@
 (use-package deft
   :commands (deft)
+  :bind (:map deft-mode-map
+              ("C-n" . deft-next-line)
+              ("C-p" . deft-previous-line)
+              ("C-u C-<return>" . deft-new-file-default-name))
   :config
   (add-hook 'deft-mode-hook 'hl-line-mode)
 
@@ -51,11 +55,6 @@ title without comments."
 ")))
       (goto-char (point-min))
       (insert tmpl)
-      (goto-char 9)))
-
-  (define-keys deft-mode-map
-    '(("C-n" deft-next-line)
-      ("C-p" deft-previous-line)
-      ("C-u C-<return>" deft-new-file-default-name))))
+      (goto-char 9))))
 
 (provide 'setup-deft)
