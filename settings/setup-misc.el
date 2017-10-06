@@ -82,6 +82,7 @@ Deletes whitespace at join."
 (diminish 'auto-revert-mode)
 
 (setq-default require-final-newline t)
+(setq ring-bell-function 'ignore)
 ;; (setq debug-on-error t)
 
 (provide 'setup-misc)
