@@ -36,4 +36,30 @@
           ("c" "Capture website" entry (file+headline "bookmarkx.org" "Unsorted")
            "* %?%:description\n:PROPERTIES:\n:URL: %:link\n:END:\n\n Added %U\n\n%:initial" :immediate-finish t))))
 
+(use-package alert
+  :if window-system
+  :config
+  (setq alert-default-style 'osx-notifier))
+
+(use-package appt
+  :ensure nil
+  :init
+  (defun bh/org-agenda-to-appt ()
+    (interactive)
+    (setq appt-time-msg-list nil)
+    (org-agenda-to-appt))
+  (add-hook 'org-finalize-agenda-hook 'bh/org-agenda-to-appt 'append)
+  (bh/org-agenda-to-appt)
+  (appt-activate t)
+  (run-at-time "24:01" nil 'bh/org-agenda-to-appt)
+  :config
+  (setq appt-display-mode-line t)
+
+  (defun mb/appt-disp-window-function (min-to-appt new-time appt-msg)
+    (appt-disp-window min-to-appt new-time appt-msg)
+    (alert (concat "Starting in " min-to-appt " minutes.")
+           :title appt-msg))
+  (setq appt-disp-window-function 'mb/appt-disp-window-function)
+  (setq appt-delete-window-function 'appt-delete-window))
+
 (provide 'setup-org)
