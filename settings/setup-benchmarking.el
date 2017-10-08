@@ -19,11 +19,15 @@ LOAD-DURATION is the time taken in milliseconds to load FEATURE.")
                        (cons feature time)
                        t))))))
 
-(defun sanityinc/show-init-time ()
+(defun mb/show-init-time ()
+  (let ((threshold 400))
+    (message "following packages took more than %.2fms to load:" threshold)
+    (dolist (item (--remove (> threshold (cdr it)) sanityinc/require-times))
+      (message "%s: %2fms" (car item) (cdr item))))
   (message "init completed in %.2fms"
            (sanityinc/time-subtract-millis after-init-time before-init-time)))
 
-(add-hook 'after-init-hook 'sanityinc/show-init-time)
+(add-hook 'after-init-hook 'mb/show-init-time)
 
 
 (provide 'setup-benchmarking)
