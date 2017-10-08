@@ -8,6 +8,7 @@
   :config
   (require 'spaceline-config)
   (setq powerline-default-separator 'wave)
+  (spaceline-toggle-anzu-off)
   (spaceline-spacemacs-theme))
 
 (use-package spaceline-all-the-icons
