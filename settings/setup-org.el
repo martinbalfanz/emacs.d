@@ -63,4 +63,7 @@
   (setq appt-disp-window-function 'mb/appt-disp-window-function)
   (setq appt-delete-window-function 'appt-delete-window))
 
+(use-package org-pomodoro
+  :commands org-pomodoro)
+
 (provide 'setup-org)
