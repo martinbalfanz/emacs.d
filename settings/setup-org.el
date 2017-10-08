@@ -5,6 +5,7 @@
          ("C-c c" . org-capture))
   :config
   (add-hook 'org-mode-hook 'auto-fill-mode)
+  (add-hook 'org-agenda-mode-hook 'hl-line-mode)
   (setq org-directory "~/Dropbox/notes"
         org-agenda-files (append '("~/Dropbox/notes/todox.org"
                                    "~/Dropbox/notes/inbox.org"
