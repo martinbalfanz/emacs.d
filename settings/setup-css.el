@@ -1,4 +1,5 @@
 (use-package rainbow-mode
+  :diminish rainbow-mode
   :init
   (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook scss-mode-hook))
     (add-hook hook 'rainbow-mode)))
