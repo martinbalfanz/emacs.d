@@ -1,7 +1,8 @@
+(use-package eclipse-theme)
 (use-package color-theme-sanityinc-solarized)
 (use-package color-theme-sanityinc-tomorrow)
 
-(load-theme 'sanityinc-tomorrow-night t)
+(load-theme 'eclipse-theme t)
 
 (use-package spaceline
   :defer 5
