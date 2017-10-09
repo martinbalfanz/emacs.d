@@ -35,6 +35,14 @@
 
   (helm-mode 1))
 
+(use-package helm-flx
+  :if (featurep 'flx)
+  :after helm
+  :config
+  (setq helm-flx-for-helm-find-files t
+        helm-flx-for-helm-locate t)
+  (helm-flx-mode 1))
+
 (diminish 'helm-mode)
 
 (use-package helm-dash
