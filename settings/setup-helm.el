@@ -28,6 +28,7 @@
         helm-ff-fuzzy-matching t
         helm-buffers-fuzzy-matching t
         helm-recentf-fuzzy-match t
+        helm-mode-fuzzy-match t
         helm-split-window-in-side-p nil)
 
   (when (executable-find "curl")
