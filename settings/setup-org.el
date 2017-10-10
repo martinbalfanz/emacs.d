@@ -35,7 +35,11 @@
           ;; ("h" "Habit" entry (file "~/git/org/refile.org")
           ;;  "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n")
           ("c" "Capture website" entry (file+headline "bookmarkx.org" "Unsorted")
-           "* %?%:description\n:PROPERTIES:\n:URL: %:link\n:END:\n\n Added %U\n\n%:initial" :immediate-finish t))))
+           "* %?%:description\n:PROPERTIES:\n:URL: %:link\n:END:\n\n Added %U\n\n%:initial" :immediate-finish t)))
+
+  (setq org-hide-emphasis-markers t
+        org-export-coding-system 'utf-8
+        org-catch-invisible-edits 'show))
 
 (use-package alert
   :if window-system
