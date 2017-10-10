@@ -21,9 +21,9 @@
 
   (setq org-capture-templates
         '(("t" "Todo" entry (file+headline "inbox.org" "Tasks")
-           "* TODO %^{Brief Description}\n:PROPERTIES:\n:CREATED: %U\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%?\n%i\n" :clock-in t :clock-resume t)
+           "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%i\n" :clock-in t :clock-resume t)
           ("n" "Note" entry (file+headline "inbox.org" "Notes")
-           "* %^{Brief Description}\n:PROPERTIES:\n:CREATED: %U\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%?\n%i\n" :clock-in t :clock-resume t)
+           "* %?\n:PROPERTIES:\n:CREATED: %U\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%i\n" :clock-in t :clock-resume t)
           ("j" "Journal" entry (file+datetree "journal.org")
            "* %U\n\n%?\n" :clock-in t :clock-resume t :kill-buffer t)
           ("r" "respond" entry (file "~/git/org/refile.org")
