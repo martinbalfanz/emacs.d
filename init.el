@@ -62,6 +62,7 @@
 
 (require 'setup-org)
 (require 'setup-deft)
+(require 'setup-mu4e)
 
 ;; ------------------------------------------------------------
 ;; programming languages & other file types
