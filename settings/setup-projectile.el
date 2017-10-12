@@ -1,4 +1,5 @@
-(use-package ag)
+(use-package ag
+  :if (executable-find "ag"))
 
 (use-package projectile
   :delight '(:eval (concat " P[" (projectile-project-name) "]"))
