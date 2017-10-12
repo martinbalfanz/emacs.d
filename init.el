@@ -63,6 +63,8 @@
 (require 'setup-org)
 (require 'setup-deft)
 (require 'setup-mu4e)
+(use-package markdown-mode
+  :mode ("\\.md$" "\\.markdown$" "\\.txt$"))
 
 ;; ------------------------------------------------------------
 ;; programming languages & other file types
