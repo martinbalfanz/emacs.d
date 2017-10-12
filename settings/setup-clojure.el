@@ -1,9 +1,10 @@
 (use-package clojure-mode
   :commands (clojure-mode)
   :mode (("\\.clj$" . clojure-mode)
-         ("\\.cljs$" . clojure-mode))
+         ("\\.cljs$" . clojurescript-mode))
   :config
-  (add-hook 'clojure-mode-hook 'subword-mode))
+  (add-hook 'clojure-mode-hook 'subword-mode)
+  (add-hook 'clojurescript-mode-hook 'subword-mode))
 
 (use-package elein)
 
@@ -19,6 +20,7 @@
 (use-package clj-refactor
   :commands (clj-refactor-mode)
   :init
-  (add-hook 'clojure-mode-hook 'clj-refactor-mode))
+  (add-hook 'clojure-mode-hook 'clj-refactor-mode)
+  (add-hook 'clojurescript-mode-hook 'clj-refactor-mode))
 
 (provide 'setup-clojure)
