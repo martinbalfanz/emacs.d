@@ -39,7 +39,8 @@
 
   (setq org-hide-emphasis-markers t
         org-export-coding-system 'utf-8
-        org-catch-invisible-edits 'show))
+        org-catch-invisible-edits 'show
+        org-agenda-show-future-repeats nil))
 
 (use-package alert
   :if window-system
