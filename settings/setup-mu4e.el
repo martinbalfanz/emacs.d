@@ -3,6 +3,7 @@
 (use-package mu4e
   :ensure nil
   :if (executable-find "mu")
+  :commands (mu4e)
   :config
   (setq mu4e-attachment-dir (expand-file-name "~/Downloads")
         mu4e-user-mail-address-list user-mail-addresses
