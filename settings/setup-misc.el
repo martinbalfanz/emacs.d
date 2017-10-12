@@ -85,4 +85,6 @@ Deletes whitespace at join."
 (setq ring-bell-function 'ignore)
 ;; (setq debug-on-error t)
 
+(diminish 'auto-fill-mode)
+
 (provide 'setup-misc)
