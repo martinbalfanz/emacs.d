@@ -10,6 +10,8 @@
   :if (executable-find "rg")
   :after projectile
   :bind (:map projectile-mode-map
-              ("C-c p s r" . projectile-ripgrep))))
+              ("C-c p s r" . projectile-ripgrep))
+  :config
+  (add-hook 'ripgrep-search-mode-hook 'hl-line-mode))
 
 (provide 'setup-projectile)
