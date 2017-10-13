@@ -2,10 +2,16 @@
   :ensure org-plus-contrib
   :mode ("\\.org$" . org-mode)
   :bind (("C-c a" . org-agenda)
-         ("C-c c" . org-capture))
+         ("C-c c" . org-capture)
+         ("M-m o c j" . org-clock-jump-to-current-clock))
   :config
   (add-hook 'org-mode-hook 'auto-fill-mode)
   (add-hook 'org-agenda-mode-hook 'hl-line-mode)
+  (if (featurep 'which-key)
+      (which-key-add-key-based-replacements
+        "M-m o" "org"
+        "M-m o c" "org-clock"))
+
   (setq org-directory "~/Dropbox/notes"
         org-agenda-files (append '("~/Dropbox/notes/todox.org"
                                    "~/Dropbox/notes/inbox.org"
