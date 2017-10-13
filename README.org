@@ -1,6 +1,6 @@
 #+TITLE: .emacs.d
 
-This is my emacs config, rewritten. Many things taken from  [[https://github.com/purcell/emacs.d][Steve Purcell's emacs.d]].
+This is my emacs config, rewritten.
 
 * Setup
 
@@ -9,3 +9,13 @@ Clone this repository to =~/.emacs.d=:
 #+BEGIN_SRC
 git clone https://github.com/martinbalfanz/emacs.d.git ~/.emacs.d
 #+END_SRC
+
+* Similar configs
+
+A lot of credit goes to [[https://github.com/purcell][Steve Purcell]] and his excellent [[https://github.com/purcell/emacs.d][emacs.d]].  I
+recommend to checkout his repository if you like mine.
+
+Other similar projects:
+- [[https://github.com/technomancy/emacs-starter-kit][emacs-starter-kit]]
+- [[https://github.com/bbatsov/prelude][prelude]]
+- [[https://github.com/magnars/.emacs.d][emacs.d by Magnar Sveen]]
