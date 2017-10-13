@@ -1,6 +1,7 @@
 (global-unset-key (kbd "C-x c"))
 
 (use-package helm
+  :diminish helm-mode
   :commands (helm-mode
              helm-mini
              helm-M-x
@@ -43,8 +44,6 @@
   (setq helm-flx-for-helm-find-files t
         helm-flx-for-helm-locate t)
   (helm-flx-mode 1))
-
-(diminish 'helm-mode)
 
 (use-package helm-dash
   :after helm)
