@@ -3,24 +3,37 @@
   :mode (("\\.clj$" . clojure-mode)
          ("\\.cljs$" . clojurescript-mode))
   :config
-  (add-hook 'clojure-mode-hook 'subword-mode)
-  (add-hook 'clojurescript-mode-hook 'subword-mode))
+  (dolist (hook '(clojure-mode-hook
+                  clojurescript-mode-hook
+                  nrepl-mode-hook))
+    (add-hook hook (lambda ()
+                     (mb/lispy-mode-config)
+                     (eldoc-mode 1)))))
 
-(use-package elein)
+(use-package elein
+  :after clojure-mode)
 
 (use-package cider
   :after clojure-mode
   :config
-  (add-hook 'cider-mode-hook 'eldoc-mode)
-  (add-hook 'cider-repl-mode-hook 'eldoc-mode)
-  (add-hook 'cider-clojure-interaction-mode-hook 'eldoc-mode)
-  (add-hook 'cider-mode-hook 'subword-mode)
-  (add-hook 'cider-repl-mode-hook 'subword-mode))
+  (dolist (hook '(cider-mode-hook
+                  cider-repl-mode-hook
+                  cider-clojure-interaction-mode-hook))
+    (add-hook hook (lambda ()
+                     (mb/lispy-mode-config)
+                     (eldoc-mode 1)
+                     (sanityinc/no-trailing-whitespace)))))
 
 (use-package clj-refactor
   :commands (clj-refactor-mode)
   :init
   (add-hook 'clojure-mode-hook 'clj-refactor-mode)
   (add-hook 'clojurescript-mode-hook 'clj-refactor-mode))
+
+(use-package flycheck-clojure
+  :if (featurep 'flycheck)
+  :after clojure-mode
+  :config
+  (flycheck-clojure-setup))
 
 (provide 'setup-clojure)
