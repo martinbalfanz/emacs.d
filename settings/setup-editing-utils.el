@@ -125,7 +125,7 @@ With arg N, insert N newlines."
   :bind ("C-=" . er/expand-region))
 
 (use-package avy
-  :bind ("C-;" . avy-goto-char-timer))
+  :bind ("C-." . avy-goto-char-timer))
 
 (use-package multiple-cursors
   :bind (("C-<" . mc/mark-previous-like-this)
