@@ -30,6 +30,13 @@
   (add-hook 'clojure-mode-hook 'clj-refactor-mode)
   (add-hook 'clojurescript-mode-hook 'clj-refactor-mode))
 
+(use-package cljr-helm
+  :if (featurep 'helm)
+  :bind (:map clojure-mode-map
+              ("C-c C-r" . cljr-helm)
+              :map clojurescript-mode-map
+              ("C-c C-r" . cljr-helm)))
+
 (use-package flycheck-clojure
   :if (featurep 'flycheck)
   :after clojure-mode
