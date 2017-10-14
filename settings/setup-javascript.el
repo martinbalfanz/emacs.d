@@ -13,6 +13,9 @@
   (when (featurep 'flycheck)
     (add-hook 'js2-mode-hook 'flycheck-mode)))
 
+(use-package rjsx-mode
+  :mode ("\\.jsx$" . rjsx-mode))
+
 (use-package tern
   :if (executable-find "tern")
   :after js2-mode
