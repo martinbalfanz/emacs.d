@@ -1,7 +1,8 @@
+(use-package dracula-theme)
 (use-package color-theme-sanityinc-solarized)
 (use-package color-theme-sanityinc-tomorrow)
 
-(load-theme 'sanityinc-tomorrow-day t)
+(load-theme 'dracula t)
 
 (use-package spaceline
   :defer 5
