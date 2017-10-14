@@ -79,6 +79,9 @@
 (use-package org-pomodoro
   :commands org-pomodoro)
 
+(use-package ox-pandoc
+  :if (executable-find "pandoc")
+  :after org)
 
 ;; ------------------------------------------------------------
 ;; prose mode, taken from
