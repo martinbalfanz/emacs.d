@@ -55,16 +55,18 @@
 
 (use-package appt
   :ensure nil
+  :after org
   :init
   (defun bh/org-agenda-to-appt ()
     (interactive)
     (setq appt-time-msg-list nil)
     (org-agenda-to-appt))
   (add-hook 'org-finalize-agenda-hook 'bh/org-agenda-to-appt 'append)
+  :config
   (bh/org-agenda-to-appt)
   (appt-activate t)
   (run-at-time "24:01" nil 'bh/org-agenda-to-appt)
-  :config
+
   (setq appt-display-mode-line t)
 
   (defun mb/appt-disp-window-function (min-to-appt new-time appt-msg)
