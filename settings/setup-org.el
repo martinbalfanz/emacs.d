@@ -77,4 +77,41 @@
 (use-package org-pomodoro
   :commands org-pomodoro)
 
+
+;; ------------------------------------------------------------
+;; prose mode, taken from
+;; https://github.com/purcell/emacs.d/blob/3c1ce6892db5b838636a49b0f7c37d348a45f87f/lisp/init-org.el#L62
+
+(define-minor-mode prose-mode
+  "Set up a buffer for prose editing.
+This enables or modifies a number of settings so that the
+experience of editing prose is a little more like that of a
+typical word processor."
+  nil " Prose" nil
+  (if prose-mode
+      (progn
+        (when (fboundp 'writeroom-mode)
+          (writeroom-mode 1))
+        (setq truncate-lines nil)
+        (setq word-wrap t)
+        (setq cursor-type 'bar)
+        (when (eq major-mode 'org)
+          (kill-local-variable 'buffer-face-mode-face))
+        (buffer-face-mode 1)
+        ;;(delete-selection-mode 1)
+        (set (make-local-variable 'blink-cursor-interval) 0.6)
+        (set (make-local-variable 'show-trailing-whitespace) nil)
+        (ignore-errors (flyspell-mode 1))
+        (visual-line-mode 1))
+    (kill-local-variable 'truncate-lines)
+    (kill-local-variable 'word-wrap)
+    (kill-local-variable 'cursor-type)
+    (kill-local-variable 'show-trailing-whitespace)
+    (buffer-face-mode -1)
+    ;; (delete-selection-mode -1)
+    (flyspell-mode -1)
+    (visual-line-mode -1)
+    (when (fboundp 'writeroom-mode)
+      (writeroom-mode 0))))
+
 (provide 'setup-org)
