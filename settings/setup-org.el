@@ -44,7 +44,7 @@
           ("c" "Capture website" entry (file+headline "bookmarkx.org" "Unsorted")
            "* %?%:description\n:PROPERTIES:\n:URL: %:link\n:END:\n\n Added %U\n\n%:initial" :immediate-finish t)))
 
-  (setq org-hide-emphasis-markers t
+  (setq org-hide-emphasis-markers nil
         org-export-coding-system 'utf-8
         org-catch-invisible-edits 'show
         org-agenda-show-future-repeats nil))
