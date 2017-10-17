@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: figwheel
+# key: fig
+# --
+(use 'figwheel-sidecar.repl-api)
+(start-figwheel!)
+(cljs-repl)
