@@ -10,7 +10,8 @@
          :map magit-status-mode-map
          ("C-M-<up>" . magit-section-up))
   :config
-  (fullframe magit-status magit-mode-quit-window))
+  (when (featurep 'fullframe)
+    (fullframe magit-status magit-mode-quit-window)))
 
 (use-package git-commit
   :init
