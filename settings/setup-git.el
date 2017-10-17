@@ -29,13 +29,13 @@
 ;; ------------------------------------------------------------
 ;; Github
 
-(use-package yagist)
-(use-package bug-reference-github
-  :init
-  (add-hook 'prog-mode-hook 'bug-reference-prog-mode))
+;; (use-package yagist)
+;; (use-package bug-reference-github
+;;   :init
+;;   (add-hook 'prog-mode-hook 'bug-reference-prog-mode))
 
-(use-package github-clone)
-(use-package github-issues)
-(use-package magit-gh-pulls)
+;; (use-package github-clone)
+;; (use-package github-issues)
+;; (use-package magit-gh-pulls)
 
 (provide 'setup-git)
