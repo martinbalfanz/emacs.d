@@ -29,6 +29,7 @@
 
 (require 'setup-recentf)
 (require 'setup-editing-utils)
+(require 'setup-smartparens)
 (require 'setup-flx)
 (require 'setup-helm)
 (require 'setup-whitespace)
