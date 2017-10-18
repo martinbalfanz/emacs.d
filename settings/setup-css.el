@@ -4,7 +4,8 @@
   (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook scss-mode-hook))
     (add-hook hook 'rainbow-mode)))
 
-(use-package sass-mode)
+(use-package sass-mode
+  :mode "\\.sass$")
 (use-package scss-mode)
 
 (use-package css-eldoc
