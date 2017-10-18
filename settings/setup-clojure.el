@@ -24,6 +24,10 @@
                      (eldoc-mode 1)
                      (sanityinc/no-trailing-whitespace)))))
 
+(use-package helm-cider
+  :if (featurep 'helm)
+  :after cider)
+
 (use-package clj-refactor
   :commands (clj-refactor-mode)
   :init
