@@ -11,4 +11,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.vue$" . vue-mode))
 
+(use-package vue-mode
+  :disabled)
+
 (provide 'setup-vue)
