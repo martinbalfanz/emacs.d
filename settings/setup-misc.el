@@ -1,4 +1,3 @@
-(unbind-key "C-.")
 (unbind-key "M-m")
 
 (fset 'yes-or-no-p 'y-or-n-p)
