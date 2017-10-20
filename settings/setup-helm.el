@@ -105,4 +105,7 @@
 (use-package helm-css-scss
   :after helm)
 
+(use-package helm-org-rifle
+  :after helm)
+
 (provide 'setup-helm)
