@@ -9,7 +9,7 @@
              helm-show-kill-ring
              helm-find-files
              helm-register)
-  :bind (("C-c h" . helm-command-prefix)
+  :bind (("M-m h" . helm-command-prefix)
          ("M-x" . helm-M-x)
          ("M-y" . helm-show-kill-ring)
          ("C-x b" . helm-mini)
@@ -22,6 +22,9 @@
          ("<tab>" . helm-execute-persistent-action)
          ("C-i" . helm-execute-persistent-action)
          ("C-z" . helm-select-action))
+  :init
+  (when (featurep 'which-key)
+    (which-key-add-key-based-replacements "M-m h" "helm"))
   :config
   (require 'helm-config)
   (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
