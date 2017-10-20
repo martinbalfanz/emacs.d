@@ -1,7 +1,7 @@
 (setq create-lockfiles nil)
 
 (setq backup-directory-alist '((".*" . "~/.saves"))
-      auto-save-file-name-transforms '((".*" "~/.saves" t))
+      auto-save-file-name-transforms '((".*" "~/.saves/" t))
       backup-by-copying t
       delete-old-versions t
       kept-new-versions 6
