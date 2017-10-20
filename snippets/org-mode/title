@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: title
+# key: t_
+# --
+#+TITLE: $0
