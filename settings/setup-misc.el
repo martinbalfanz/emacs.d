@@ -89,4 +89,7 @@ Deletes whitespace at join."
 
 (diminish 'auto-fill-mode)
 
+(use-package hideshow-org
+  :bind ("M-m TAB" . hs-org/minor-mode))
+
 (provide 'setup-misc)
