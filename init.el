@@ -88,3 +88,6 @@
     (add-hook 'systemd-mode-hook 'company-mode-on)))
 
 (require 'setup-twitter)
+
+(use-package pdf-tools
+  :disabled)
