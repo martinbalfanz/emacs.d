@@ -91,3 +91,5 @@
 
 (use-package pdf-tools
   :disabled)
+
+(require 'setup-hydra)
