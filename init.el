@@ -16,7 +16,7 @@
 
 (require 'setup-use-package)
 
-;; (require 'setup-utils)
+(require 'setup-utils)
 ;; (require 'setup-site-lisp)
 ;; (require 'setup-elpa)
 (require 'setup-exec-path)

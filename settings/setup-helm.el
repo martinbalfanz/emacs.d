@@ -23,8 +23,7 @@
          ("C-i" . helm-execute-persistent-action)
          ("C-z" . helm-select-action))
   :init
-  (when (featurep 'which-key)
-    (which-key-add-key-based-replacements "M-m h" "helm"))
+  (which-key-replace "M-m h" "helm")
   :config
   (require 'helm-config)
   (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)

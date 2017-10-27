@@ -29,8 +29,7 @@
          ("M-m y TAB" . yas-expand))
   :defer 5
   :init
-  (when (featurep 'which-key)
-    (which-key-add-key-based-replacements "M-m y" "yasnippet"))
+  (which-key-replace "M-m y" "yasnippet")
   :config
   (use-package yasnippet-snippets)
   (yas-global-mode 1))
