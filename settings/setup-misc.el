@@ -8,6 +8,9 @@
   (delete-trailing-whitespace)
   (indent-region (point-min) (point-max)))
 
+(which-key-replace "M-m b" "Buffer")
+(bind-key "M-m b i" 'indent-buffer)
+
 (defun define-keys (mode-map keybindings)
   "Takes a mode map, and a list of (key function-designator)
 lists. The functions are bound to the keys in the given mode-map.
