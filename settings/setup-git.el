@@ -1,7 +1,15 @@
-(use-package git-blamed)
-(use-package gitignore-mode)
-(use-package gitconfig-mode)
-(use-package git-timemachine)
+(use-package git-blamed
+  :commands (git-blamed-mode))
+
+(use-package gitignore-mode
+  :mode ("^\\.gitignore$"))
+
+(use-package gitconfig-mode
+  :mode ("^\\.gitconfig"))
+
+(use-package git-timemachine
+  :commands (git-timemachine))
+
 (use-package fullframe)
 
 (use-package magit
@@ -14,7 +22,8 @@
     (fullframe magit-status magit-mode-quit-window)))
 
 (use-package git-commit
-  :init
+  :after magit
+  :config
   (add-hook 'git-commit-mode-hook 'goto-address-mode))
 
 (use-package diff-hl
