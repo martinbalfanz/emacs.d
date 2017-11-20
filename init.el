@@ -100,3 +100,5 @@
   :disabled)
 
 (require 'setup-hydra)
+
+(use-package system-packages)
