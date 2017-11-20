@@ -42,6 +42,13 @@
 
 (require 'setup-shell)
 (use-package dash)
+
+(use-package dumb-jump
+  :commands (dumb-jump-go
+             dumb-jump-back
+             dumb-jump-quick-look
+             dumb-jump-go-other-window))
+
 (use-package ranger)
 (use-package command-log-mode)
 (use-package writeroom-mode
