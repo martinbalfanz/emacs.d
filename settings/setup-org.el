@@ -47,7 +47,9 @@
   (setq org-hide-emphasis-markers nil
         org-export-coding-system 'utf-8
         org-catch-invisible-edits 'show
-        org-agenda-show-future-repeats nil))
+        org-agenda-show-future-repeats nil)
+
+  (require 'org-habit))
 
 (use-package alert
   :if window-system
