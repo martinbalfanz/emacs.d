@@ -23,5 +23,6 @@
 
 (use-package diminish)
 (use-package delight)
+(use-package use-package-ensure-system-package)
 
 (provide 'setup-use-package)
