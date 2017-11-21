@@ -49,7 +49,12 @@
         org-catch-invisible-edits 'show
         org-agenda-show-future-repeats nil)
 
-  (require 'org-habit))
+  (require 'org-habit)
+  (setq org-habit-show-habits t
+        org-habit-show-habits-only-for-today nil
+        org-habit-show-all-today nil
+        org-habit-show-done-always-green nil
+        org-agenda-repeating-timestamp-show-all nil))
 
 (use-package alert
   :if window-system
