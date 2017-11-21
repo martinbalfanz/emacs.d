@@ -17,6 +17,7 @@
                                    "~/Dropbox/notes/inbox.org"
                                    "~/Dropbox/notes/inbox-mobile.org"
                                    "~/Dropbox/notes/backlogx.org"
+                                   "~/Dropbox/notes/refile-beorg.org"
                                    "~/agenda.org"
                                    "~/Dropbox/notes/brain/Work/MING/HR.org")
                                  (file-expand-wildcards "~/Dropbox/notes/brain/Work/MING/Projects/*.org")))
