@@ -19,7 +19,9 @@
          ("C-M-<up>" . magit-section-up))
   :config
   (when (featurep 'fullframe)
-    (fullframe magit-status magit-mode-quit-window)))
+    (fullframe magit-status magit-mode-quit-window))
+
+  (setq magit-status-sections-hook (remove 'magit-insert-unpushed-to-upstream-or-recent magit-status-sections-hook)))
 
 (use-package git-commit
   :after magit
