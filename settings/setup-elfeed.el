@@ -1,5 +1,9 @@
 (use-package elfeed
-  :ensure-system-package curl)
+  :ensure-system-package curl
+  :bind (:map elfeed-search-mode-map
+              ("v" . elfeed-show-visit)
+              :map elfeed-show-mode-map
+              ("v" . elfeed-show-visit)))
 
 (use-package elfeed-goodies
   :after elfeed
