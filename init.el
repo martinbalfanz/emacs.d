@@ -39,6 +39,7 @@
 (require 'setup-dired)
 (require 'setup-ibuffer)
 (require 'setup-anzu)
+(require 'setup-elfeed)
 
 (require 'setup-shell)
 (use-package dash)
