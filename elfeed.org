@@ -1,0 +1,8 @@
+Even though emacs is not my main rss reader (yet) I like to follow
+some news on an irregular basis with =elfeed=.
+
+* Feeds                                                              :elfeed:
+** Github Repositories                                               :github:
+*** emacs                                                             :emacs:
+**** [[https://github.com/jwiegley/use-package/commits/master.atom][use-package]]
+**** [[https://github.com/waymondo/use-package-ensure-system-package/commits/master.atom][use-package-ensure-system-package]]
