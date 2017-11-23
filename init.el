@@ -21,7 +21,8 @@
 ;; (require 'setup-elpa)
 (require 'setup-exec-path)
 (require 'setup-mac)
-(require 'setup-fonts)
+(when (eq system-type 'darwin)
+  (require 'setup-fonts))
 (require 'setup-themes)
 (require 'setup-gui-frames)
 (require 'setup-misc) ;; TODO cleanup
