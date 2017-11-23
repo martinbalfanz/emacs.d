@@ -12,15 +12,16 @@
   (add-hook 'org-mode-hook 'auto-fill-mode)
   (add-hook 'org-agenda-mode-hook 'hl-line-mode)
 
-  (setq org-directory "~/Dropbox/notes"
-        org-agenda-files (append '("~/Dropbox/notes/todox.org"
-                                   "~/Dropbox/notes/inbox.org"
-                                   "~/Dropbox/notes/inbox-mobile.org"
-                                   "~/Dropbox/notes/backlogx.org"
-                                   "~/Dropbox/notes/refile-beorg.org"
-                                   "~/agenda.org"
-                                   "~/Dropbox/notes/brain/Work/MING/HR.org")
-                                 (file-expand-wildcards "~/Dropbox/notes/brain/Work/MING/Projects/*.org")))
+  (when (file-exists-p "~/Dropbox/notes")
+    (setq org-directory "~/Dropbox/notes"
+          org-agenda-files (append '("~/Dropbox/notes/todox.org"
+                                     "~/Dropbox/notes/inbox.org"
+                                     "~/Dropbox/notes/inbox-mobile.org"
+                                     "~/Dropbox/notes/backlogx.org"
+                                     "~/Dropbox/notes/refile-beorg.org"
+                                     "~/agenda.org"
+                                     "~/Dropbox/notes/brain/Work/MING/HR.org")
+                                   (file-expand-wildcards "~/Dropbox/notes/brain/Work/MING/Projects/*.org"))))
 
   (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
                             ;; (sequence "PROJECT(p)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
