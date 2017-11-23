@@ -29,5 +29,6 @@ LOAD-DURATION is the time taken in milliseconds to load FEATURE.")
 
 (add-hook 'after-init-hook 'mb/show-init-time)
 
+(setq use-package-verbose t)
 
 (provide 'setup-benchmarking)
