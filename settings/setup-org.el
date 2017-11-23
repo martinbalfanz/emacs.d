@@ -3,11 +3,23 @@
   :mode ("\\.org$" . org-mode)
   :bind (("C-c a" . org-agenda)
          ("C-c c" . org-capture)
-         ("M-m o c j" . org-clock-jump-to-current-clock))
+         ("M-m o c j" . org-clock-jump-to-current-clock)
+         :map org-mode-map
+         ("M-m o c i" . org-clock-in)
+         ("M-m o c o" . org-clock-out)
+         ("M-m o p p" . org-property-action)
+         ("M-m o p s" . org-set-property)
+         ("M-m o p d" . org-delete-property)
+         ("M-m o p D" . org-delete-property-globally))
   :init
   (which-key-replace
    "M-m o" "org"
-   "M-m o c" "org-clock")
+   "M-m o c" "clock"
+   "M-m o p" "property"
+   "M-m o p p" "+action"
+   "M-m o p s" "set"
+   "M-m o p d" "delete"
+   "M-m o p D" "delete globally")
   :config
   (add-hook 'org-mode-hook 'auto-fill-mode)
   (add-hook 'org-agenda-mode-hook 'hl-line-mode)
