@@ -171,14 +171,4 @@ With arg N, insert N newlines."
   (setq guide-key/guide-key-sequence t)
   (guide-key-mode 1))
 
-;; ------------------------------------------------------------
-;; which-key
-
-(use-package which-key
-  :diminish which-key-mode
-  :config
-  (setq which-key-separator " => ")
-  (which-key-add-key-based-replacements "C-x 8" "unicode")
-  (which-key-mode 1))
-
 (provide 'setup-editing-utils)
