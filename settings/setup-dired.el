@@ -7,4 +7,11 @@
   (setq ls-lisp-use-insert-directory-program nil
         ls-lisp-dirs-first t))
 
+(use-package stripe-buffer
+  :commands stripe-buffer-mode
+  :custom-face
+  (stripe-highlight ((t (:background "#191919"))))
+  :init
+  (add-hook 'dired-mode-hook #'stripe-buffer-mode))
+
 (provide 'setup-dired)
