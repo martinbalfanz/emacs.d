@@ -1,11 +1,15 @@
-(use-package all-the-icons-dired
-  :commands (all-the-icons-dired-mode)
-  :init
-  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+(use-package dired
+  :ensure nil
   :config
   (require 'ls-lisp)
   (setq ls-lisp-use-insert-directory-program nil
         ls-lisp-dirs-first t))
+
+(use-package all-the-icons-dired
+  :disabled
+  :commands (all-the-icons-dired-mode)
+  :init
+  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
 
 (use-package stripe-buffer
   :commands stripe-buffer-mode
