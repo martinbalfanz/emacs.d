@@ -38,9 +38,10 @@
 
 (use-package stripe-buffer
   :commands stripe-buffer-mode
-  :custom-face
-  (stripe-highlight ((t (:background "#191919"))))
   :init
-  (add-hook 'dired-mode-hook #'stripe-buffer-mode))
+  (add-hook 'dired-mode-hook #'stripe-buffer-mode)
+  :config
+  (custom-set-faces
+   '(stripe-highlight ((t (:background "#191919"))))))
 
 (provide 'setup-dired)
