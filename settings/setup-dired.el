@@ -44,4 +44,12 @@
   (custom-set-faces
    '(stripe-highlight ((t (:background "#191919"))))))
 
+(use-package bf-mode
+  :bind (:map dired-mode-map
+              ("b" . bf-mode))
+  :config
+  (setq bf-mode-browsing-size 100
+        bf-mode-archive-list-verbose t
+        bf-mode-directory-list-verbose t))
+
 (provide 'setup-dired)
