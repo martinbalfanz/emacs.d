@@ -59,6 +59,11 @@
   :disabled
   :commands (paradox-upgrade-packages
              paradox-list-packages))
+(use-package package-utils
+  :commands (package-utils-upgrade-all
+             package-utils-upgrade-by-name
+             package-utils-remove-by-name
+             package-utils-list-upgrades))
 
 ;; ------------------------------------------------------------
 ;; programming utilities
