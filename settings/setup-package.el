@@ -25,4 +25,18 @@
 (use-package delight)
 (use-package use-package-ensure-system-package)
 
-(provide 'setup-use-package)
+(use-package paradox
+  :disabled
+  :commands (paradox-upgrade-packages
+             paradox-list-packages))
+
+(use-package package-utils
+  :commands (package-utils-upgrade-all
+             package-utils-upgrade-by-name
+             package-utils-remove-by-name
+             package-utils-list-upgrades))
+
+(use-package try
+  :commands try)
+
+(provide 'setup-package)

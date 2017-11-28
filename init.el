@@ -14,7 +14,7 @@
 
 (require 'setup-benchmarking)
 
-(require 'setup-use-package)
+(require 'setup-package)
 
 (require 'setup-utils)
 ;; (require 'setup-site-lisp)
@@ -55,17 +55,6 @@
 (use-package command-log-mode)
 (use-package writeroom-mode
   :commands (writeroom-mode global-writeroom-mode))
-(use-package paradox
-  :disabled
-  :commands (paradox-upgrade-packages
-             paradox-list-packages))
-(use-package package-utils
-  :commands (package-utils-upgrade-all
-             package-utils-upgrade-by-name
-             package-utils-remove-by-name
-             package-utils-list-upgrades))
-(use-package try
-  :commands try)
 
 ;; ------------------------------------------------------------
 ;; programming utilities
