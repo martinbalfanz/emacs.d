@@ -64,6 +64,8 @@
              package-utils-upgrade-by-name
              package-utils-remove-by-name
              package-utils-list-upgrades))
+(use-package try
+  :commands try)
 
 ;; ------------------------------------------------------------
 ;; programming utilities
