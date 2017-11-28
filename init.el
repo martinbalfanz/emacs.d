@@ -56,6 +56,7 @@
 (use-package writeroom-mode
   :commands (writeroom-mode global-writeroom-mode))
 (use-package paradox
+  :disabled
   :commands (paradox-upgrade-packages
              paradox-list-packages))
 
