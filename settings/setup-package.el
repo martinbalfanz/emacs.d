@@ -39,4 +39,14 @@
 (use-package try
   :commands try)
 
+(add-hook 'package-menu-mode-hook 'hl-line-mode)
+
+(use-package stripe-buffer
+  :commands stripe-buffer-mode
+  :init
+  (add-hook 'package-menu-mode-hook #'stripe-buffer-mode)
+  :config
+  (custom-set-faces
+   '(stripe-highlight ((t (:background "#191919"))))))
+
 (provide 'setup-package)
