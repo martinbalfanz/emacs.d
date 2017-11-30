@@ -2,7 +2,8 @@
   :config
   (require 'ls-lisp)
   (setq ls-lisp-use-insert-directory-program nil
-        ls-lisp-dirs-first t))
+        ls-lisp-dirs-first t)
+  (add-hook 'dired-mode-hook 'hl-line-mode))
 
 (use-package all-the-icons-dired
   :ensure t
