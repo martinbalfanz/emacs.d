@@ -1,4 +1,5 @@
 (use-package paredit
+  :ensure t
   :diminish paredit-mode
   :config
   (defadvice paredit-kill (around mb/paredit-kill () activate)

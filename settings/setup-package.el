@@ -17,31 +17,38 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(setq use-package-always-ensure t)
+(setq use-package-always-ensure nil)
 
 (require 'bind-key)
 
-(use-package diminish)
-(use-package delight)
-(use-package use-package-ensure-system-package)
+(use-package diminish
+  :ensure t)
+(use-package delight
+  :ensure t)
+(use-package use-package-ensure-system-package
+  :ensure t)
 
 (use-package paradox
+  :ensure t
   :disabled
   :commands (paradox-upgrade-packages
              paradox-list-packages))
 
 (use-package package-utils
+  :ensure t
   :commands (package-utils-upgrade-all
              package-utils-upgrade-by-name
              package-utils-remove-by-name
              package-utils-list-upgrades))
 
 (use-package try
+  :ensure t
   :commands try)
 
 (add-hook 'package-menu-mode-hook 'hl-line-mode)
 
 (use-package stripe-buffer
+  :ensure t
   :commands stripe-buffer-mode
   :init
   (add-hook 'package-menu-mode-hook #'stripe-buffer-mode)

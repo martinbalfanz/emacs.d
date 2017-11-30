@@ -1,4 +1,5 @@
 (use-package editorconfig
+  :ensure t
   :diminish editorconfig-mode
   :config
   (setq editorconfig-exclude-modes '(vue-mode))

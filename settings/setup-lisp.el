@@ -1,4 +1,5 @@
-(use-package paren-face)
+(use-package paren-face
+  :ensure t)
 
 (defun mb/lispy-mode-config ()
   (when (featurep 'smartparens) (smartparens-mode -1))
@@ -9,6 +10,7 @@
   (add-hook 'after-save-hook 'check-parens nil t))
 
 (use-package parinfer
+  :ensure t
   :disabled
   :bind ("C-," . parinfer-toggle-mode)
   :diminish parinfer-mode

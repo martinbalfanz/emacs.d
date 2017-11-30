@@ -1,4 +1,5 @@
 (use-package elisp-slime-nav
+  :ensure t
   :diminish elisp-slime-nav-mode
   :init
   (dolist (hook '(emacs-lisp-mode-hook
@@ -17,9 +18,11 @@
               (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
 
 (use-package litable
+  :ensure t
   :defer 2)
 
 (use-package highlight-quoted
+  :ensure t
   :config
   (add-hook 'emacs-lisp-mode-hook 'highlight-quoted-mode))
 

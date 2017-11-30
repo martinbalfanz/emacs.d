@@ -1,5 +1,4 @@
 (use-package ibuffer
-  :ensure nil
   :bind ("C-x C-b" . ibuffer)
   :config
   (setq ibuffer-show-empty-filter-groups nil
@@ -18,6 +17,7 @@
       (ibuffer-jump-to-buffer recent-buffer-name))))
 
 (use-package ibuffer-vc
+  :ensure t
   :after ibuffer
   :config
   (add-hook 'ibuffer-hook (lambda ()

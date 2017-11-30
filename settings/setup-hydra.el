@@ -1,4 +1,5 @@
-(use-package hydra)
+(use-package hydra
+  :ensure t)
 
 ;; ------------------------------------------------------------
 ;; movement

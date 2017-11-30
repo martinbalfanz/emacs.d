@@ -43,17 +43,22 @@
 (require 'setup-elfeed)
 
 (require 'setup-shell)
-(use-package dash)
+(use-package dash
+  :ensure t)
 
 (use-package dumb-jump
+  :ensure t
   :commands (dumb-jump-go
              dumb-jump-back
              dumb-jump-quick-look
              dumb-jump-go-other-window))
 
-(use-package ranger)
-(use-package command-log-mode)
+(use-package ranger
+  :ensure t)
+(use-package command-log-mode
+  :ensure t)
 (use-package writeroom-mode
+  :ensure t
   :commands (writeroom-mode global-writeroom-mode))
 
 ;; ------------------------------------------------------------
@@ -65,13 +70,17 @@
 (require 'setup-completion)
 (require 'setup-flycheck)
 (require 'setup-paredit)
-(use-package aggressive-indent :diminish aggressive-indent-mode)
-(use-package scratch)
+(use-package aggressive-indent
+  :ensure t
+  :diminish aggressive-indent-mode)
+(use-package scratch
+  :ensure t)
 
 (require 'setup-org)
 (require 'setup-deft)
 (require 'setup-mu4e)
 (use-package markdown-mode
+  :ensure t
   :mode ("\\.md$" "\\.markdown$" "\\.txt$"))
 
 ;; ------------------------------------------------------------
@@ -85,10 +94,14 @@
 (require 'setup-javascript)
 (require 'setup-vue)
 (require 'setup-rust)
-(use-package toml-mode)
-(use-package yaml-mode)
-(use-package nginx-mode)
+(use-package toml-mode
+  :ensure t)
+(use-package yaml-mode
+  :ensure t)
+(use-package nginx-mode
+  :ensure t)
 (use-package systemd
+  :ensure t
   :init
   (when (featurep 'company)
     (add-hook 'systemd-mode-hook 'company-mode-on)))
@@ -96,10 +109,13 @@
 (require 'setup-twitter)
 
 (use-package pdf-tools
+  :ensure t
   :disabled)
 
 (require 'setup-hydra)
 
-(use-package system-packages)
+(use-package system-packages
+  :ensure t)
 (use-package homebrew-mode
+  :ensure t
   :if (eq system-type 'darwin))

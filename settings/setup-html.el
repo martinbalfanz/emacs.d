@@ -1,4 +1,5 @@
 (use-package web-mode
+  :ensure t
   :mode ("\\.html$" "\\.htm$")
   :init
   (when (featurep 'company)

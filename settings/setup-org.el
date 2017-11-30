@@ -70,12 +70,12 @@
         org-agenda-repeating-timestamp-show-all nil))
 
 (use-package alert
+  :ensure t
   :if window-system
   :config
   (setq alert-default-style 'osx-notifier))
 
 (use-package appt
-  :ensure nil
   :after org
   :init
   (defun bh/org-agenda-to-appt ()
@@ -98,9 +98,11 @@
   (setq appt-delete-window-function 'appt-delete-window))
 
 (use-package org-pomodoro
+  :ensure t
   :commands org-pomodoro)
 
 (use-package ox-pandoc
+  :ensure t
   :if (executable-find "pandoc")
   :after org)
 

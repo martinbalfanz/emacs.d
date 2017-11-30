@@ -1,17 +1,18 @@
 (use-package dired
-  :ensure nil
   :config
   (require 'ls-lisp)
   (setq ls-lisp-use-insert-directory-program nil
         ls-lisp-dirs-first t))
 
 (use-package all-the-icons-dired
+  :ensure t
   :disabled
   :commands (all-the-icons-dired-mode)
   :init
   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
 
 (use-package dired-k
+  :ensure t
   :disabled
   :commands (dired-k
              dired-k-no-revert)
@@ -37,6 +38,7 @@
    '(dired-k-ignored ((t (:inherit 'font-lock-type-face))))))
 
 (use-package stripe-buffer
+  :ensure t
   :commands stripe-buffer-mode
   :init
   (add-hook 'dired-mode-hook #'stripe-buffer-mode)
@@ -45,6 +47,7 @@
    '(stripe-highlight ((t (:background "#191919"))))))
 
 (use-package bf-mode
+  :ensure t
   :bind (:map dired-mode-map
               ("b" . bf-mode))
   :config

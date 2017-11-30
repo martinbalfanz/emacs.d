@@ -1,4 +1,5 @@
-(use-package web-mode)
+(use-package web-mode
+  :ensure t)
 
 (define-derived-mode vue-mode
   web-mode "Vue"
@@ -12,6 +13,7 @@
 (add-to-list 'auto-mode-alist '("\\.vue$" . vue-mode))
 
 (use-package vue-mode
+  :ensure t
   :disabled)
 
 (provide 'setup-vue)

@@ -1,4 +1,5 @@
 (use-package which-key
+  :ensure t
   :diminish which-key-mode
   :config
   (setq which-key-separator " => ")

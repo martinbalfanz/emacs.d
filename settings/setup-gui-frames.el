@@ -15,7 +15,8 @@
   (add-to-list 'default-frame-alist no-border)
   (add-to-list 'initial-frame-alist no-border))
 
-(use-package seethru)
+(use-package seethru
+  :ensure t)
 
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
@@ -28,6 +29,7 @@
           (lambda ()
             (setq line-spacing 0)))
 
-(use-package disable-mouse)
+(use-package disable-mouse
+  :ensure t)
 
 (provide 'setup-gui-frames)
