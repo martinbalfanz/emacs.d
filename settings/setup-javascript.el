@@ -11,8 +11,9 @@
   (setq js2-mode-show-parse-errors nil
         js2-mode-show-strict-warnings nil)
 
-  (when (featurep 'flycheck)
-    (add-hook 'js2-mode-hook 'flycheck-mode)))
+  ;; (when (featurep 'flycheck)
+  ;;   (add-hook 'js2-mode-hook 'flycheck-mode))
+  )
 
 (use-package rjsx-mode
   :ensure t
