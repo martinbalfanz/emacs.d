@@ -32,5 +32,9 @@
       (set-char-table-range composition-function-table (car char-regexp)
                             `([,(cdr char-regexp) 0 font-shape-gstring])))))
 
+(defun mb/disable-ligatures-face ()
+  (interactive)
+  (setq buffer-face-mode-face '(:family "Fira Mono"))
+  (buffer-face-mode))
 
 (provide 'setup-fonts)

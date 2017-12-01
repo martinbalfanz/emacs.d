@@ -67,7 +67,9 @@
         org-habit-show-habits-only-for-today nil
         org-habit-show-all-today nil
         org-habit-show-done-always-green nil
-        org-agenda-repeating-timestamp-show-all nil))
+        org-agenda-repeating-timestamp-show-all nil)
+
+  (add-hook 'org-agenda-mode-hook 'mb/disable-ligatures-face))
 
 (use-package alert
   :if window-system
