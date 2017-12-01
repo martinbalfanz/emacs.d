@@ -1,5 +1,4 @@
 (use-package elfeed
-  :ensure t
   :ensure-system-package curl
   :bind (:map elfeed-search-mode-map
               ("v" . elfeed-show-visit)
@@ -7,7 +6,6 @@
               ("v" . elfeed-show-visit)))
 
 (use-package elfeed-goodies
-  :ensure t
   :after elfeed
   :bind (:map elfeed-search-mode-map
               ("RET" . mb/elfeed-search-show-entry))
@@ -24,7 +22,6 @@
       (elfeed-show-entry entry))))
 
 (use-package elfeed-org
-  :ensure t
   :after elfeed
   :config
   (elfeed-org))

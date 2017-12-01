@@ -1,5 +1,4 @@
 (use-package twittering-mode
-  :ensure t
   :bind (:map twittering-mode-map
               ("n" . twittering-goto-next-status)
               ("p" . twittering-goto-previous-status)

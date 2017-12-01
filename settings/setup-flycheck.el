@@ -1,4 +1,3 @@
-(use-package flycheck
-  :ensure t)
+(use-package flycheck)
 
 (provide 'setup-flycheck)

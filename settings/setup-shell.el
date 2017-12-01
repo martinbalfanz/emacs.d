@@ -1,4 +1,3 @@
-(use-package multi-term
-  :ensure t)
+(use-package multi-term)
 
 (provide 'setup-shell)

@@ -3,8 +3,7 @@
 (when (fboundp 'electric-pair-mode)
   (electric-pair-mode))
 
-(use-package list-unicode-display
-  :ensure t)
+(use-package list-unicode-display)
 
 (setq-default indent-tabs-mode nil)
 
@@ -53,7 +52,6 @@ With arg N, insert N newlines."
 ;; Undo behaviour
 
 (use-package undo-tree
-  :ensure t
   :diminish undo-tree-mode
   :init
   (global-undo-tree-mode))
@@ -62,7 +60,6 @@ With arg N, insert N newlines."
 ;; Killing behaviour
 
 (use-package browse-kill-ring
-  :ensure t
   :bind (("M-Y" . browse-kill-ring)
          :map browse-kill-ring-mode-map
          ("C-g" . browse-kill-ring-quit)
@@ -85,14 +82,12 @@ With arg N, insert N newlines."
 ;; ------------------------------------------------------------
 ;; Visual hints
 
-(use-package rainbow-delimiters
-  :ensure t)
+(use-package rainbow-delimiters)
 
 (when (fboundp 'global-prettify-symbols-mode)
   (global-prettify-symbols-mode))
 
 (use-package symbol-overlay
-  :ensure t
   :diminish symbol-overlay-mode
   :bind (:map symbol-overlay-mode-map
               ("M-n" . symbol-overlay-jump-next)
@@ -127,15 +122,12 @@ With arg N, insert N newlines."
 ;; Selection behaviour
 
 (use-package expand-region
-  :ensure t
   :bind ("C-=" . er/expand-region))
 
 (use-package avy
-  :ensure t
   :bind ("C-." . avy-goto-char-timer))
 
 (use-package multiple-cursors
-  :ensure t
   :bind (("C-<" . mc/mark-previous-like-this)
          ("C->" . mc/mark-next-like-this)
          ("C-+" . mc/mark-next-like-this)
@@ -149,13 +141,11 @@ With arg N, insert N newlines."
 ;; Page break lines
 
 (use-package page-break-lines
-  :ensure t
   :diminish page-break-lines-mode
   :config
   (global-page-break-lines-mode))
 
 (use-package page-break-lines
-  :ensure t
   :diminish pages-break-lines-mode)
 (global-page-break-lines-mode)
 
@@ -163,7 +153,6 @@ With arg N, insert N newlines."
 ;; Move lines
 
 (use-package move-dup
-  :ensure t
   :bind (("M-<up>" . md/move-lines-up)
          ("M-<down>" . md/move-lines-down)
          ("M-S-<up>" . md/move-lines-up)
@@ -176,7 +165,6 @@ With arg N, insert N newlines."
 ;; guide-key
 
 (use-package guide-key
-  :ensure t
   :disabled
   :diminish guide-key-mode
   :config

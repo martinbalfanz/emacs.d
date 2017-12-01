@@ -1,6 +1,7 @@
 ;; brew install mu --with-emacs
 
 (use-package mu4e
+  :ensure nil
   :if (executable-find "mu")
   :commands (mu4e)
   :config

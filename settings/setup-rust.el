@@ -1,5 +1,4 @@
 (use-package rust-mode
-  :ensure t
   :config
   ;; install rustfmt using `cargo install rustfmt'
   (when (executable-find "rustfmt")
@@ -10,13 +9,11 @@
                             (rust-format-buffer)) nil t)))))
 
 (use-package cargo
-  :ensure t
   :after rust-mode
   :config
   (add-hook 'rust-mode-hook 'cargo-minor-mode))
 
 (use-package racer
-  :ensure t
   ;; install racer using `rustup component add rust-src' and `cargo install racer'
   :after rust-mode
   :if (executable-find "racer")
@@ -31,11 +28,9 @@
     (bind-key "TAB" 'company-indent-or-complete-common rust-mode-map))
   (add-hook 'racer-mode-hook 'eldoc-mode))
 
-(use-package rust-playground
-  :ensure t)
+(use-package rust-playground)
 
 (use-package flycheck-rust
-  :ensure t
   :if (featurep 'flycheck)
   :after flycheck
   :init

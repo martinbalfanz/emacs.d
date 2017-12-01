@@ -1,5 +1,4 @@
 (use-package deft
-  :ensure t
   :commands (deft)
   :bind (:map deft-mode-map
               ("C-n" . deft-next-line)

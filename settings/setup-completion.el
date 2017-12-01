@@ -1,7 +1,6 @@
 ;; company
 
 (use-package company
-  :ensure t
   :diminish company-mode
   :bind ("C-c /" . company-complete)
   :config
@@ -11,21 +10,17 @@
         company-tooltip-align-annotations t)
   (global-company-mode 1))
 
-(use-package pos-tip
-  :ensure t)
+(use-package pos-tip)
 (use-package company-quickhelp
-  :ensure t
   :after company
   :config
   (company-quickhelp-mode 1))
 
 (use-package company-statistics
-  :ensure t
   :init
   (add-hook 'company-mode-hook 'company-statistics-mode))
 
 (use-package yasnippet
-  :ensure t
   :bind (("C-c y" . company-yasnippet)
          ("M-m y y" . company-yasnippet)
          ("M-m y v" . yas-visit-snippet-file)

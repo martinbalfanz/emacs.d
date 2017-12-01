@@ -1,5 +1,4 @@
 (use-package js2-mode
-  :ensure t
   :mode ("\\.js$" . js2-mode)
   :config
   (when (featurep 'company)
@@ -16,28 +15,23 @@
   )
 
 (use-package rjsx-mode
-  :ensure t
   :mode ("\\.jsx$" . rjsx-mode))
 
 (use-package tern
-  :ensure t
   :if (executable-find "tern")
   :after js2-mode
   :init
   (add-hook 'js2-mode-hook 'tern-mode))
 
-(use-package js-doc
-  :ensure t)
+(use-package js-doc)
 
 (use-package js2-refactor
-  :ensure t
   :diminish js2-refactor-mode
   :after js2-mode
   :init
   (add-hook 'js2-mode-hook 'js2-refactor-mode))
 
 (use-package company-tern
-  :ensure t
   :if (executable-find "tern")
   :requires company
   :init

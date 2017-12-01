@@ -1,4 +1,3 @@
-(use-package smartparens
-  :ensure t)
+(use-package smartparens)
 
 (provide 'setup-smartparens)

@@ -1,5 +1,4 @@
 (use-package anzu
-  :ensure t
   :diminish anzu-mode
   :commands (anzu-mode
              global-anzu-mode)

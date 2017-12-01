@@ -1,12 +1,9 @@
-(use-package color-theme-sanityinc-solarized
-  :ensure t)
-(use-package color-theme-sanityinc-tomorrow
-  :ensure t)
+(use-package color-theme-sanityinc-solarized)
+(use-package color-theme-sanityinc-tomorrow)
 
 (load-theme 'sanityinc-tomorrow-night t)
 
 (use-package spaceline
-  :ensure t
   :defer 5
   :config
   (require 'spaceline-config)
@@ -15,7 +12,6 @@
   (spaceline-spacemacs-theme))
 
 (use-package spaceline-all-the-icons
-  :ensure t
   :disabled
   :after spaceline
   :config

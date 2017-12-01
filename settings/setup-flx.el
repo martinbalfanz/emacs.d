@@ -1,6 +1,4 @@
-(use-package flx
-  :ensure t)
-(use-package flx-isearch
-  :ensure t)
+(use-package flx)
+(use-package flx-isearch)
 
 (provide 'setup-flx)
