@@ -44,7 +44,9 @@
 
 (require 'setup-shell)
 (use-package dash)
-(use-package tldr)
+(use-package tldr
+  :commands (tldr
+             tldr-update-docs))
 
 (use-package dumb-jump
   :commands (dumb-jump-go
