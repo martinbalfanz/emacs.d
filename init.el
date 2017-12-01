@@ -44,6 +44,7 @@
 
 (require 'setup-shell)
 (use-package dash)
+(use-package tldr)
 
 (use-package dumb-jump
   :commands (dumb-jump-go
