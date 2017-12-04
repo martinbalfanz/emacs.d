@@ -24,17 +24,6 @@
   (add-hook 'org-mode-hook 'auto-fill-mode)
   (add-hook 'org-agenda-mode-hook 'hl-line-mode)
 
-  (when (file-exists-p "~/Dropbox/notes")
-    (setq org-directory "~/Dropbox/notes"
-          org-agenda-files (append '("~/Dropbox/notes/todox.org"
-                                     "~/Dropbox/notes/inbox.org"
-                                     "~/Dropbox/notes/inbox-mobile.org"
-                                     "~/Dropbox/notes/backlogx.org"
-                                     "~/Dropbox/notes/refile-beorg.org"
-                                     "~/agenda.org"
-                                     "~/Dropbox/notes/brain/Work/MING/HR.org")
-                                   (file-expand-wildcards "~/Dropbox/notes/brain/Work/MING/Projects/*.org"))))
-
   (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
                             ;; (sequence "PROJECT(p)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
                             (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING")))
@@ -151,11 +140,9 @@ typical word processor."
          :map org-brain-visualize-mode-map
          ("+" . org-brain-new-child))
   :init
-  (setq org-brain-path "~/Dropbox/notes/brain")
   (which-key-replace "M-m o b" "brain")
   :config
   (setq org-id-track-globally t
-        org-id-locations-file "~/.emacs.d/.org-id-locations"
         org-brain-visualize-default-choices 'all
         org-brain-show-text t
         org-brain-title-max-length 12)
