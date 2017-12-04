@@ -1,0 +1,21 @@
+;;; -*- mode: emacs-lisp -*-
+
+(setq user-full-name "John Doe"
+      user-mail-address "john@mail.com"
+      user-mail-addresses (cons user-mail-address
+                                '("xyz@abc.com"))
+      user-init-file "~/.emacs.d/init.el"
+      ;; user-emacs-directory "~/emacs-config/site-lisp"
+      )
+
+(setq org-directory "~/org"
+      org-agenda-files (append '("~/org/todo.org"
+                                 "~/org/inbox.org"
+                                 "~/org/backlog.org"
+                                 "~/org/agenda.org")
+                               ;; (file-expand-wildcards "~/org/*.org")
+                               ))
+
+(setq org-brain-path "~/org/brain")
+
+(load user-init-file)
