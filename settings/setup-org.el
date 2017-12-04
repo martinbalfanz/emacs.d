@@ -163,7 +163,7 @@ typical word processor."
 (use-package link-hint
   :if (featurep 'org-brain)
   :bind (:map org-brain-visualize-mode-map
-              ("C-l" . link-hint-open-link)))
+              ("." . link-hint-open-link)))
 
 (use-package ascii-art-to-unicode
   :ensure t
