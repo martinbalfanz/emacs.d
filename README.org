@@ -10,6 +10,8 @@ Clone this repository to =~/.emacs.d=:
 git clone https://github.com/martinbalfanz/emacs.d.git ~/.emacs.d
 #+END_SRC
 
+Then, copy and adjust `example-dot-emacs` to `~/.emacs`.
+
 * Similar configs
 
 A lot of credit goes to [[https://github.com/purcell][Steve Purcell]] and his excellent [[https://github.com/purcell/emacs.d][emacs.d]].  I
