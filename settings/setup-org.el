@@ -147,8 +147,12 @@ typical word processor."
       (writeroom-mode 0))))
 
 (use-package org-brain
+  :bind (("M-m o b v" . org-brain-visualize)
+         :map org-brain-visualize-mode-map
+         ("+" . org-brain-new-child))
   :init
   (setq org-brain-path "~/Dropbox/notes/brain")
+  (which-key-replace "M-m o b" "brain")
   :config
   (setq org-id-track-globally t
         org-id-locations-file "~/.emacs.d/.org-id-locations"
