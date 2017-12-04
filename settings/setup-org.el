@@ -146,4 +146,32 @@ typical word processor."
     (when (fboundp 'writeroom-mode)
       (writeroom-mode 0))))
 
+(use-package org-brain
+  :init
+  (setq org-brain-path "~/Dropbox/notes/brain")
+  :config
+  (setq org-id-track-globally t
+        org-id-locations-file "~/.emacs.d/.org-id-locations"
+        org-brain-visualize-default-choices 'all
+        org-brain-show-text t
+        org-brain-title-max-length 12)
+
+  (push '("b" "Brain" plain (function org-brain-goto-end)
+          "* %i%?" :empty-lines 1)
+        org-capture-templates))
+
+(use-package link-hint
+  :if (featurep 'org-brain)
+  :bind (:map org-brain-visualize-mode-map
+              ("C-l" . link-hint-open-link)))
+
+(use-package ascii-art-to-unicode
+  :ensure t
+  :if (featurep 'org-brain)
+  :config
+  (defun aa2u-buffer ()
+    (aa2u (point-min) (point-max)))
+
+  (add-hook 'org-brain-after-visualize-hook #'aa2u-buffer))
+
 (provide 'setup-org)
