@@ -65,7 +65,7 @@
    '(org-habit-ready-future-face ((t (:background "SeaGreen"))))))
 
 (use-package alert
-  :if window-system
+  :if (eq window-system 'mac)
   :config
   (setq alert-default-style 'osx-notifier))
 
@@ -86,9 +86,10 @@
   (setq appt-display-mode-line t)
 
   (defun mb/appt-disp-window-function (min-to-appt new-time appt-msg)
-    (appt-disp-window min-to-appt new-time appt-msg)
-    (alert (concat "Starting in " min-to-appt " minutes.")
-           :title appt-msg))
+    (if (featurep 'alert)
+        (alert (concat "Starting in " min-to-appt " minutes.")
+               :title appt-msg)
+      (appt-disp-window min-to-appt new-time appt-msg)))
   (setq appt-disp-window-function 'mb/appt-disp-window-function)
   (setq appt-delete-window-function 'appt-delete-window))
 
