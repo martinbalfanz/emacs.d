@@ -152,7 +152,7 @@ typical word processor."
         org-capture-templates))
 
 (use-package link-hint
-  :if (featurep 'org-brain)
+  :after org-brain
   :bind (:map org-brain-visualize-mode-map
               ("." . link-hint-open-link)))
 
