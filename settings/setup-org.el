@@ -67,7 +67,8 @@
 (use-package alert
   :if (eq window-system 'mac)
   :config
-  (setq alert-default-style 'osx-notifier))
+  (setq alert-default-style 'osx-notifier
+        appt-delete-window-function nil))
 
 (use-package appt
   :ensure nil
@@ -90,8 +91,8 @@
         (alert (concat "Starting in " min-to-appt " minutes.")
                :title appt-msg)
       (appt-disp-window min-to-appt new-time appt-msg)))
-  (setq appt-disp-window-function 'mb/appt-disp-window-function)
-  (setq appt-delete-window-function 'appt-delete-window))
+
+  (setq appt-disp-window-function 'mb/appt-disp-window-function))
 
 (use-package org-pomodoro
   :commands org-pomodoro)
