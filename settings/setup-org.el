@@ -147,7 +147,7 @@ typical word processor."
   (setq org-id-track-globally t
         org-brain-visualize-default-choices 'all
         org-brain-show-text t
-        org-brain-title-max-length 12)
+        org-brain-title-max-length 0)
 
   (push '("b" "Brain" plain (function org-brain-goto-end)
           "* %i%?" :empty-lines 1)
