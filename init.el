@@ -88,6 +88,7 @@
 (require 'setup-javascript)
 (require 'setup-vue)
 (require 'setup-rust)
+(require 'setup-docker)
 (use-package toml-mode)
 (use-package yaml-mode)
 (use-package nginx-mode)
