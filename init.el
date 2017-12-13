@@ -34,6 +34,7 @@
 (require 'setup-flx)
 (require 'setup-helm)
 (require 'setup-ivy)
+(require 'setup-uniquify)
 (require 'setup-whitespace)
 (require 'setup-windows)
 (require 'setup-deprecate)
