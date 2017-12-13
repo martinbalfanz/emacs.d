@@ -139,6 +139,7 @@ typical word processor."
 
 (use-package org-brain
   :bind (("M-m o b v" . org-brain-visualize)
+         ("M-m o b i" . org-id-get-create)
          :map org-brain-visualize-mode-map
          ("+" . org-brain-new-child))
   :init
