@@ -46,6 +46,11 @@
           ("c" "Capture website" entry (file+headline "bookmarkx.org" "Unsorted")
            "* %?%:description\n:PROPERTIES:\n:URL: %:link\n:END:\n\n Added %U\n\n%:initial" :immediate-finish t)))
 
+
+  (add-hook 'org-capture-mode-hook
+            (lambda ()
+              (whitespace-cleanup-mode -1)))
+
   (setq org-hide-emphasis-markers nil
         org-export-coding-system 'utf-8
         org-catch-invisible-edits 'show
