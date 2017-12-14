@@ -43,6 +43,7 @@
 (require 'setup-anzu)
 (require 'setup-elfeed)
 (require 'setup-folding)
+(require 'setup-help)
 
 (require 'setup-shell)
 (use-package dash)
