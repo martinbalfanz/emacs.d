@@ -1,8 +1,11 @@
 (use-package origami
-  :disabled
   :bind (:map origami-mode-map
               ("C-c f" . origami-recursively-toggle-node)
-              ("C-c F" . origami-toggle-all-nodes)))
+              ("C-c F" . origami-toggle-all-nodes))
+  :config
+  ;; override default elisp parser to support use-package
+  (defun origami-elisp-parser (create)
+    (origami-lisp-parser create "(\\(def\\|use-\\)\\w*\\s-*\\(\\s_\\|\\w\\|[:?!]\\)*\\([ \\t]*(.*?)\\)?")))
 
 (use-package yafolding
   :disabled
