@@ -42,6 +42,7 @@
 (require 'setup-ibuffer)
 (require 'setup-anzu)
 (require 'setup-elfeed)
+(require 'setup-folding)
 
 (require 'setup-shell)
 (use-package dash)
