@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: block
+# key: b_
+# --
+#+BEGIN_${1:$$(yas-choose-value '("BlOCK" "CENTER" "COMMENT" "EXAMPLE" "QUOTE" "SRC" "VERSE"))}
+$0
+#+END_$1
