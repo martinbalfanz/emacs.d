@@ -92,6 +92,7 @@
 (require 'setup-vue)
 (require 'setup-rust)
 (require 'setup-python)
+(require 'setup-go)
 (require 'setup-docker)
 (use-package toml-mode)
 (use-package yaml-mode)
