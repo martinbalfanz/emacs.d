@@ -12,6 +12,9 @@
 (add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+(defvar mb/use-package-allow-ensure-system-package t
+  "Set if use-package is allowed to install system packages.")
+
 (require 'setup-benchmarking)
 
 (require 'setup-package)

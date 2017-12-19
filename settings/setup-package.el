@@ -25,6 +25,31 @@
 (use-package delight)
 (use-package use-package-ensure-system-package)
 
+(defun mb/ensure-system-package (doit &rest args)
+  "Verify if the installation of system packages is allowed or if
+it is required at all.  Then continue or disable."
+  (if mb/use-package-allow-ensure-system-package
+      (apply doit args)
+    (let* ((name (first args))
+           (keyword (nth 1 args))
+           (arg (nth 2 args))
+           (rest (nth 3 args))
+           (state (nth 4 args))
+           (body (use-package-process-keywords name rest state))
+           (count (mapcar #'(lambda (cons)
+                              (if (executable-find (symbol-name (car cons)))
+                                  0
+                                1)) arg)))
+      (when (= 0 (reduce #'+ count))
+        body))))
+
+(advice-add 'use-package-handler/:ensure-system-package
+            :around
+            #'mb/ensure-system-package)
+
+(delete :ensure-system-package use-package-keywords)
+(add-to-list 'use-package-keywords :ensure-system-package nil)
+
 (use-package paradox
   :disabled
   :commands (paradox-upgrade-packages
