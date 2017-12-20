@@ -1,5 +1,5 @@
 (use-package ag
-  :if (executable-find "ag"))
+  :ensure-system-package ag)
 
 (use-package projectile
   :delight '(:eval (concat " P[" (projectile-project-name) "]"))
@@ -7,7 +7,7 @@
   (add-hook 'after-init-hook 'projectile-mode))
 
 (use-package projectile-ripgrep
-  :if (executable-find "rg")
+  :ensure-system-package rg
   :after projectile
   :bind (:map projectile-mode-map
               ("C-c p s r" . projectile-ripgrep))
