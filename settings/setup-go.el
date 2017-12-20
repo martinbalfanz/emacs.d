@@ -1,4 +1,3 @@
-(use-package go-mode
-  :if (executable-find "go"))
+(use-package go-mode)
 
 (provide 'setup-go)
