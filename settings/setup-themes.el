@@ -1,5 +1,7 @@
 (use-package color-theme-sanityinc-solarized)
 (use-package color-theme-sanityinc-tomorrow)
+(use-package nord-theme
+  :disabled)
 
 (load-theme 'sanityinc-tomorrow-night t)
 
