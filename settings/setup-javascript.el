@@ -37,4 +37,7 @@
   :init
   (add-to-list 'company-backends 'company-tern))
 
+(use-package json-mode
+  :mode ("\\.json$" . json-mode))
+
 (provide 'setup-javascript)
