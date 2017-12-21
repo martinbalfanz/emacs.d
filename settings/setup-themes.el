@@ -4,9 +4,11 @@
   :config
   (setq nord-comment-brightness 10)
 
-  (let ((nord0 (if (display-graphic-p) "#2E3440" nil)))
+  (let ((nord0 (if (display-graphic-p) "#2E3440" nil))
+        (nord1 (if (display-graphic-p) "#3B4252" "black")))
     (custom-set-faces
      '(button ((t (:box nil :underline t))))
+     `(custom-button ((t (:box (:line-width 1 :style released-button :color ,nord0) :background ,nord1))))
      '(helm-match ((t (:inherit nil :background nil))))
      `(scroll-bar ((t (:background ,nord0)))))))
 
