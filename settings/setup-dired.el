@@ -43,7 +43,7 @@
   (add-hook 'dired-mode-hook #'stripe-buffer-mode)
   :config
   (custom-set-faces
-   '(stripe-highlight ((t (:background "#191919"))))))
+   '(stripe-highlight ((t (:background "#2a3141"))))))
 
 (use-package bf-mode
   :bind (:map dired-mode-map

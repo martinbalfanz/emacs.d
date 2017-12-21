@@ -1,9 +1,16 @@
 (use-package color-theme-sanityinc-solarized)
 (use-package color-theme-sanityinc-tomorrow)
 (use-package nord-theme
-  :disabled)
+  :config
+  (setq nord-comment-brightness 10)
 
-(load-theme 'sanityinc-tomorrow-night t)
+  (let ((nord0 (if (display-graphic-p) "#2E3440" nil)))
+    (custom-set-faces
+     '(button ((t (:box nil :underline t))))
+     '(helm-match ((t (:inherit nil :background nil))))
+     `(scroll-bar ((t (:background ,nord0)))))))
+
+(load-theme 'nord t)
 
 (use-package spaceline
   :defer 5
