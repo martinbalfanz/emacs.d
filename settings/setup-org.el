@@ -103,7 +103,7 @@
   :commands org-pomodoro)
 
 (use-package ox-pandoc
-  :if (executable-find "pandoc")
+  :ensure-system-package pandoc
   :after org)
 
 ;; ------------------------------------------------------------
