@@ -1,5 +1,6 @@
 (use-package color-theme-sanityinc-solarized)
 (use-package color-theme-sanityinc-tomorrow)
+(use-package dracula-theme)
 (use-package nord-theme
   :config
   (setq nord-comment-brightness 10)
