@@ -1,6 +1,7 @@
 (use-package color-theme-sanityinc-solarized)
 (use-package color-theme-sanityinc-tomorrow)
 (use-package dracula-theme)
+(use-package doom-themes)
 (use-package nord-theme
   :config
   (setq nord-comment-brightness 10)
@@ -39,7 +40,7 @@
      `(org-level-7 ((,class (:foreground ,nord10 :weight normal))))
      `(org-level-8 ((,class (:foreground ,nord7 :weight normal))))
      `(scroll-bar ((,class (:background ,nord0))))
-     `(stripe-highlight ((,class (:background ,nord1)))))))
+     `(stripe-highlight ((,class (:background ,(doom-darken nord1 0.3))))))))
 
 (load-theme 'nord t)
 
