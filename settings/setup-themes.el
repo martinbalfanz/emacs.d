@@ -24,15 +24,21 @@
     (custom-set-faces
      `(button ((,class (:box nil :underline t))))
      `(custom-button ((,class (:box (:line-width 1 :style released-button :color ,nord0) :background ,nord1))))
+     `(dired-k-commited ((,class (:inherit 'font-lock-keyword-face))))
+     `(dired-k-directory ((,class (:inherit 'font-lock-function-name-face))))
+     `(dired-k-ignored ((,class (:inherit 'font-lock-type-face))))
+     `(dired-k-modified ((,class (:inherit 'error :weight bold))))
+     `(dired-k-untracked ((,class (:inherit 'warning))))
      `(helm-match ((,class (:inherit nil :background nil))))
-     `(scroll-bar ((,class (:background ,nord0))))
+     `(org-document-title ((,class (:height 1.44))))
      `(org-level-2 ((,class (:foreground ,nord9))))
      `(org-level-3 ((,class (:foreground ,nord10))))
      `(org-level-4 ((,class (:foreground ,nord7))))
      `(org-level-5 ((,class (:foreground ,nord8))))
      `(org-level-7 ((,class (:foreground ,nord10 :weight normal))))
      `(org-level-8 ((,class (:foreground ,nord7 :weight normal))))
-     `(org-document-title ((,class (:height 1.44)))))))
+     `(scroll-bar ((,class (:background ,nord0))))
+     `(stripe-highlight ((,class (:background ,nord1)))))))
 
 (load-theme 'nord t)
 

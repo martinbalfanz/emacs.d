@@ -63,11 +63,7 @@
         org-habit-show-done-always-green nil
         org-agenda-repeating-timestamp-show-all nil)
 
-  (add-hook 'org-agenda-mode-hook 'mb/disable-ligatures-face)
-  (custom-set-faces
-   '(org-habit-clear-face ((t (:background "Steelblue4"))))
-   '(org-habit-clear-future-face ((t (:background "Gray17"))))
-   '(org-habit-ready-future-face ((t (:background "SeaGreen"))))))
+  (add-hook 'org-agenda-mode-hook 'mb/disable-ligatures-face))
 
 (use-package alert
   :if (eq window-system 'mac)

@@ -28,22 +28,12 @@
     "Don't use if directory is remote."
     (unless (file-remote-p default-directory)
       (apply orig-fn args)))
-  (advice-add #'dired-k--highlight :around #'mb/dired-k--highlight)
-
-  (custom-set-faces
-   '(dired-k-modified ((t (:inherit 'error :weight bold))))
-   '(dired-k-untracked ((t (:inherit 'warning))))
-   '(dired-k-commited ((t (:inherit 'font-lock-keyword-face))))
-   '(dired-k-directory ((t (:inherit 'font-lock-function-name-face))))
-   '(dired-k-ignored ((t (:inherit 'font-lock-type-face))))))
+  (advice-add #'dired-k--highlight :around #'mb/dired-k--highlight))
 
 (use-package stripe-buffer
   :commands stripe-buffer-mode
   :init
-  (add-hook 'dired-mode-hook #'stripe-buffer-mode)
-  :config
-  (custom-set-faces
-   '(stripe-highlight ((t (:background "#2a3141"))))))
+  (add-hook 'dired-mode-hook #'stripe-buffer-mode))
 
 (use-package bf-mode
   :bind (:map dired-mode-map

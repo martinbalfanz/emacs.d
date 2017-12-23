@@ -69,9 +69,6 @@ it is required at all.  Then continue or disable."
 (use-package stripe-buffer
   :commands stripe-buffer-mode
   :init
-  (add-hook 'package-menu-mode-hook #'stripe-buffer-mode)
-  :config
-  (custom-set-faces
-   '(stripe-highlight ((t (:background "#191919"))))))
+  (add-hook 'package-menu-mode-hook #'stripe-buffer-mode))
 
 (provide 'setup-package)
