@@ -6,3 +6,4 @@ some news on an irregular basis with =elfeed=.
 *** emacs                                                             :emacs:
 **** [[https://github.com/jwiegley/use-package/commits/master.atom][use-package]]
 **** [[https://github.com/waymondo/use-package-ensure-system-package/commits/master.atom][use-package-ensure-system-package]]
+**** [[https://github.com/Kungsgeten/org-brain/commits/master.atom][org-brain]]
