@@ -170,4 +170,10 @@ typical word processor."
 
   (add-hook 'org-brain-after-visualize-hook #'aa2u-buffer))
 
+(use-package org-wiki
+  :ensure nil
+  :load-path "site-lisp/"
+  :config
+  (setq org-wiki-default-read-only nil))
+
 (provide 'setup-org)
