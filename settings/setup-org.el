@@ -47,9 +47,15 @@
            "* %?%:description\n:PROPERTIES:\n:URL: %:link\n:END:\n\n Added %U\n\n%:initial" :immediate-finish t)))
 
 
-  (add-hook 'org-capture-mode-hook
-            (lambda ()
-              (whitespace-cleanup-mode -1)))
+  (defun mb/require-final-newline ()
+    "Add final newline to buffer"
+    (save-excursion
+      (when (and (> (point-max) (point-min))
+                 (/= (char-after (1- (point-max))) ?\n))
+        (goto-char (point-max))
+        (insert ?\n))))
+
+  (add-hook 'org-capture-prepare-finalize-hook #'mb/require-final-newline)
 
   (setq org-hide-emphasis-markers nil
         org-export-coding-system 'utf-8
