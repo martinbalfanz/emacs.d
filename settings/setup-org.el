@@ -182,4 +182,7 @@ typical word processor."
   :config
   (setq org-wiki-default-read-only nil))
 
+(use-package kanban
+  :after org)
+
 (provide 'setup-org)
