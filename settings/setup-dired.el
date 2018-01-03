@@ -30,11 +30,6 @@
       (apply orig-fn args)))
   (advice-add #'dired-k--highlight :around #'mb/dired-k--highlight))
 
-(use-package stripe-buffer
-  :commands stripe-buffer-mode
-  :init
-  (add-hook 'dired-mode-hook #'stripe-buffer-mode))
-
 (use-package bf-mode
   :bind (:map dired-mode-map
               ("b" . bf-mode))

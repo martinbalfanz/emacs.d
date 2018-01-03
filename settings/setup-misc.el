@@ -95,4 +95,10 @@ Deletes whitespace at join."
 (use-package hideshow-org
   :bind ("M-m TAB" . hs-org/minor-mode))
 
+(use-package stripe-buffer
+  :commands stripe-buffer-mode
+  :hook ((dired-mode . stripe-buffer-mode)
+         (package-menu-mode . stripe-buffer-mode)
+         (deft-mode . stripe-buffer-mode)))
+
 (provide 'setup-misc)

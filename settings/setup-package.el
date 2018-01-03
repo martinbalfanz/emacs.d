@@ -66,9 +66,4 @@ it is required at all.  Then continue or disable."
 
 (add-hook 'package-menu-mode-hook 'hl-line-mode)
 
-(use-package stripe-buffer
-  :commands stripe-buffer-mode
-  :init
-  (add-hook 'package-menu-mode-hook #'stripe-buffer-mode))
-
 (provide 'setup-package)
