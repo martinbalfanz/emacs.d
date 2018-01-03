@@ -16,6 +16,7 @@
                                ;; (file-expand-wildcards "~/org/*.org")
                                ))
 
-(setq org-brain-path "~/org/brain")
+(setq org-brain-path "~/org/brain"
+      deft-directory "~/org/deft")
 
 (load user-init-file)
