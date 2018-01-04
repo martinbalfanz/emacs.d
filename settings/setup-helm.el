@@ -19,7 +19,7 @@
          ;; ("C-c h M-:" . helm-eval-expression-with-eldoc)
          ("C-x r i" . helm-register)
          :map helm-map
-         ("<tab>" . helm-execute-persistent-action)
+         ("<tab>" . helm-yank-selection)
          ("C-i" . helm-execute-persistent-action)
          ("C-z" . helm-select-action))
   :init
