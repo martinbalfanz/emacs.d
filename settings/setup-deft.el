@@ -5,6 +5,7 @@
               ("C-p" . deft-previous-line))
   :config
   (add-hook 'deft-mode-hook 'hl-line-mode)
+  (add-hook 'deft-mode-hook 'mb/disable-ligatures-face)
 
   (setq deft-extensions '("org" "markdown" "md" "tex" "txt")
         deft-default-extension "org"
