@@ -24,6 +24,12 @@
   (add-hook 'org-mode-hook 'auto-fill-mode)
   (add-hook 'org-agenda-mode-hook 'hl-line-mode)
 
+  (setq org-refile-targets '((nil :maxlevel . 5)
+                             (org-agenda-files :maxlevel . 2))
+        org-refile-use-outline-path 'file
+        org-outline-path-complete-in-steps nil
+        org-refile-allow-creating-parent-nodes 'confirm)
+
   (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
                             ;; (sequence "PROJECT(p)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
                             (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING")))
