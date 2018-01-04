@@ -19,6 +19,8 @@
 
 (require 'setup-package)
 
+(unbind-key "M-m")
+
 (require 'setup-utils)
 ;; (require 'setup-site-lisp)
 ;; (require 'setup-elpa)
