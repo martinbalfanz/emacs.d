@@ -37,4 +37,8 @@
   (setq buffer-face-mode-face '(:family "Fira Mono"))
   (buffer-face-mode))
 
+(use-package default-text-scale
+  :bind (("M-m +" . default-text-scale-increase)
+         ("M-m -" . default-text-scale-decrease)))
+
 (provide 'setup-fonts)
