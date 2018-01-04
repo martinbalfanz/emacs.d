@@ -1,7 +1,8 @@
 (use-package which-key
   :diminish which-key-mode
   :config
-  (setq which-key-separator " => ")
+  (setq which-key-separator " => "
+        which-key-add-column-padding 2)
   (which-key-add-key-based-replacements "C-x 8" "unicode")
   (which-key-mode 1)
 
