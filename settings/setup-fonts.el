@@ -38,7 +38,7 @@
   (buffer-face-mode))
 
 (use-package default-text-scale
-  :bind (("M-m +" . default-text-scale-increase)
-         ("M-m -" . default-text-scale-decrease)))
+  :bind (("M-m M-+" . default-text-scale-increase)
+         ("M-m M--" . default-text-scale-decrease)))
 
 (provide 'setup-fonts)
