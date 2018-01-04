@@ -36,7 +36,7 @@
                     (if (string-empty-p filter)
                         (ad-get-arg 0)
                       filter)))
-           (tmpl (concat "#+TITLE: " (eval title) "
+           (tmpl (concat "#+TITLE: " (funcall title) "
 #+DATE: " timestamp "
 #+KEYWORDS:
 
