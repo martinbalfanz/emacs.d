@@ -42,7 +42,8 @@
      `(org-level-8 ((,class (:foreground ,nord7 :weight normal))))
      `(org-priority ((,class (:foreground ,nord14))))
      `(scroll-bar ((,class (:background ,nord0))))
-     `(stripe-highlight ((,class (:background ,(doom-darken nord1 0.3))))))))
+     `(stripe-highlight ((,class (:background ,(doom-darken nord1 0.3)))))
+     `(which-key-key-face ((,class (:foreground ,nord13)))))))
 
 (load-theme 'nord t)
 
