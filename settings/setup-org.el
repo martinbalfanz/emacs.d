@@ -182,6 +182,30 @@ typical word processor."
   :config
   (setq org-wiki-default-read-only nil))
 
+(use-package org-board
+  :after org
+  :init
+  (which-key-replace
+   "M-m o o" "board")
+  :config
+  (require 'org-protocol)
+
+  (global-set-key (kbd "M-m o o") org-board-keymap)
+  (setq org-board-capture-file "bookmarkx.org")
+
+  (push `("c" "Capture website" entry (file+headline ,org-board-capture-file "Unsorted")
+          "* %?%:description\n:PROPERTIES:\n:URL: %:link\n:END:\n\n Added %U\n\n%:initial" :immediate-finish t)
+        org-capture-templates)
+
+  (defun mb/org-board-dl-hook ()
+    (when (equal (buffer-name)
+                 (concat "CAPTURE-" org-board-capture-file))
+      (org-board-archive)))
+
+  (add-hook 'org-capture-before-finalize-hook #'mb/org-board-dl-hook)
+
+  (server-start))
+
 (use-package kanban
   :after org)
 
