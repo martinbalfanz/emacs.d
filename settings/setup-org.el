@@ -22,7 +22,7 @@
    "M-m o p d" "delete"
    "M-m o p D" "delete globally")
   :config
-  (add-hook 'org-mode-hook 'auto-fill-mode)
+  (add-hook 'org-mode-hook 'turn-on-visual-line-mode)
   (add-hook 'org-agenda-mode-hook 'hl-line-mode)
 
   (setq org-refile-targets '((nil :maxlevel . 5)
