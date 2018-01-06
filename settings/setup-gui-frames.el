@@ -28,6 +28,8 @@
           (lambda ()
             (setq line-spacing 0)))
 
-(use-package disable-mouse)
+(use-package disable-mouse
+  :commands (disable-mouse-mode
+             global-disable-mouse-mode))
 
 (provide 'setup-gui-frames)
