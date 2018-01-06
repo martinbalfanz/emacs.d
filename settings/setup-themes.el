@@ -32,6 +32,7 @@
      `(dired-k-ignored ((,class (:inherit 'font-lock-type-face))))
      `(dired-k-modified ((,class (:inherit 'error :weight bold))))
      `(dired-k-untracked ((,class (:inherit 'warning))))
+     `(font-lock-constant-face ((,class (:foreground ,nord14))))
      `(helm-match ((,class (:inherit nil :background nil))))
      `(org-document-title ((,class (:height 1.44))))
      `(org-level-2 ((,class (:foreground ,nord9))))
