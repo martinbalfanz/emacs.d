@@ -109,7 +109,10 @@
   (setq appt-disp-window-function 'mb/appt-disp-window-function))
 
 (use-package org-pomodoro
-  :commands org-pomodoro)
+  :commands org-pomodoro
+  :bind (("M-m o M-p" . org-pomodoro))
+  :config
+  (spaceline-toggle-org-pomodoro-on))
 
 (use-package ox-pandoc
   :ensure-system-package pandoc
