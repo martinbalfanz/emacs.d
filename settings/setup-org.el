@@ -6,6 +6,8 @@
          ("M-m o b" . org-iswitchb)
          ("M-m o c j" . org-clock-jump-to-current-clock)
          :map org-mode-map
+         ("C-c [" . nil)
+         ("C-c ]" . nil)
          ("M-m o c i" . org-clock-in)
          ("M-m o c o" . org-clock-out)
          ("M-m o p p" . org-property-action)
