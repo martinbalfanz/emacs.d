@@ -44,7 +44,16 @@
      `(org-priority ((,class (:foreground ,nord14))))
      `(scroll-bar ((,class (:background ,nord0))))
      `(stripe-highlight ((,class (:background ,(doom-darken nord1 0.3)))))
-     `(which-key-key-face ((,class (:foreground ,nord13)))))))
+     `(which-key-key-face ((,class (:foreground ,nord13)))))
+
+    (setq org-todo-keyword-faces
+          `(("TODO" :foreground ,nord11 :weight bold)
+            ("NEXT" :foreground ,nord13 :weight bold)
+            ("DONE" :foreground ,nord14 :weight bold)
+            ("WAITING" :background ,nord12 :foreground ,nord0 :weight bold)
+            ("HOLD" :background ,nord12 :foreground ,nord0 :weight bold)
+            ("CANCELLED" :foreground ,nord14 :weight bold)
+            ("MEETING" :foreground ,nord14 :weight bold)))))
 
 (load-theme 'nord t)
 
