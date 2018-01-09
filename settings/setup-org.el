@@ -3,6 +3,7 @@
   :mode ("\\.org$" . org-mode)
   :bind (("C-c a" . org-agenda)
          ("C-c c" . org-capture)
+         ("M-m o b" . org-iswitchb)
          ("M-m o c j" . org-clock-jump-to-current-clock)
          :map org-mode-map
          ("M-m o c i" . org-clock-in)
