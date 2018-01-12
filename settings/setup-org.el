@@ -28,28 +28,43 @@
   (add-hook 'org-mode-hook 'auto-fill-mode)
   (add-hook 'org-agenda-mode-hook 'hl-line-mode)
 
+  (setq org-enforce-todo-dependencies t
+        org-startup-indented t
+        org-cycle-separator-lines 0
+        org-return-follows-link t
+        org-clone-delete-id t
+        org-src-fontify-natively t
+        org-src-preserve-indentation nil
+        org-src-tab-acts-natively t
+        org-edit-src-content-indentation 0
+        org-hide-emphasis-markers t
+        org-goto-interface 'outline-path-completion
+        org-outline-path-complete-in-steps nil)
+
+  (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
+                            (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "MEETING")))
+
   (setq org-refile-targets '((nil :maxlevel . 5)
-                             (org-agenda-files :maxlevel . 2))
+                             (org-agenda-files :maxlevel . 5))
         org-refile-use-outline-path 'file
         org-outline-path-complete-in-steps nil
         org-refile-allow-creating-parent-nodes 'confirm)
 
-  (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
-                            ;; (sequence "PROJECT(p)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
-                            (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING")))
+  (defun bh/verify-refile-target ()
+    "Exclude todo keywords with a done state from refile targets"
+    (not (member (nth 2 (org-heading-components)) org-done-keywords)))
+
+  (setq org-refile-target-verify-function 'bh/verify-refile-target)
 
   (setq org-capture-templates
-        '(("t" "Todo" entry (file+headline "inbox.org" "Tasks")
-           "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%i\n" :clock-in t :clock-resume t)
-          ("n" "Note" entry (file+headline "inbox.org" "Notes")
-           "* %?\n:PROPERTIES:\n:CREATED: %U\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%i\n" :clock-in t :clock-resume t)
+        '(("t" "Todo" entry (file "inbox.org")
+           "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%i\n")
+          ("n" "Note" entry (file "inbox.org")
+           "* %? :note:\n:PROPERTIES:\n:CREATED: %U\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%i\n" :clock-in t :clock-resume t)
           ("j" "Journal" entry (file+datetree "journal.org")
            "* %U\n\n%?\n" :clock-in t :clock-resume t :kill-buffer t)
-          ("m" "Meeting" entry (file+headline "inbox.org" "Meeting Minutes")
-           "* MEETING %?\n:PROPERTIES:\n:CREATED: %T\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\nParticipants\n- \n%i\n" :clock-in t :clock-resume t)
-          ("p" "Call" entry (file+headline "inbox.org" "Phone Calls")
-           "* PHONE %? :phone:\n:PROPERTIES:\n:CREATED: %T\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%i\n" :clock-in t :clock-resume t)))
-
+          ("m" "Meeting" entry (file "inbox.org")
+           "* MEETING %? :meeting:\n:PROPERTIES:\n:CREATED: %T\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\nParticipants\n- \n%i\n" :clock-in t :clock-resume t)))
 
   (defun mb/require-final-newline ()
     "Add final newline to buffer"
@@ -63,23 +78,61 @@
 
   (setq org-hide-emphasis-markers nil
         org-export-coding-system 'utf-8
-        org-catch-invisible-edits 'show
-        org-agenda-show-future-repeats nil)
+        org-catch-invisible-edits 'show)
 
   (require 'org-habit)
   (setq org-habit-show-habits t
         org-habit-show-habits-only-for-today nil
         org-habit-show-all-today nil
-        org-habit-show-done-always-green nil
-        org-agenda-repeating-timestamp-show-all nil)
+        org-habit-show-done-always-green nil)
 
-  (add-hook 'org-agenda-mode-hook 'mb/disable-ligatures-face)
+  (add-hook 'org-mode-hook 'mb/disable-ligatures-face)
 
   (defun mb/org-new-headline-with-date ()
     (interactive)
     (let ((timestamp (format-time-string "%Y-%m-%d %H:%M")))
       (org-insert-heading-respect-content)
-      (insert timestamp))))
+      (insert timestamp)))
+
+  (require 'setup-org-babel)
+
+  ;; Agenda
+  (add-hook 'org-agenda-mode-hook 'mb/disable-ligatures-face)
+  (setq org-agenda-repeating-timestamp-show-all t
+        org-agenda-show-all-dates t
+        org-agenda-start-on-weekday 1
+        org-agenda-sticky t
+        org-agenda-show-future-repeats nil
+        org-agenda-compact-blocks t
+        org-agenda-log-mode-items '(closed clock state)
+        org-agenda-todo-ignore-with-date nil
+        org-agenda-todo-ignore-deadlines nil
+        org-agenda-todo-ignore-scheduled nil
+        org-agenda-todo-ignore-timestamp nil
+        org-agenda-skip-deadline-if-done t
+        org-agenda-skip-scheduled-if-done t
+        org-agenda-skip-timestamp-if-done t
+        org-agenda-text-search-extra-files '(agenda-archives)
+        org-agenda-custom-commands '(("N" "Notes" tags "NOTE"
+                                      ((org-agenda-overriding-header "Notes")
+                                       (org-tags-match-list-sublevels t)))
+                                     ("h" "Habits" tags-todo "STYLE=\"habit\""
+                                      ((org-agenda-overriding-header "Habits")
+                                       (org-agenda-sorting-strategy
+                                        '(todo-state-down effort-up category-keep))))))
+
+  ;; Clock
+  (org-clock-persistence-insinuate)
+  (setq org-clock-history-length 23
+        org-clock-in-resume t
+        org-clock-out-remove-zero-time-clocks t
+        org-clock-out-when-done t
+        org-clock-persist t
+        org-clock-report-include-clocking-task t)
+
+  ;; Columns
+  (setq org-columns-default-format "%25ITEM %TODO %3PRIORITY %10Effort(Effort){:} %10CLOCKSUM %TAGS")
+  )
 
 (use-package alert
   :if (eq window-system 'mac)
