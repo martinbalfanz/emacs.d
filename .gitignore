@@ -5,6 +5,7 @@ custom.el
 elpa/
 recentf
 custom.el
+projectile.cache
 projectile-bookmarks.eld
 var/
 .mc-lists.el
@@ -21,3 +22,5 @@ url/
 GPATH
 GRTAGS
 GTAGS
+org-clock-save.el
+oauth2.plstore
