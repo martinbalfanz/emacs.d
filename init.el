@@ -65,7 +65,9 @@
 (use-package ranger)
 (use-package command-log-mode)
 (use-package writeroom-mode
-  :commands (writeroom-mode global-writeroom-mode))
+  :commands (writeroom-mode global-writeroom-mode)
+  :config
+  (setq writeroom-mode-line t))
 
 ;; ------------------------------------------------------------
 ;; programming utilities
