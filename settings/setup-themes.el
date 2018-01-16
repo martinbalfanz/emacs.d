@@ -50,8 +50,8 @@
           `(("TODO" :foreground ,nord11 :weight bold)
             ("NEXT" :foreground ,nord13 :weight bold)
             ("DONE" :foreground ,nord14 :weight bold)
-            ("WAITING" :background ,nord12 :foreground ,nord0 :weight bold)
-            ("HOLD" :background ,nord12 :foreground ,nord0 :weight bold)
+            ("WAITING" :foreground ,nord12 :weight bold)
+            ("HOLD" :foreground ,nord12 :weight bold)
             ("CANCELLED" :foreground ,nord14 :weight bold)
             ("MEETING" :foreground ,nord14 :weight bold)))))
 
