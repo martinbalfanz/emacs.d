@@ -94,7 +94,7 @@
       (org-insert-heading-respect-content)
       (insert timestamp)))
 
-  (require 'setup-org-babel)
+  ;; (require 'setup-org-babel)
 
   ;; Agenda
   (add-hook 'org-agenda-mode-hook 'mb/disable-ligatures-face)
