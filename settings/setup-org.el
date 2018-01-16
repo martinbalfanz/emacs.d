@@ -64,7 +64,7 @@
           ("j" "Journal" entry (file+datetree "journal.org")
            "* %U\n\n%?\n" :clock-in t :clock-resume t :kill-buffer t)
           ("m" "Meeting" entry (file "inbox.org")
-           "* MEETING %? :meeting:\n:PROPERTIES:\n:CREATED: %T\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\nParticipants\n- \n%i\n" :clock-in t :clock-resume t)))
+           "* MEETING %? :meeting:\n:PROPERTIES:\n:CREATED: %T\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\nParticipants:\n- \n%i\n" :clock-in t :clock-resume t)))
 
   (defun mb/require-final-newline ()
     "Add final newline to buffer"
