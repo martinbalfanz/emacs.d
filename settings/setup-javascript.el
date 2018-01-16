@@ -18,7 +18,8 @@
   :mode ("\\.jsx$" . rjsx-mode))
 
 (use-package tern
-  :ensure-system-package (tern . "npm install -g tern")
+  :ensure-system-package (node
+                          (tern . "npm install -g tern"))
   :after js2-mode
   :init
   (add-hook 'js2-mode-hook 'tern-mode))
@@ -32,8 +33,8 @@
   (add-hook 'js2-mode-hook 'js2-refactor-mode))
 
 (use-package company-tern
-  :ensure-system-package (tern . "npm install -g tern")
-  :requires company
+  :requires (company
+             tern)
   :init
   (add-to-list 'company-backends 'company-tern))
 
