@@ -102,6 +102,7 @@
         org-agenda-show-all-dates t
         org-agenda-start-on-weekday 1
         org-agenda-sticky t
+        org-deadline-warning-days 7
         org-agenda-show-future-repeats nil
         org-agenda-compact-blocks t
         org-agenda-log-mode-items '(closed clock state)
