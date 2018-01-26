@@ -33,6 +33,7 @@
 (require 'setup-misc) ;; TODO cleanup
 (require 'setup-backup)
 (use-package real-auto-save
+  :disabled
   :commands (real-auto-save-mode)
   :init
   (add-hook 'prog-mode-hook 'real-auto-save-mode)
