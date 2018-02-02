@@ -276,4 +276,8 @@ typical word processor."
 (use-package kanban
   :after org)
 
+(use-package org-trello
+  :init
+  (add-hook 'org-mode-hook 'org-trello-mode))
+
 (provide 'setup-org)

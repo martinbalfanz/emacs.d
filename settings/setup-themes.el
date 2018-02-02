@@ -49,6 +49,7 @@
     (setq org-todo-keyword-faces
           `(("TODO" :foreground ,nord11 :weight bold)
             ("NEXT" :foreground ,nord13 :weight bold)
+            ("DOING" :foreground ,nord13 :weight bold)
             ("DONE" :foreground ,nord14 :weight bold)
             ("WAITING" :foreground ,nord12 :weight bold)
             ("HOLD" :foreground ,nord12 :weight bold)
