@@ -277,6 +277,7 @@ typical word processor."
   :after org)
 
 (use-package org-trello
+  :disabled
   :init
   (add-hook 'org-mode-hook 'org-trello-mode))
 
