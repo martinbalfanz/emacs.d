@@ -39,7 +39,10 @@
         org-edit-src-content-indentation 0
         org-hide-emphasis-markers t
         org-goto-interface 'outline-path-completion
-        org-outline-path-complete-in-steps nil)
+        org-outline-path-complete-in-steps nil
+        org-log-reschedule 'time
+        org-log-redeadline 'time
+        org-log-refile 'time)
 
   (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
                             (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "MEETING")))
@@ -97,7 +100,7 @@
   ;; (require 'setup-org-babel)
 
   ;; Agenda
-  (add-hook 'org-agenda-mode-hook 'mb/disable-ligatures-face)
+  ;; (add-hook 'org-agenda-mode-hook 'mb/disable-ligatures-face)
   (setq org-agenda-repeating-timestamp-show-all t
         org-agenda-show-all-dates t
         org-agenda-start-on-weekday 1
@@ -113,6 +116,7 @@
         org-agenda-skip-deadline-if-done t
         org-agenda-skip-scheduled-if-done t
         org-agenda-skip-timestamp-if-done t
+        org-agenda-skip-deadline-prewarning-if-scheduled t
         org-agenda-text-search-extra-files '(agenda-archives)
         org-agenda-custom-commands '(("N" "Notes" tags "NOTE"
                                       ((org-agenda-overriding-header "Notes")
@@ -142,6 +146,7 @@
         appt-delete-window-function nil))
 
 (use-package appt
+  :disabled
   :ensure nil
   :after org
   :init
