@@ -32,12 +32,6 @@
 (require 'setup-gui-frames)
 (require 'setup-misc) ;; TODO cleanup
 (require 'setup-backup)
-(use-package real-auto-save
-  :disabled
-  :commands (real-auto-save-mode)
-  :init
-  (add-hook 'prog-mode-hook 'real-auto-save-mode)
-  (add-hook 'org-mode-hook 'real-auto-save-mode))
 
 (require 'setup-recentf)
 (require 'setup-editing-utils)
