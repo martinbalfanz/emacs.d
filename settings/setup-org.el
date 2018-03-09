@@ -249,12 +249,14 @@ typical word processor."
   (add-hook 'org-brain-after-visualize-hook #'aa2u-buffer))
 
 (use-package org-wiki
+  :disabled
   :ensure nil
   :load-path "site-lisp/"
   :config
   (setq org-wiki-default-read-only nil))
 
 (use-package org-board
+  :disabled
   :after org
   :init
   (which-key-replace
@@ -277,11 +279,39 @@ typical word processor."
   (add-hook 'org-capture-before-finalize-hook #'mb/org-board-dl-hook))
 
 (use-package kanban
+  :disabled
   :after org)
 
 (use-package org-trello
   :disabled
   :init
   (add-hook 'org-mode-hook 'org-trello-mode))
+
+(use-package org-journal
+  :config
+  (add-hook 'org-journal-after-entry-create-hook
+            (lambda ()
+              (save-excursion
+                (let ((template "#+FILETAGS: journal"))
+                  (beginning-of-buffer)
+                  (unless (search-forward template nil t)
+                    (insert template "\n\n"))))))
+
+  (setq calendar-week-start-day 1
+        calendar-date-style 'iso
+        org-journal-date-format "%A, %Y-%m-%d"))
+
+(use-package ox-minutes
+  :after org)
+
+(use-package ox-tufte
+  :after org)
+
+(use-package ox-gfm
+  :after org)
+
+(use-package orgbox
+  :disabled
+  :after org)
 
 (provide 'setup-org)
