@@ -274,9 +274,7 @@ typical word processor."
                  (concat "CAPTURE-" org-board-capture-file))
       (org-board-archive)))
 
-  (add-hook 'org-capture-before-finalize-hook #'mb/org-board-dl-hook)
-
-  (server-start))
+  (add-hook 'org-capture-before-finalize-hook #'mb/org-board-dl-hook))
 
 (use-package kanban
   :after org)
