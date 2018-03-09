@@ -120,3 +120,6 @@
 (use-package system-packages)
 (use-package homebrew-mode
   :if (eq system-type 'darwin))
+
+
+(server-start)
