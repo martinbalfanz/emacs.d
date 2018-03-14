@@ -31,7 +31,9 @@
   :init
   (which-key-replace "M-m y" "yasnippet")
   :config
-  (use-package yasnippet-snippets)
   (yas-global-mode 1))
+
+(use-package yasnippet-snippets
+  :after yasnippet)
 
 (provide 'setup-completion)
