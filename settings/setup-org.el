@@ -116,6 +116,7 @@
         org-agenda-skip-deadline-if-done t
         org-agenda-skip-scheduled-if-done t
         org-agenda-skip-timestamp-if-done t
+        org-agenda-skip-scheduled-if-deadline-is-shown t
         org-agenda-skip-deadline-prewarning-if-scheduled t
         org-agenda-text-search-extra-files '(agenda-archives)
         org-agenda-custom-commands '(("N" "Notes" tags "NOTE"
