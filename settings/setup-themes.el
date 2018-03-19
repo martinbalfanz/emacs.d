@@ -54,7 +54,13 @@
             ("WAITING" :foreground ,nord12 :weight bold)
             ("HOLD" :foreground ,nord12 :weight bold)
             ("CANCELLED" :foreground ,nord14 :weight bold)
-            ("MEETING" :foreground ,nord14 :weight bold)))))
+            ("MEETING" :foreground ,nord14 :weight bold))))
+
+  (defun color-theme-nord ()
+    (interactive)
+    (if (boundp 'custom-enabled-themes)
+        (custom-set-variables '(custom-enabled-themes '(nord)))
+      (load-theme 'nord t))))
 
 (load-theme 'nord t)
 
