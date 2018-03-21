@@ -315,4 +315,6 @@ typical word processor."
   :disabled
   :after org)
 
+(use-package org-gcal)
+
 (provide 'setup-org)
