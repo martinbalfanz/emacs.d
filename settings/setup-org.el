@@ -81,6 +81,8 @@
 
   (setq org-hide-emphasis-markers nil
         org-export-coding-system 'utf-8
+        org-html-doctype "html5"
+        org-html-html5-fancy t
         org-catch-invisible-edits 'show)
 
   (require 'org-habit)
