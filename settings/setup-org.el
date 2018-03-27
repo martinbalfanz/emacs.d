@@ -42,7 +42,8 @@
         org-outline-path-complete-in-steps nil
         org-log-reschedule 'time
         org-log-redeadline 'time
-        org-log-refile 'time)
+        org-log-refile 'time
+        org-log-into-drawer t)
 
   (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
                             (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "MEETING")))
