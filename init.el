@@ -73,6 +73,7 @@
 ;; programming utilities
 
 (require 'setup-git)
+(require 'setup-mercurial)
 (require 'setup-projectile)
 (require 'setup-editorconfig)
 (require 'setup-completion)
