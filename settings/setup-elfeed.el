@@ -3,9 +3,11 @@
   :bind (:map elfeed-search-mode-map
               ("v" . elfeed-show-visit)
               :map elfeed-show-mode-map
-              ("v" . elfeed-show-visit)))
+              ("v" . elfeed-show-visit)
+              ("o" . elfeed-show-visit)))
 
 (use-package elfeed-goodies
+  :disabled
   :after elfeed
   :bind (:map elfeed-search-mode-map
               ("RET" . mb/elfeed-search-show-entry))
