@@ -107,7 +107,7 @@
   (setq org-agenda-repeating-timestamp-show-all t
         org-agenda-show-all-dates t
         org-agenda-start-on-weekday 1
-        org-agenda-sticky t
+        org-agenda-sticky nil
         org-deadline-warning-days 7
         org-agenda-show-future-repeats nil
         org-agenda-compact-blocks t
