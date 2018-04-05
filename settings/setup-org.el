@@ -345,11 +345,19 @@ typical word processor."
           ;; Review
           ("r" . "Review")
           ("rr" "Refile" tags-todo "+refile")
-          ("re" "Without estimate" tags-todo "+work-Effort>\"0:00\"")
+          ("re" "Without effort" tags-todo "+work-Effort>\"0:00\"" ((org-super-agenda-groups
+                                                                     '((:discard (:regexp "\[[0-9]\/[0-9]\]"))
+                                                                       (:name "Tasks without effort"
+                                                                              :anything t)))))
           ("rs" "Without schedule" tags-todo "+work" ((org-super-agenda-groups
-                                                       '((:name "not scheduled"
+                                                       '((:discard (:regexp "\[[0-9]\/[0-9]\]"))
+                                                         (:name "not scheduled"
                                                                 :scheduled nil)
                                                          (:discard (:anything t))))))
+          ("rp" "Projects" tags-todo "+work" ((org-super-agenda-groups
+                                               '((:name "Projects"
+                                                        :regexp "\[[0-9]\/[0-9]\]")
+                                                 (:discard (:anything t))))))
           ("ro" "Overdue" tags-todo "+work" ((org-super-agenda-groups
                                               '((:name "Overdue by deadline"
                                                        :deadline past)
