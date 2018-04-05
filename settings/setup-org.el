@@ -121,14 +121,7 @@
         org-agenda-skip-timestamp-if-done t
         org-agenda-skip-scheduled-if-deadline-is-shown t
         org-agenda-skip-deadline-prewarning-if-scheduled t
-        org-agenda-text-search-extra-files '(agenda-archives)
-        org-agenda-custom-commands '(("N" "Notes" tags "NOTE"
-                                      ((org-agenda-overriding-header "Notes")
-                                       (org-tags-match-list-sublevels t)))
-                                     ("h" "Habits" tags-todo "STYLE=\"habit\""
-                                      ((org-agenda-overriding-header "Habits")
-                                       (org-agenda-sorting-strategy
-                                        '(todo-state-down effort-up category-keep))))))
+        org-agenda-text-search-extra-files '(agenda-archives))
 
   ;; Clock
   (org-clock-persistence-insinuate)
@@ -319,5 +312,47 @@ typical word processor."
   :after org)
 
 (use-package org-gcal)
+
+(use-package org-super-agenda
+  :after org
+  :config
+  (org-super-agenda-mode)
+  (setq org-agenda-custom-commands
+        '(("N" "Notes" tags "NOTE"
+           ((org-agenda-overriding-header "Notes")
+            (org-tags-match-list-sublevels t)))
+          ("h" "Habits" tags-todo "STYLE=\"habit\""
+           ((org-agenda-overriding-header "Habits")
+            (org-agenda-sorting-strategy
+             '(todo-state-down effort-up category-keep))))
+          ("w" "Work agenda" agenda "" ((org-super-agenda-groups
+                                         '((:log t)
+                                           (:name "Schedule"
+                                                  :time-grid t)
+                                           (:name "Today"
+                                                  :scheduled today)
+                                           (:name "Due today"
+                                                  :deadline today)
+                                           (:name "Overdue"
+                                                  :deadline past)
+                                           (:name "Due soon"
+                                                  :deadline future)
+                                           (:name "Scheduled earlier"
+                                                  :scheduled past)
+                                           (:name "Projects"
+                                                  :children t)))))
+          ;; Review
+          ("r" . "Review")
+          ("rr" "Refile" tags "+refile")
+          ("re" "Without estimate" tags-todo "+mozilla-Effort>\"0:00\"")
+          ("rs" "Without schedule" tags-todo "+mozilla" ((org-super-agenda-groups
+                                                          '((:name "not scheduled"
+                                                                   :scheduled nil)))))
+          ("ro" "Overdue" tags-todo "+mozilla" ((org-super-agenda-groups
+                                                 '((:name "Overdue by deadline"
+                                                          :deadline past)
+                                                   (:name "Overdue by schedule"
+                                                          :scheduled past)
+                                                   (:discard t))))))))
 
 (provide 'setup-org)
