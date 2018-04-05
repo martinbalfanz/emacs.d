@@ -345,15 +345,15 @@ typical word processor."
           ;; Review
           ("r" . "Review")
           ("rr" "Refile" tags "+refile")
-          ("re" "Without estimate" tags-todo "+mozilla-Effort>\"0:00\"")
-          ("rs" "Without schedule" tags-todo "+mozilla" ((org-super-agenda-groups
-                                                          '((:name "not scheduled"
-                                                                   :scheduled nil)))))
-          ("ro" "Overdue" tags-todo "+mozilla" ((org-super-agenda-groups
-                                                 '((:name "Overdue by deadline"
-                                                          :deadline past)
-                                                   (:name "Overdue by schedule"
-                                                          :scheduled past)
-                                                   (:discard t))))))))
+          ("re" "Without estimate" tags-todo "+work-Effort>\"0:00\"")
+          ("rs" "Without schedule" tags-todo "+work" ((org-super-agenda-groups
+                                                       '((:name "not scheduled"
+                                                                :scheduled nil)))))
+          ("ro" "Overdue" tags-todo "+work" ((org-super-agenda-groups
+                                              '((:name "Overdue by deadline"
+                                                       :deadline past)
+                                                (:name "Overdue by schedule"
+                                                       :scheduled past)
+                                                (:discard t))))))))
 
 (provide 'setup-org)
