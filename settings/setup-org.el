@@ -344,16 +344,17 @@ typical word processor."
                                                   :children t)))))
           ;; Review
           ("r" . "Review")
-          ("rr" "Refile" tags "+refile")
+          ("rr" "Refile" tags-todo "+refile")
           ("re" "Without estimate" tags-todo "+work-Effort>\"0:00\"")
           ("rs" "Without schedule" tags-todo "+work" ((org-super-agenda-groups
                                                        '((:name "not scheduled"
-                                                                :scheduled nil)))))
+                                                                :scheduled nil)
+                                                         (:discard (:anything t))))))
           ("ro" "Overdue" tags-todo "+work" ((org-super-agenda-groups
                                               '((:name "Overdue by deadline"
                                                        :deadline past)
                                                 (:name "Overdue by schedule"
                                                        :scheduled past)
-                                                (:discard t))))))))
+                                                (:discard (:anything t)))))))))
 
 (provide 'setup-org)
