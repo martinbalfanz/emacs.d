@@ -42,6 +42,7 @@
      `(org-level-7 ((,class (:foreground ,nord10 :weight normal))))
      `(org-level-8 ((,class (:foreground ,nord7 :weight normal))))
      `(org-priority ((,class (:foreground ,nord14))))
+     `(org-agenda-dimmed-todo-face ((,class (:background nil :foreground ,nord3))))
      `(scroll-bar ((,class (:background ,nord0))))
      `(stripe-highlight ((,class (:background ,(doom-darken nord1 0.3)))))
      `(which-key-key-face ((,class (:foreground ,nord13)))))
