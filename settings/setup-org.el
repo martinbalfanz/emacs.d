@@ -325,7 +325,8 @@ typical word processor."
            ((org-agenda-overriding-header "Habits")
             (org-agenda-sorting-strategy
              '(todo-state-down effort-up category-keep))))
-          ("w" "Work agenda" agenda "" ((org-super-agenda-groups
+          ("w" "Work agenda" agenda "" ((org-agenda-span 1)
+                                        (org-super-agenda-groups
                                          '((:log t)
                                            (:name "Schedule"
                                                   :time-grid t)
