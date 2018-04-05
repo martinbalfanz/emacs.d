@@ -341,7 +341,8 @@ typical word processor."
                                            (:name "Scheduled earlier"
                                                   :scheduled past)
                                            (:name "Projects"
-                                                  :children t)))))
+                                                  :children t
+                                                  :regexp "\[[0-9]\/[0-9]\]")))))
           ;; Review
           ("r" . "Review")
           ("rr" "Refile" tags-todo "+refile")
@@ -356,7 +357,8 @@ typical word processor."
                                                          (:discard (:anything t))))))
           ("rp" "Projects" tags-todo "+work" ((org-super-agenda-groups
                                                '((:name "Projects"
-                                                        :regexp "\[[0-9]\/[0-9]\]")
+                                                        :regexp "\[[0-9]\/[0-9]\]"
+                                                        :children t)
                                                  (:discard (:anything t))))))
           ("ro" "Overdue" tags-todo "+work" ((org-super-agenda-groups
                                               '((:name "Overdue by deadline"
