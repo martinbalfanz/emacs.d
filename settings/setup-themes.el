@@ -43,6 +43,8 @@
      `(org-level-8 ((,class (:foreground ,nord7 :weight normal))))
      `(org-priority ((,class (:foreground ,nord14))))
      `(org-agenda-dimmed-todo-face ((,class (:background nil :foreground ,nord3))))
+     `(org-agenda-date-today ((,class (:height 1.44 :weight normal))))
+     `(org-agenda-structure ((,class (:italic t :height 1.2))))
      `(scroll-bar ((,class (:background ,nord0))))
      `(stripe-highlight ((,class (:background ,(doom-darken nord1 0.3)))))
      `(which-key-key-face ((,class (:foreground ,nord13)))))
