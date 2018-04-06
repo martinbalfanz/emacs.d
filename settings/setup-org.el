@@ -365,6 +365,10 @@ typical word processor."
                                                        :deadline past)
                                                 (:name "Overdue by schedule"
                                                        :scheduled past)
-                                                (:discard (:anything t)))))))))
+                                                (:discard (:anything t))))))
+          ("rq" "Quick picks" tags-todo "+work" ((org-super-agenda-groups
+                                                  '((:name "Quick picks"
+                                                           :effort< "0:30")
+                                                    (:discard (:anything t)))))))))
 
 (provide 'setup-org)
