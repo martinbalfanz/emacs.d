@@ -369,6 +369,19 @@ typical word processor."
           ("rq" "Quick picks" tags-todo "+work" ((org-super-agenda-groups
                                                   '((:name "Quick picks"
                                                            :effort< "0:30")
+                                                    (:discard (:anything t))))))
+          ("rf" "Full Review" tags-todo "+work" ((org-super-agenda-groups
+                                                  '((:name "Refile"
+                                                           :tag "refile")
+                                                    (:discard (:regexp "\[[0-9]\/[0-9]\]"))
+                                                    (:name "Without Effort"
+                                                           :tag "-Effort>\"0:00\"")
+                                                    (:name "Past deadline"
+                                                           :deadline past)
+                                                    (:name "Past schedule"
+                                                           :scheduled past)
+                                                    (:name "Without schedule"
+                                                           :scheduled nil)
                                                     (:discard (:anything t)))))))))
 
 (provide 'setup-org)
