@@ -313,6 +313,8 @@ typical word processor."
 
 (use-package org-gcal)
 
+(use-package org-kanban)
+
 (use-package org-super-agenda
   :after org
   :config
