@@ -375,7 +375,7 @@ typical word processor."
                                                            :tag "refile")
                                                     (:discard (:regexp "\[[0-9]\/[0-9]\]"))
                                                     (:name "Without Effort"
-                                                           :tag "-Effort>\"0:00\"")
+                                                           :not (:effort> "0:00"))
                                                     (:name "Past deadline"
                                                            :deadline past)
                                                     (:name "Past schedule"
