@@ -372,18 +372,19 @@ typical word processor."
                                                   '((:name "Quick picks"
                                                            :effort< "0:30")
                                                     (:discard (:anything t))))))
-          ("rf" "Full Review" tags-todo "+work" ((org-super-agenda-groups
-                                                  '((:name "Refile"
-                                                           :tag "refile")
-                                                    (:discard (:regexp "\[[0-9]\/[0-9]\]"))
-                                                    (:name "Without Effort"
-                                                           :not (:effort> "0:00"))
-                                                    (:name "Past deadline"
-                                                           :deadline past)
-                                                    (:name "Past schedule"
-                                                           :scheduled past)
-                                                    (:name "Without schedule"
-                                                           :scheduled nil)
-                                                    (:discard (:anything t)))))))))
+          ("rf" "Full Review" todo "" ((org-super-agenda-groups
+                                        '((:name "Refile"
+                                                 :tag "refile")
+                                          (:discard (:regexp "\[[0-9]\/[0-9]\]"))
+                                          (:discard (:not (:tag "work")))
+                                          (:name "Without Effort"
+                                                 :not (:effort> "0:00"))
+                                          (:name "Past deadline"
+                                                 :deadline past)
+                                          (:name "Past schedule"
+                                                 :scheduled past)
+                                          (:name "Without schedule"
+                                                 :scheduled nil)
+                                          (:discard (:anything t)))))))))
 
 (provide 'setup-org)
