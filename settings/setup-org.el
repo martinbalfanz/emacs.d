@@ -60,6 +60,10 @@
 
   (setq org-refile-target-verify-function 'bh/verify-refile-target)
 
+  (advice-add 'org-refile :after
+              (lambda (&rest _)
+                (org-save-all-org-buffers)))
+
   (setq org-capture-templates
         '(("t" "Todo" entry (file "inbox.org")
            "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%i\n")
