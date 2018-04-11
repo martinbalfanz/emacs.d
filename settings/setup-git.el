@@ -23,6 +23,11 @@
 
   (setq magit-status-sections-hook (remove 'magit-insert-unpushed-to-upstream-or-recent magit-status-sections-hook)))
 
+(use-package magit-org-todos
+  :after magit
+  :config
+  (magit-org-todos-autoinsert))
+
 (use-package git-commit
   :after magit
   :config
