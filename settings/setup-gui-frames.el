@@ -15,7 +15,8 @@
   (add-to-list 'default-frame-alist no-border)
   (add-to-list 'initial-frame-alist no-border))
 
-(use-package seethru)
+(use-package seethru
+  :commands (seethru))
 
 (setq frame-title-format
       '((:eval (if (buffer-file-name)

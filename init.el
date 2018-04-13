@@ -37,8 +37,8 @@
 (require 'setup-editing-utils)
 (require 'setup-smartparens)
 (require 'setup-flx)
-(require 'setup-helm)
-;; (require 'setup-ivy)
+;; (require 'setup-helm)
+(require 'setup-ivy)
 (require 'setup-uniquify)
 (require 'setup-whitespace)
 (require 'setup-windows)
@@ -107,6 +107,8 @@
 (use-package nginx-mode)
 (use-package coffee-mode)
 (use-package systemd
+  :commands (systemd-mode
+             systemd-doc-open)
   :init
   (when (featurep 'company)
     (add-hook 'systemd-mode-hook 'company-mode-on)))

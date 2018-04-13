@@ -1,3 +1,5 @@
+(require 'cl)
+
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (defun indent-buffer ()

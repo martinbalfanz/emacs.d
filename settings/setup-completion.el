@@ -17,6 +17,7 @@
   (company-quickhelp-mode 1))
 
 (use-package company-statistics
+  :after company
   :init
   (add-hook 'company-mode-hook 'company-statistics-mode))
 

@@ -1,8 +1,21 @@
-(use-package color-theme-sanityinc-solarized)
-(use-package color-theme-sanityinc-tomorrow)
+(use-package color-theme-sanityinc-solarized
+  :commands (color-theme-sanityinc-solarized-dark
+             color-theme-sanityinc-solarized-light))
+
+(use-package color-theme-sanityinc-tomorrow
+  :commands (color-theme-sanityinc-tomorrow-day
+             color-theme-sanityinc-tomorrow-night
+             color-theme-sanityinc-tomorrow-blue
+             color-theme-sanityinc-tomorrow-bright
+             color-theme-sanityinc-tomorrow-eighties))
+
 (use-package dracula-theme
   :disabled)
-(use-package doom-themes)
+
+(use-package doom-themes
+  :commands (doom-lighten
+             doom-darken))
+
 (use-package nord-theme
   :config
   (setq nord-comment-brightness 10)

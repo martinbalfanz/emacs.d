@@ -1,9 +1,13 @@
-(use-package unfill)
+(use-package unfill
+  :commands (unfill-toggle
+             unfill-paragraph
+             unfill-region))
 
 (when (fboundp 'electric-pair-mode)
   (electric-pair-mode))
 
-(use-package list-unicode-display)
+(use-package list-unicode-display
+  :commands (list-unicode-display))
 
 (setq-default indent-tabs-mode nil)
 
@@ -82,7 +86,8 @@ With arg N, insert N newlines."
 ;; ------------------------------------------------------------
 ;; Visual hints
 
-(use-package rainbow-delimiters)
+(use-package rainbow-delimiters
+  :commands (rainbow-delimiters-mode))
 
 (when (fboundp 'global-prettify-symbols-mode)
   (global-prettify-symbols-mode))
@@ -144,10 +149,6 @@ With arg N, insert N newlines."
   :diminish page-break-lines-mode
   :config
   (global-page-break-lines-mode))
-
-(use-package page-break-lines
-  :diminish pages-break-lines-mode)
-(global-page-break-lines-mode)
 
 ;; ------------------------------------------------------------
 ;; Move lines

@@ -289,6 +289,7 @@ typical word processor."
   (add-hook 'org-mode-hook 'org-trello-mode))
 
 (use-package org-journal
+  :after org
   :config
   (add-hook 'org-journal-after-entry-create-hook
             (lambda ()
@@ -315,9 +316,13 @@ typical word processor."
   :disabled
   :after org)
 
-(use-package org-gcal)
+(use-package org-gcal
+  :commands (org-gcal-sync
+             org-gcal-fetch
+             org-gcal-refresh-token))
 
-(use-package org-kanban)
+(use-package org-kanban
+  :after org)
 
 (use-package org-super-agenda
   :after org

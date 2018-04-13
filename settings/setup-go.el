@@ -1,3 +1,4 @@
-(use-package go-mode)
+(use-package go-mode
+  :mode ("\\.go$" . go-mode))
 
 (provide 'setup-go)
