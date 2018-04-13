@@ -62,7 +62,8 @@
              dumb-jump-quick-look
              dumb-jump-go-other-window))
 
-(use-package ranger)
+(use-package ranger
+  :commands (ranger))
 (use-package command-log-mode)
 (use-package writeroom-mode
   :commands (writeroom-mode global-writeroom-mode)
