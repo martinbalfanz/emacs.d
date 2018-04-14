@@ -1,4 +1,4 @@
-;(package-initialize)
+(package-initialize)
 
 ;; Temporarily reduce garbage collection during startup
 (defconst sanityinc/initial-gc-cons-threshold gc-cons-threshold
