@@ -84,7 +84,8 @@
 (require 'setup-flycheck)
 (require 'setup-paredit)
 (use-package aggressive-indent :diminish aggressive-indent-mode)
-(use-package scratch)
+(use-package scratch
+  :commands (scratch))
 
 (require 'setup-org)
 (require 'setup-deft)
