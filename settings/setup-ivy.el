@@ -16,7 +16,8 @@
   (ivy-mode 1))
 
 (use-package swiper
-  :bind (("C-s" . swiper))
+  :bind (("C-s" . swiper)
+         ("C-r" . swiper))
   :config
   (ivy-mode 1))
 
