@@ -57,7 +57,7 @@ With arg N, insert N newlines."
 
 (use-package undo-tree
   :diminish undo-tree-mode
-  :init
+  :config
   (global-undo-tree-mode))
 
 ;; ------------------------------------------------------------
@@ -146,6 +146,7 @@ With arg N, insert N newlines."
 ;; Page break lines
 
 (use-package page-break-lines
+  :disabled
   :diminish page-break-lines-mode
   :config
   (global-page-break-lines-mode))

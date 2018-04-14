@@ -125,7 +125,11 @@
 
 (use-package system-packages)
 (use-package homebrew-mode
-  :if (eq system-type 'darwin))
+  :if (eq system-type 'darwin)
+  :commands (homebrew-mode
+             homebrew-brew-install
+             homebrew-brew-uninstall
+             homebrew-brew-fetch))
 
 
 (server-start)
