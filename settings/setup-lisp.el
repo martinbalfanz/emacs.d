@@ -1,4 +1,5 @@
-(use-package paren-face)
+(use-package paren-face
+  :commands (paren-face-mode))
 
 (defun mb/lispy-mode-config ()
   (when (featurep 'smartparens) (smartparens-mode -1))

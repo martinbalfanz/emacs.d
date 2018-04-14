@@ -24,7 +24,11 @@
   :init
   (add-hook 'js2-mode-hook 'tern-mode))
 
-(use-package js-doc)
+(use-package js-doc
+  :commands (js-doc-insert-tag
+             js-doc-describe-tag
+             js-doc-insert-file-doc
+             js-doc-insert-function-doc))
 
 (use-package js2-refactor
   :diminish js2-refactor-mode

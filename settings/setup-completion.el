@@ -10,7 +10,7 @@
         company-tooltip-align-annotations t)
   (global-company-mode 1))
 
-(use-package pos-tip)
+;; (use-package pos-tip)
 (use-package company-quickhelp
   :after company
   :config
