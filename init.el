@@ -28,7 +28,9 @@
 (require 'setup-mac)
 (when (eq system-type 'darwin)
   (require 'setup-fonts))
-(require 'setup-themes)
+
+(when (display-graphic-p)
+  (require 'setup-themes))
 (require 'setup-gui-frames)
 (require 'setup-misc) ;; TODO cleanup
 (require 'setup-backup)
