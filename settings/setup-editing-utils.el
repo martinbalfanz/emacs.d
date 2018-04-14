@@ -57,8 +57,9 @@ With arg N, insert N newlines."
 
 (use-package undo-tree
   :diminish undo-tree-mode
+  :defer 5
   :config
-  (global-undo-tree-mode))
+  (global-undo-tree-mode t))
 
 ;; ------------------------------------------------------------
 ;; Killing behaviour

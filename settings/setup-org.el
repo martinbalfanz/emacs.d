@@ -142,6 +142,7 @@
 
 (use-package alert
   :if (eq window-system 'mac)
+  :commands (alert)
   :config
   (setq alert-default-style 'osx-notifier
         appt-delete-window-function nil))

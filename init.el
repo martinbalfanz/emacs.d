@@ -108,7 +108,8 @@
 (use-package toml-mode)
 (use-package yaml-mode)
 (use-package nginx-mode)
-(use-package coffee-mode)
+(use-package coffee-mode
+  :mode (("\\.coffee$" . coffee-mode)))
 (use-package systemd
   :commands (systemd-mode
              systemd-doc-open)
