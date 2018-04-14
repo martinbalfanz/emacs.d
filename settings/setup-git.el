@@ -10,7 +10,8 @@
 (use-package git-timemachine
   :commands (git-timemachine))
 
-(use-package fullframe)
+(use-package fullframe
+  :commands (fullframe))
 
 (use-package magit
   :bind (("C-x g" . magit-status)
