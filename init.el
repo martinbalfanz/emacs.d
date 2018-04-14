@@ -64,7 +64,8 @@
 
 (use-package ranger
   :commands (ranger))
-(use-package command-log-mode)
+(use-package command-log-mode
+  :commands (command-log-mode))
 (use-package writeroom-mode
   :commands (writeroom-mode global-writeroom-mode)
   :config
@@ -105,9 +106,13 @@
 (require 'setup-python)
 (require 'setup-go)
 (require 'setup-docker)
-(use-package toml-mode)
-(use-package yaml-mode)
-(use-package nginx-mode)
+(use-package toml-mode
+  :mode (("\\.toml$" . toml-mode)))
+(use-package yaml-mode
+  :mode (("\\.yml$" . yaml-mode)
+         ("\\.yaml$" . yaml-mode)))
+(use-package nginx-mode
+  :defer 5)
 (use-package coffee-mode
   :mode (("\\.coffee$" . coffee-mode)))
 (use-package systemd
