@@ -28,7 +28,7 @@
          ("M-m y n" . yas-new-snippet)
          ("M-m y r" . yas-reload-all)
          ("M-m y TAB" . yas-expand))
-  :defer 5
+  :defer 10
   :init
   (which-key-replace "M-m y" "yasnippet")
   :config

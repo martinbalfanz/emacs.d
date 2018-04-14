@@ -85,7 +85,9 @@
 (require 'setup-completion)
 (require 'setup-flycheck)
 (require 'setup-paredit)
-(use-package aggressive-indent :diminish aggressive-indent-mode)
+(use-package aggressive-indent
+  :diminish aggressive-indent-mode
+  :commands (aggressive-indent-mode))
 (use-package scratch
   :commands (scratch))
 
@@ -132,7 +134,8 @@
 
 (require 'setup-hydra)
 
-(use-package system-packages)
+(use-package system-packages
+  :disabled)
 (use-package homebrew-mode
   :if (eq system-type 'darwin)
   :commands (homebrew-mode

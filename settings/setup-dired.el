@@ -1,5 +1,7 @@
 (use-package dired
   :ensure nil
+  :commands (dired)
+  :bind (("C-x d" . dired))
   :config
   (require 'ls-lisp)
   (setq ls-lisp-use-insert-directory-program nil
