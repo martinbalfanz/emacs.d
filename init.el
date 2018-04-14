@@ -69,6 +69,8 @@
   :commands (writeroom-mode global-writeroom-mode)
   :config
   (setq writeroom-mode-line t))
+(use-package focus
+  :commands (focus-mode))
 
 ;; ------------------------------------------------------------
 ;; programming utilities
