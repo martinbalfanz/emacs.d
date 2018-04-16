@@ -1,4 +1,4 @@
-;(package-initialize)
+(package-initialize)
 
 ;; Temporarily reduce garbage collection during startup
 (defconst sanityinc/initial-gc-cons-threshold gc-cons-threshold
@@ -29,7 +29,9 @@
 (require 'setup-mac)
 (when (eq system-type 'darwin)
   (require 'setup-fonts))
-(require 'setup-themes)
+
+(when (display-graphic-p)
+  (require 'setup-themes))
 (require 'setup-gui-frames)
 (require 'setup-misc) ;; TODO cleanup
 (require 'setup-backup)
@@ -38,8 +40,8 @@
 (require 'setup-editing-utils)
 (require 'setup-smartparens)
 (require 'setup-flx)
-(require 'setup-helm)
-;; (require 'setup-ivy)
+;; (require 'setup-helm)
+(require 'setup-ivy)
 (require 'setup-uniquify)
 (require 'setup-whitespace)
 (require 'setup-windows)
@@ -63,12 +65,16 @@
              dumb-jump-quick-look
              dumb-jump-go-other-window))
 
-(use-package ranger)
-(use-package command-log-mode)
+(use-package ranger
+  :commands (ranger))
+(use-package command-log-mode
+  :commands (command-log-mode))
 (use-package writeroom-mode
   :commands (writeroom-mode global-writeroom-mode)
   :config
   (setq writeroom-mode-line t))
+(use-package focus
+  :commands (focus-mode))
 
 ;; ------------------------------------------------------------
 ;; programming utilities
@@ -80,8 +86,11 @@
 (require 'setup-completion)
 (require 'setup-flycheck)
 (require 'setup-paredit)
-(use-package aggressive-indent :diminish aggressive-indent-mode)
-(use-package scratch)
+(use-package aggressive-indent
+  :diminish aggressive-indent-mode
+  :commands (aggressive-indent-mode))
+(use-package scratch
+  :commands (scratch))
 
 (require 'setup-org)
 (require 'org-auto-save)
@@ -105,11 +114,18 @@
 (require 'setup-python)
 (require 'setup-go)
 (require 'setup-docker)
-(use-package toml-mode)
-(use-package yaml-mode)
-(use-package nginx-mode)
-(use-package coffee-mode)
+(use-package toml-mode
+  :mode (("\\.toml$" . toml-mode)))
+(use-package yaml-mode
+  :mode (("\\.yml$" . yaml-mode)
+         ("\\.yaml$" . yaml-mode)))
+(use-package nginx-mode
+  :defer 5)
+(use-package coffee-mode
+  :mode (("\\.coffee$" . coffee-mode)))
 (use-package systemd
+  :commands (systemd-mode
+             systemd-doc-open)
   :init
   (when (featurep 'company)
     (add-hook 'systemd-mode-hook 'company-mode-on)))
@@ -121,9 +137,14 @@
 
 (require 'setup-hydra)
 
-(use-package system-packages)
+(use-package system-packages
+  :disabled)
 (use-package homebrew-mode
-  :if (eq system-type 'darwin))
+  :if (eq system-type 'darwin)
+  :commands (homebrew-mode
+             homebrew-brew-install
+             homebrew-brew-uninstall
+             homebrew-brew-fetch))
 
 
 (server-start)

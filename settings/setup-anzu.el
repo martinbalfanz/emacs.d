@@ -8,8 +8,8 @@
          ("M-%" . anzu-isearch-query-replace)
          ("C-M-%" . anzu-isearch-query-replace-regexp))
   :config
-  (setq anzu-replace-to-string-separator " => "))
-
-(global-anzu-mode +1)
+  (setq anzu-replace-to-string-separator " => ")
+  ;; (global-anzu-mode +1)
+  )
 
 (provide 'setup-anzu)

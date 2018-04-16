@@ -1,3 +1,5 @@
+(require 'cl)
+
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (defun indent-buffer ()
@@ -130,6 +132,7 @@ Deletes whitespace at join."
 
 (use-package super-save
   :diminish super-save-mode
+  :defer 1
   :config
   (setq super-save-auto-save-when-idle t)
   (super-save-mode +1))

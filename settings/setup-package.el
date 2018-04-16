@@ -1,4 +1,4 @@
-(require 'package)
+;; (require 'package)
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (defconst sanityinc/no-ssl (and (memq system-type '(windows-nt ms-dos))
                                 (not (gnutls-available-p))))
@@ -11,7 +11,7 @@
   ;; Force SSL for GNU ELPA
   (setcdr (assoc "gnu" package-archives) "https://elpa.gnu.org/packages/"))
 
-(package-initialize)
+;; (package-initialize)
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -62,6 +62,7 @@ it is required at all.  Then continue or disable."
              package-utils-list-upgrades))
 
 (use-package auto-package-update
+  :defer 3
   :config
   (setq auto-package-update-delete-old-versions t
         auto-package-update-hide-results t)

@@ -10,13 +10,14 @@
         company-tooltip-align-annotations t)
   (global-company-mode 1))
 
-(use-package pos-tip)
+;; (use-package pos-tip)
 (use-package company-quickhelp
   :after company
   :config
   (company-quickhelp-mode 1))
 
 (use-package company-statistics
+  :after company
   :init
   (add-hook 'company-mode-hook 'company-statistics-mode))
 
@@ -27,7 +28,7 @@
          ("M-m y n" . yas-new-snippet)
          ("M-m y r" . yas-reload-all)
          ("M-m y TAB" . yas-expand))
-  :defer 5
+  :defer 10
   :init
   (which-key-replace "M-m y" "yasnippet")
   :config

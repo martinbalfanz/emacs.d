@@ -1,4 +1,8 @@
-(use-package web-mode)
+(use-package web-mode
+  :commands (web-mode)
+  :mode (("\\.htm$" . web-mode)
+         ("\\.html$" . web-mode)
+         ("\\.php$" . web-mode)))
 
 (define-derived-mode vue-mode
   web-mode "Vue"
