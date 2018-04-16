@@ -10,6 +10,7 @@
 ;; ------------------------------------------------------------
 
 (add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 (defvar mb/use-package-allow-ensure-system-package t
@@ -83,6 +84,8 @@
 (use-package scratch)
 
 (require 'setup-org)
+(require 'org-auto-save)
+
 (require 'setup-deft)
 ;; (require 'setup-mu4e)
 (use-package markdown-mode
