@@ -48,8 +48,8 @@
   (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
                             (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "MEETING")))
 
-  (setq org-refile-targets '((nil :maxlevel . 5)
-                             (org-agenda-files :maxlevel . 5))
+  (setq org-refile-targets '((nil :maxlevel . 2)
+                             (org-agenda-files :maxlevel . 2))
         org-refile-use-outline-path 'file
         org-outline-path-complete-in-steps nil
         org-refile-allow-creating-parent-nodes 'confirm)
@@ -59,10 +59,6 @@
     (not (member (nth 2 (org-heading-components)) org-done-keywords)))
 
   (setq org-refile-target-verify-function 'bh/verify-refile-target)
-
-  (advice-add 'org-refile :after
-              (lambda (&rest _)
-                (org-save-all-org-buffers)))
 
   (setq org-capture-templates
         '(("t" "Todo" entry (file "inbox.org")
