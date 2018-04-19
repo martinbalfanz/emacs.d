@@ -20,7 +20,7 @@ LOAD-DURATION is the time taken in milliseconds to load FEATURE.")
                        t))))))
 
 (defun mb/show-init-time ()
-  (let ((threshold 400))
+  (let ((threshold 50))
     (message "following packages took more than %.2fms to load:" threshold)
     (dolist (item (--remove (> threshold (cdr it)) sanityinc/require-times))
       (message "%s: %2fms" (car item) (cdr item))))
