@@ -81,6 +81,7 @@
 (load-theme 'nord t)
 
 (use-package spaceline
+  :if (display-graphic-p)
   :defer 5
   :config
   (require 'spaceline-config)
