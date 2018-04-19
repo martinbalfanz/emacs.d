@@ -43,7 +43,8 @@
         org-log-reschedule 'time
         org-log-redeadline 'time
         org-log-refile 'time
-        org-log-into-drawer t)
+        org-log-into-drawer t
+        org-tags-exclude-from-inheritance '("prj"))
 
   (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
                             (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "MEETING")))
