@@ -356,17 +356,17 @@ typical word processor."
           ("r" . "Review")
           ("rr" "Refile" tags-todo "+refile")
           ("re" "Without effort" tags-todo "+work-Effort>\"0:00\"" ((org-super-agenda-groups
-                                                                     '((:discard (:regexp "\[[0-9]\/[0-9]\]"))
+                                                                     '((:discard (:regexp "\[[0-9]*\/[0-9]*\]"))
                                                                        (:name "Tasks without effort"
                                                                               :anything t)))))
           ("rs" "Without schedule" tags-todo "+work" ((org-super-agenda-groups
-                                                       '((:discard (:regexp "\[[0-9]\/[0-9]\]"))
+                                                       '((:discard (:regexp "\[[0-9]*\/[0-9]*\]"))
                                                          (:name "not scheduled"
                                                                 :scheduled nil)
                                                          (:discard (:anything t))))))
           ("rp" "Projects" tags-todo "+work" ((org-super-agenda-groups
                                                '((:name "Projects"
-                                                        :regexp "\[[0-9]\/[0-9]\]"
+                                                        :regexp "\[[0-9]*\/[0-9]*\]"
                                                         :children t)
                                                  (:discard (:anything t))))))
           ("ro" "Overdue" tags-todo "+work" ((org-super-agenda-groups
@@ -382,7 +382,7 @@ typical word processor."
           ("rf" "Full Review" todo "" ((org-super-agenda-groups
                                         '((:name "Refile"
                                                  :tag "refile")
-                                          (:discard (:regexp "\[[0-9]\/[0-9]\]"))
+                                          (:discard (:regexp "\[[0-9]*\/[0-9]*\]"))
                                           (:discard (:not (:tag "work")))
                                           (:name "Without Effort"
                                                  :not (:effort> "0:00"))
