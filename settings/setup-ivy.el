@@ -15,6 +15,11 @@
   :config
   (ivy-mode 1))
 
+(use-package counsel-dash
+  :after counsel
+  :commands (counsel-dash
+             counsel-dash-install-docset))
+
 (use-package swiper
   :bind (("C-s" . swiper))
   :config
