@@ -147,7 +147,7 @@ With arg N, insert N newlines."
 ;; Page break lines
 
 (use-package page-break-lines
-  :disabled
+  :defer 1
   :diminish page-break-lines-mode
   :config
   (global-page-break-lines-mode))
