@@ -74,6 +74,9 @@
   (setq writeroom-mode-line t))
 (use-package olivetti
   :commands olivetti-mode)
+(use-package imenu-list
+  :commands imenu-list-smart-toggle
+  :bind ("M-m i" . imenu-list-smart-toggle))
 (use-package focus
   :commands (focus-mode))
 
