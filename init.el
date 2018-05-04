@@ -72,6 +72,8 @@
   :commands (writeroom-mode global-writeroom-mode)
   :config
   (setq writeroom-mode-line t))
+(use-package olivetti
+  :commands olivetti-mode)
 (use-package focus
   :commands (focus-mode))
 
