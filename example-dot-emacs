@@ -19,4 +19,6 @@
 (setq org-brain-path "~/org/brain"
       deft-directory "~/org/deft")
 
+(setq mb/use-package-allow-ensure-system-package nil)
+
 (load user-init-file)
