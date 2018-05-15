@@ -153,5 +153,7 @@
              homebrew-brew-uninstall
              homebrew-brew-fetch))
 
+(when (eq system-type 'gnu/linux)
+  (require 'setup-exwm))
 
 (server-start)
