@@ -92,7 +92,7 @@
         org-habit-show-all-today nil
         org-habit-show-done-always-green nil)
 
-  (when (boundp 'mb/disable-ligatures-face)
+  (when (fboundp 'mb/disable-ligatures-face)
     (add-hook 'org-mode-hook 'mb/disable-ligatures-face))
 
   (defun mb/org-new-headline-with-date ()
