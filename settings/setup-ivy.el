@@ -20,6 +20,9 @@
   :commands (counsel-dash
              counsel-dash-install-docset))
 
+(use-package counsel-etags
+  :after counsel)
+
 (use-package swiper
   :bind (("C-s" . swiper))
   :config
