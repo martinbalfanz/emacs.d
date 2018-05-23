@@ -105,7 +105,6 @@
   :commands (scratch))
 
 (require 'setup-org)
-(require 'org-auto-save)
 
 (require 'setup-deft)
 ;; (require 'setup-mu4e)
