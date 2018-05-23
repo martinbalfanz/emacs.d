@@ -40,7 +40,8 @@
 (defgroup org-auto-save nil
   "Auto-saving of org-buffers."
   :group 'org
-  :group 'convenience)
+  :group 'convenience
+  :link '(url-link "http://github.com/martinbalfanz/org-auto-save"))
 
 (defvar org-auto-save-mode-map (make-sparse-keymap)
   "org-autosave mode's keymap.")
@@ -68,23 +69,14 @@
           (advice-remove (intern command) #'org-auto-save-command-advice))
         org-auto-save-triggers))
 
-(defun org-auto-save-initialize ()
-  "Setup org-auto-save's advices and hooks."
-  (org-auto-save-advise-trigger-commands))
-
-(defun org-auto-save-stop ()
-  "Cleanup org-auto-save's advices and hooks."
-  (org-auto-save-remove-advice-from-trigger-commands))
-
 ;;;###autoload
 (define-minor-mode org-auto-save-mode
   "A minor mode that saves your org buffers when you run common org commands."
   :lighter " org-auto-save"
   :keymap org-auto-save-mode-map
   :group 'org-auto-save
-  :global t
   (cond
-   (org-auto-save-mode (org-auto-save-initialize))
-   (t (org-auto-save-stop))))
+   (org-auto-save-mode (org-auto-save-advice-trigger-commands))
+   (t (org-auto-save-remove-advice-from-trigger-commands))))
 
 (provide 'org-auto-save)
