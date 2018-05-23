@@ -12,9 +12,8 @@ git clone https://github.com/martinbalfanz/emacs.d.git ~/.emacs.d
 
 Then, copy and adjust =example-dot-emacs= to =~/.emacs=.
 
-The configuration will try to install required system packages.  If
-you want to disable this set
-=mb/use-package-allow-ensure-system-package= to nil.
+If you want the configuration to install required system packages, set
+=mb/use-package-allow-ensure-system-package= to t.
 
 * Similar configs
 

@@ -38,6 +38,9 @@
 (when (eq system-type 'darwin)
   (require 'setup-fonts))
 
+(when (eq system-type 'gnu/linux)
+  (require 'setup-linux))
+
 (require 'setup-themes)
 (require 'setup-gui-frames)
 (require 'setup-misc) ;; TODO cleanup
@@ -157,5 +160,7 @@
              homebrew-brew-uninstall
              homebrew-brew-fetch))
 
+(when (eq system-type 'gnu/linux)
+  (require 'setup-exwm))
 
 (server-start)
