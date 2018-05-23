@@ -37,7 +37,7 @@
         org-src-preserve-indentation nil
         org-src-tab-acts-natively t
         org-edit-src-content-indentation 0
-        org-hide-emphasis-markers t
+        org-hide-emphasis-markers nil
         org-goto-interface 'outline-path-completion
         org-outline-path-complete-in-steps nil
         org-log-reschedule 'time
@@ -81,8 +81,7 @@
 
   (add-hook 'org-capture-prepare-finalize-hook #'mb/require-final-newline)
 
-  (setq org-hide-emphasis-markers nil
-        org-export-coding-system 'utf-8
+  (setq org-export-coding-system 'utf-8
         org-html-doctype "html5"
         org-html-html5-fancy t
         org-catch-invisible-edits 'show)
