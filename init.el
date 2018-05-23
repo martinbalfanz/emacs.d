@@ -1,11 +1,19 @@
 (package-initialize)
+(setq package-enable-at-startup nil)
 
 ;; Temporarily reduce garbage collection during startup
 (defconst sanityinc/initial-gc-cons-threshold gc-cons-threshold
   "Initial value of `gc-cons-threshold' at start-up time.")
 (setq gc-cons-threshold (* 128 1024 1024))
+
+(defconst mb/initial-file-name-handler-alist file-name-handler-alist
+  "Initial value of `file-name-handler-alist' at start-up time")
+(setq file-name-handler-alist nil)
+
 (add-hook 'after-init-hook
-          (lambda () (setq gc-cons-threshold sanityinc/initial-gc-cons-threshold)))
+          (lambda ()
+            (setq gc-cons-threshold sanityinc/initial-gc-cons-threshold
+                  file-name-handler-alist mb/initial-file-name-handler-alist)))
 
 ;; ------------------------------------------------------------
 
