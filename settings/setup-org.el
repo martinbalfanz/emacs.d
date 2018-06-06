@@ -299,7 +299,9 @@ typical word processor."
 
   (setq calendar-week-start-day 1
         calendar-date-style 'iso
-        org-journal-date-format "%A, %Y-%m-%d"))
+        org-journal-file-format "%Y-%m-%d"
+        org-journal-date-format "%Y-%m-%d (%A)"
+        org-journal-time-format ""))
 
 (use-package ox-minutes
   :after org)

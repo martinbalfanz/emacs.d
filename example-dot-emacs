@@ -17,6 +17,7 @@
                                ))
 
 (setq org-brain-path "~/org/brain"
+      org-journal-dir (concat "~/Dropbox/journal/" (format-time-string "%Y"))
       deft-directory "~/org/deft")
 
 (setq mb/use-package-allow-ensure-system-package nil)
