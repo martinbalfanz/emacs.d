@@ -83,6 +83,10 @@
   :commands (writeroom-mode global-writeroom-mode)
   :config
   (setq writeroom-mode-line t))
+(use-package powerthesaurus
+  :bind ("M-m p p" . powerthesaurus-lookup-word))
+(use-package synosaurus
+  :commands synosaurus-mode)
 (use-package olivetti
   :commands olivetti-mode)
 (use-package imenu-list
