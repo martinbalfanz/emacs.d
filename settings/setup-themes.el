@@ -17,6 +17,7 @@
              doom-darken))
 
 (use-package nord-theme
+  :disabled
   :config
   (setq nord-comment-brightness 10)
 
@@ -78,7 +79,8 @@
         (custom-set-variables '(custom-enabled-themes '(nord)))
       (load-theme 'nord t))))
 
-(load-theme 'nord t)
+;; (load-theme 'nord t)
+(color-theme-sanityinc-tomorrow-night)
 
 (use-package spaceline
   :if (display-graphic-p)
