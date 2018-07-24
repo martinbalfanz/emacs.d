@@ -153,6 +153,9 @@
 (use-package pdf-tools
   :disabled)
 
+(use-package nov
+  :mode (("\\.epub$" . nov-mode)))
+
 (require 'setup-hydra)
 
 (use-package system-packages
