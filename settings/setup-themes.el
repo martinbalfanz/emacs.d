@@ -83,6 +83,7 @@
 (color-theme-sanityinc-tomorrow-night)
 
 (use-package spaceline
+  :disabled
   :if (display-graphic-p)
   :defer 5
   :config
