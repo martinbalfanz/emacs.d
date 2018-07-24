@@ -110,6 +110,8 @@
   :commands (aggressive-indent-mode))
 (use-package scratch
   :commands (scratch))
+(use-package visual-fill-column
+  :commands (visual-fill-column-mode))
 
 (require 'setup-org)
 
