@@ -118,7 +118,10 @@
 (require 'setup-deft)
 ;; (require 'setup-mu4e)
 (use-package markdown-mode
-  :mode ("\\.md$" "\\.markdown$" "\\.txt$"))
+  :mode ("\\.md$" "\\.markdown$" "\\.txt$")
+  :config
+  (add-hook 'markdown-mode-hook 'visual-fill-column-mode)
+  (add-hook 'markdown-mode-hook 'visual-line-mode))
 
 ;; ------------------------------------------------------------
 ;; programming languages & other file types
