@@ -7,7 +7,8 @@
              color-theme-sanityinc-tomorrow-night
              color-theme-sanityinc-tomorrow-blue
              color-theme-sanityinc-tomorrow-bright
-             color-theme-sanityinc-tomorrow-eighties))
+             color-theme-sanityinc-tomorrow-eighties
+	     color-theme-sanityinc-tomorrow--theme-name))
 
 (use-package dracula-theme
   :disabled)
@@ -80,7 +81,7 @@
       (load-theme 'nord t))))
 
 ;; (load-theme 'nord t)
-(color-theme-sanityinc-tomorrow-night)
+(load-theme (color-theme-sanityinc-tomorrow--theme-name 'night) t)
 
 (use-package spaceline
   :disabled
