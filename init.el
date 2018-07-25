@@ -159,7 +159,10 @@
   :disabled)
 
 (use-package nov
-  :mode (("\\.epub$" . nov-mode)))
+  :mode (("\\.epub$" . nov-mode))
+  :config
+  (setq nov-text-width 80
+        nov-variable-pitch t))
 
 (require 'setup-hydra)
 
