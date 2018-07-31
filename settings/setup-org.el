@@ -215,11 +215,15 @@ typical word processor."
     (when (fboundp 'writeroom-mode)
       (writeroom-mode 0))))
 
+(use-package org-cliplink
+  :commands (org-cliplink-clipboard-content))
+
 (use-package org-brain
   :bind (("M-m o b v" . org-brain-visualize)
          ("M-m o b i" . org-id-get-create)
          :map org-brain-visualize-mode-map
-         ("+" . org-brain-new-child))
+         ("+" . org-brain-new-child)
+         ("L" . org-brain-cliplink-resource))
   :init
   (which-key-replace "M-m o b" "brain")
   :config
@@ -228,6 +232,16 @@ typical word processor."
         org-brain-show-text t
         org-brain-title-max-length 0
         org-brain-visualize-one-child-per-line t)
+
+  (defun org-brain-cliplink-resource ()
+  "Add a URL from the clipboard as an org-brain resource.
+Suggest the URL title as a description for resource."
+  (interactive)
+  (let ((url (org-cliplink-clipboard-content)))
+    (org-brain-add-resource
+     url
+     (org-cliplink-retrieve-title-synchronously url)
+     t)))
 
   (push '("b" "Brain" plain (function org-brain-goto-end)
           "* %i%?" :empty-lines 1)
