@@ -73,4 +73,8 @@ it is required at all.  Then continue or disable."
 
 (add-hook 'package-menu-mode-hook 'hl-line-mode)
 
+(use-package el-get
+  :config
+  (setq el-get-notify-type 'message))
+
 (provide 'setup-package)
