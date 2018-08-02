@@ -410,4 +410,7 @@ Suggest the URL title as a description for resource."
                                                  :scheduled nil)
                                           (:discard (:anything t)))))))))
 
+(el-get-bundle alphapapa/org-agenda-ng)
+(el-get-bundle alphapapa/org-sidebar)
+
 (provide 'setup-org)
