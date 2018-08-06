@@ -15,7 +15,21 @@
 
 (use-package doom-themes
   :commands (doom-lighten
-             doom-darken))
+             doom-darken)
+  :config
+  (doom-themes-org-config)
+  (setq doom-enable-bold t
+        doom-enable-italic t
+        doom-org-special-tags t
+        doom-themes-padded-modeline nil
+        doom-one-brighter-modeline nil
+        doom-one-padded-modeline nil
+        doom-one-brighter-comments nil
+        doom-one-comment-bg nil))
+
+(use-package doom-modeline
+  :defer t
+  :hook (after-init . doom-modeline-init))
 
 (use-package nord-theme
   :disabled
@@ -80,8 +94,7 @@
         (custom-set-variables '(custom-enabled-themes '(nord)))
       (load-theme 'nord t))))
 
-;; (load-theme 'nord t)
-(load-theme (color-theme-sanityinc-tomorrow--theme-name 'night) t)
+(load-theme 'doom-one t)
 
 (use-package spaceline
   :disabled
@@ -101,5 +114,23 @@
   (spaceline-all-the-icons-theme))
 
 (setq-default line-spacing 2)
+
+
+;; custom adjustments
+(custom-set-faces
+ '(default ((t (:background "#000" :height 140)))))
+;; (custom-theme-set-faces
+;;  'doom-one)
+(setq org-todo-keyword-faces '(("TODO" :foreground "#BF616A" :weight bold)
+                               ("NEXT" :foreground "#EBCB8B" :weight bold)
+                               ("DOING" :foreground "#EBCB8B" :weight bold)
+                               ("DONE" :foreground "#A3BE8C" :weight bold)
+                               ("WAITING" :foreground "#D08770" :weight bold)
+                               ("HOLD" :foreground "#D08770" :weight bold)
+                               ("CANCELLED" :foreground "#A3BE8C" :weight bold)
+                               ("MEETING" :foreground "#A3BE8C" :weight bold))
+      org-priority-faces `((?A . (:foreground ,(doom-lighten "#BF616A" 0.8) :background "#BF616A" :weight bold))
+                           (?B . (:foreground ,(doom-darken "#EBCB8B" 0.6) :background "#EBCB8B" :weight bold))
+                           (?C . (:foreground ,(doom-darken "#A3BE8C" 0.6) :background "#A3BE8C" :weight bold))))
 
 (provide 'setup-themes)
