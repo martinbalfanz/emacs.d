@@ -47,7 +47,10 @@
         org-tags-exclude-from-inheritance '("prj"))
 
   (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
-                            (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "MEETING")))
+                            (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "MEETING"))
+        org-stuck-projects '("+prj/-DONE-CANCELLED-MEETING"
+                             ("TODO" "NEXT")
+                             nil ""))
 
   (setq org-refile-targets '((nil :maxlevel . 2)
                              (org-agenda-files :maxlevel . 2))
