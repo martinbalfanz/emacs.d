@@ -359,8 +359,7 @@ Suggest the URL title as a description for resource."
                                            (:name "Schedule"
                                                   :time-grid t)
                                            (:name "Today"
-                                                  :scheduled today)
-                                           (:name "Due today"
+                                                  :scheduled today
                                                   :deadline today)
                                            (:name "Overdue"
                                                   :deadline past)
