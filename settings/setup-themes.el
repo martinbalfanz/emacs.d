@@ -129,8 +129,8 @@
                                ("HOLD" :foreground "#D08770" :weight bold)
                                ("CANCELLED" :foreground "#A3BE8C" :weight bold)
                                ("MEETING" :foreground "#A3BE8C" :weight bold))
-      org-priority-faces `((?A . (:foreground ,(doom-lighten "#BF616A" 0.8) :background "#BF616A" :weight bold))
-                           (?B . (:foreground ,(doom-darken "#EBCB8B" 0.6) :background "#EBCB8B" :weight bold))
-                           (?C . (:foreground ,(doom-darken "#A3BE8C" 0.6) :background "#A3BE8C" :weight bold))))
+      org-priority-faces `((?A . (:foreground ,(doom-lighten "#BF616A" 0.8) :background ,(doom-darken "#BF616A" 0.4) :weight bold))
+                           (?B . (:foreground ,(doom-lighten "#EBCB8B" 0.6) :background ,(doom-darken "#EBCB8B" 0.4) :weight bold))
+                           (?C . (:foreground ,(doom-lighten "#A3BE8C" 0.6) :background ,(doom-darken "#A3BE8C" 0.4) :weight bold))))
 
 (provide 'setup-themes)
