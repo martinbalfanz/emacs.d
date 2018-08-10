@@ -9,7 +9,8 @@
   :init
   (add-hook 'after-init-hook 'projectile-mode)
   :config
-  (setq projectile-completion-system 'ivy))
+  (setq projectile-completion-system 'ivy)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
 (use-package counsel-projectile
   :defer 5
