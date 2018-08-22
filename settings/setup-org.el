@@ -175,6 +175,7 @@
   (setq appt-disp-window-function 'mb/appt-disp-window-function))
 
 (use-package org-pomodoro
+  :disabled
   :commands org-pomodoro
   :bind (("M-m o M-p" . org-pomodoro))
   :config
