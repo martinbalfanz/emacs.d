@@ -113,6 +113,7 @@
 (use-package visual-fill-column
   :commands (visual-fill-column-mode))
 
+(use-package htmlize)
 (require 'setup-org)
 
 (require 'setup-deft)
