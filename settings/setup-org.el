@@ -67,6 +67,8 @@
   (setq org-capture-templates
         '(("t" "Todo" entry (file "inbox.org")
            "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%i\n")
+          ("c" "Todo today" entry (file "inbox.org")
+           "* TODO %?\nSCHEDULED: %t\n:PROPERTIES:\n:CREATED: %U\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%i\n")
           ("n" "Note" entry (file "inbox.org")
            "* %? :note:\n:PROPERTIES:\n:CREATED: %U\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%i\n" :clock-in t :clock-resume t)
           ("j" "Journal" entry (file+datetree "journal.org")
