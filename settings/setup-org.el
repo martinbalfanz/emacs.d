@@ -14,7 +14,9 @@
          ("M-m o p s" . org-set-property)
          ("M-m o p d" . org-delete-property)
          ("M-m o p D" . org-delete-property-globally)
-         ("M-m o +" . mb/org-new-headline-with-date))
+         ("M-m o +" . mb/org-new-headline-with-date)
+         :map org-agenda-mode-map
+         ("C-c t" . mb/org-agenda-schedule-today))
   :init
   (which-key-replace
    "M-m o" "org"
@@ -99,6 +101,10 @@
 
   (when (fboundp 'mb/disable-ligatures-face)
     (add-hook 'org-mode-hook 'mb/disable-ligatures-face))
+
+  (defun mb/org-agenda-schedule-today ()
+    (interactive)
+    (org-agenda-schedule nil "+0"))
 
   (defun mb/org-new-headline-with-date ()
     (interactive)
