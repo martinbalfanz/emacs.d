@@ -123,6 +123,7 @@
 
 (use-package htmlize)
 (require 'setup-org)
+(require 'setup-calfw)
 
 (require 'setup-deft)
 ;; (require 'setup-mu4e)
