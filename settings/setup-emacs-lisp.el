@@ -25,4 +25,12 @@
   :init
   (add-hook 'emacs-lisp-mode-hook 'highlight-quoted-mode))
 
+(use-package lispy
+  :hook (emacs-lisp-mode-hook . lispy-mode)
+  :config
+  (defun conditionally-enable-lispy ()
+    (when (eq this-command 'eval-expression)
+      (lispy-mode 1)))
+  (add-hook 'minibuffer-setup-hook 'conditionally-enable-lispy))
+
 (provide 'setup-emacs-lisp)
