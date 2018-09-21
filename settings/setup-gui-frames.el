@@ -1,7 +1,8 @@
-(setq use-file-dialog nil)
-(setq use-dialog-box nil)
-(setq inhibit-startup-screen t)
-(setq inhibit-startup-echo-area-message t)
+(setq use-file-dialog nil
+      use-dialog-box nil
+      inhibit-startup-screen t
+      inhibit-startup-echo-area-message t
+      split-width-threshold 120)
 (setq-default indicate-empty-lines t)
 
 (when (fboundp 'tool-bar-mode)
