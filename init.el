@@ -188,4 +188,6 @@
 (when (eq system-type 'gnu/linux)
   (require 'setup-exwm))
 
+(require 'setup-try)
+
 (server-start)
