@@ -51,4 +51,8 @@
 (global-set-key (kbd "C-x |") 'split-window-horizontally-instead)
 (global-set-key (kbd "C-x _") 'split-window-vertically-instead)
 
+(use-package ace-window
+  :disabled
+  :bind ("C-x o" . ace-window))
+
 (provide 'setup-windows)
