@@ -17,8 +17,12 @@
 
 (use-package counsel-dash
   :after counsel
+  :bind ("M-m d" . counsel-dash)
   :commands (counsel-dash
-             counsel-dash-install-docset))
+             counsel-dash-install-docset)
+  :config
+  (setq counsel-dash-browser-func 'eww)
+  (add-hook 'emacs-lisp-mode-hook (lambda () (setq-local counsel-dash-docsets '("Emacs Lisp")))))
 
 (use-package counsel-etags
   :after counsel)
