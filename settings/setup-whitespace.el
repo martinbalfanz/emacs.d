@@ -15,6 +15,7 @@
   (add-hook hook #'sanityinc/no-trailing-whitespace))
 
 (use-package whitespace-cleanup-mode
+  :disabled
   :diminish whitespace-cleanup-mode
   :defer 1
   :config
