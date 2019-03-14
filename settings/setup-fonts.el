@@ -1,6 +1,7 @@
 (when (window-system)
   (set-default-font "Fira Code Light")
-  (setq-default line-spacing 1))
+  (setq-default line-spacing 0)
+  (set-face-attribute 'variable-pitch nil :family "Baskerville"))
 
 (if (fboundp 'mac-auto-operator-composition-mode)
     (mac-auto-operator-composition-mode)
