@@ -26,7 +26,9 @@
   (add-hook 'emacs-lisp-mode-hook 'highlight-quoted-mode))
 
 (use-package lispy
-  :hook (emacs-lisp-mode-hook . lispy-mode)
+  :commands (lispy-mode)
+  :bind (:map lispy-mode-map
+              ("M-m" . nil))            ;; conflict with my custom binding
   :config
   (defun conditionally-enable-lispy ()
     (when (eq this-command 'eval-expression)
