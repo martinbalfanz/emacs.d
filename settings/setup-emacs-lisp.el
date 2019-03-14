@@ -35,4 +35,17 @@
       (lispy-mode 1)))
   (add-hook 'minibuffer-setup-hook 'conditionally-enable-lispy))
 
+(use-package parinfer
+  :disabled
+  :bind (:map parinfer-mode-map
+              ("C-," . parinfer-toggle-mode))
+  :config
+  (setq parinfer-extensions '(defaults
+                               pretty-parens
+                               ;; lispy
+                               ;; paredit
+                               ;; smart-tab
+                               ;; smart-yank
+                               )))
+
 (provide 'setup-emacs-lisp)
