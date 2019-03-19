@@ -68,15 +68,17 @@
 
   (setq org-capture-templates
         '(("t" "Todo" entry (file "inbox.org")
-           "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%i\n")
+           "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n%i\n")
           ("c" "Todo today" entry (file "inbox.org")
-           "* TODO %?\nSCHEDULED: %t\n:PROPERTIES:\n:CREATED: %U\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%i\n")
+           "* TODO %?\nSCHEDULED: %t\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n%i\n")
           ("n" "Note" entry (file "inbox.org")
-           "* %? :note:\n:PROPERTIES:\n:CREATED: %U\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\n%i\n" :clock-in t :clock-resume t)
-          ("j" "Journal" entry (file+datetree "journal.org")
-           "* %U\n\n%?\n" :clock-in t :clock-resume t :kill-buffer t)
+           "* %? :note:\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n%i\n")
+          ("d" "Diary" entry (file+datetree "diary.org")
+           "* %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n" :kill-buffer t)
+          ("j" "Work Journal" entry (file+olp+datetree "journal.org")
+           "* %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n" :kill-buffer t :tree-type week)
           ("m" "Meeting" entry (file "inbox.org")
-           "* MEETING %? :meeting:\n:PROPERTIES:\n:CREATED: %T\n:ORIGIN: [[%F]]\n:FULL_ORIGIN: %a\n:END:\n\nParticipants:\n- \n%i\n" :clock-in t :clock-resume t)))
+           "* MEETING %? :meeting:\n:PROPERTIES:\n:CREATED: %T\n:END:\n\nParticipants:\n- \n%i\n")))
 
   (defun mb/require-final-newline ()
     "Add final newline to buffer"
