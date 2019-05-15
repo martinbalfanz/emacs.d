@@ -16,10 +16,10 @@
                   file-name-handler-alist mb/initial-file-name-handler-alist)))
 
 ;; ------------------------------------------------------------
-
 (add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load (expand-file-name "custom.el" user-emacs-directory) t t)
 
 (defvar mb/use-package-allow-ensure-system-package t
   "Set if use-package is allowed to install system packages.")
