@@ -48,6 +48,7 @@
   (helm-flx-mode 1))
 
 (use-package helm-dash
+  :disabled
   :after helm)
 
 (use-package helm-clojuredocs
@@ -109,5 +110,24 @@
 
 (use-package helm-org-rifle
   :after helm)
+
+;; (use-package helm-commandlinefu
+;;   :after helm)
+
+(use-package helm-eww
+  :after helm)
+
+(use-package helm-describe-modes
+  :after helm)
+
+(use-package helm-cmd-t
+  :disabled
+  :after helm
+  :bind (("M-t" . helm-cmd-t)))
+
+(use-package helm-system-packages
+  :after helm)
+
+(setq dumb-jump-selector 'helm)
 
 (provide 'setup-helm)
