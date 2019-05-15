@@ -32,4 +32,6 @@
   :config
   (ivy-mode 1))
 
+(setq dumb-jump-selector 'ivy)
+
 (provide 'setup-ivy)
